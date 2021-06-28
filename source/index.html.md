@@ -23,5 +23,6 @@ code_clipboard: true
 
 Welcome to the [KalendMe](https://www.kalendme.com)'s API! 
 
-We're under construction.
+Our API is under construction. 
 
+In the meantime you get started by [creating a free account](https://www.kalendme.com/auth/signin)!
