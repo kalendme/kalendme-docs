@@ -1,28 +1,31 @@
 ---
-title: KalendMe API Docs
+title: KalendMe API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  # - ruby
-  # - python
-  # - javascript
+  - shell: cURL
 
 toc_footers:
   - <a href='https://www.kalendme.com/signup'>Sign Up for an account!</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.kalendme.com/terms'>Terms</a>
+  - <a href='https://www.kalendme.com/privacy'>Privacy Policy</a>
 
-# includes:
-  # - errors
+
+includes:
+  - introduction
+  - users
+  - calendar-accounts
+  - user-event-types
+  - availability
+  - calendar-events
+  - webhooks
+  - special-models
+  - errors
 
 search: true
 
 code_clipboard: true
+
+meta:
+  - name: description
+    content: Documentation for KalendMe's API
 ---
-
-# Introduction
-
-Welcome to the [KalendMe](https://www.kalendme.com)'s API! 
-
-Our API is under construction. 
-
-In the meantime you get started by [creating a free account](https://www.kalendme.com/auth/signin)!
