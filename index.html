@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>KalendMe API Docs</title>
+    <title>KalendMe API Reference</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -301,7 +301,7 @@
     <div class="toc-wrapper">
       <img src="images/logo-0a12346b.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="shell">cURL</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -311,26 +311,2529 @@
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-resource" class="toc-h2 toc-link" data-title="User Resource">User Resource</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-user" class="toc-h2 toc-link" data-title="Create a User">Create a User</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-users" class="toc-h2 toc-link" data-title="Get All Users">Get All Users</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-user" class="toc-h2 toc-link" data-title="Get a Specific User">Get a Specific User</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-user" class="toc-h2 toc-link" data-title="Update a User">Update a User</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-user" class="toc-h2 toc-link" data-title="Delete a Specific User">Delete a Specific User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#calendar-accounts" class="toc-h1 toc-link" data-title="Calendar Accounts">Calendar Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#calendar-account-resource" class="toc-h2 toc-link" data-title="Calendar Account Resource">Calendar Account Resource</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-calendar-account" class="toc-h2 toc-link" data-title="Create a Calendar Account">Create a Calendar Account</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-user-39-s-calendar-accounts" class="toc-h2 toc-link" data-title="Get a user's Calendar Accounts">Get a user's Calendar Accounts</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-calendar-account" class="toc-h2 toc-link" data-title="Get a Specific Calendar Account">Get a Specific Calendar Account</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-event-types" class="toc-h1 toc-link" data-title="User Event Types">User Event Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-event-type-resource" class="toc-h2 toc-link" data-title="User Event Type Resource">User Event Type Resource</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-user-event-type" class="toc-h2 toc-link" data-title="Create a User Event Type">Create a User Event Type</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-user-39-s-event-types" class="toc-h2 toc-link" data-title="Get a User's Event Types">Get a User's Event Types</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-user-event-type" class="toc-h2 toc-link" data-title="Get a Specific User Event Type">Get a Specific User Event Type</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-user-event-type" class="toc-h2 toc-link" data-title="Update a User Event Type">Update a User Event Type</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-user-event-type" class="toc-h2 toc-link" data-title="Delete a Specific User Event Type">Delete a Specific User Event Type</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-availability" class="toc-h1 toc-link" data-title="User Availability">User Availability</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-user-39-s-availability" class="toc-h2 toc-link" data-title="Get a User's Availability">Get a User's Availability</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-user-39-s-event-type-availability" class="toc-h2 toc-link" data-title="Get a User's Event Type Availability">Get a User's Event Type Availability</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#calendar-events" class="toc-h1 toc-link" data-title="Calendar Events">Calendar Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#calendar-event-resource" class="toc-h2 toc-link" data-title="Calendar Event Resource">Calendar Event Resource</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-calendar-event" class="toc-h2 toc-link" data-title="Create a Calendar Event">Create a Calendar Event</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-calendar-event" class="toc-h2 toc-link" data-title="Get a Calendar Event">Get a Calendar Event</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-calendar-event" class="toc-h2 toc-link" data-title="Update a Calendar Event">Update a Calendar Event</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#webhooks" class="toc-h1 toc-link" data-title="Webhooks">Webhooks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#webhook-event-types" class="toc-h2 toc-link" data-title="Webhook Event Types">Webhook Event Types</a>
+                  </li>
+                  <li>
+                    <a href="#general-body-structure" class="toc-h2 toc-link" data-title="General Body Structure">General Body Structure</a>
+                  </li>
+                  <li>
+                    <a href="#security" class="toc-h2 toc-link" data-title="Security">Security</a>
+                  </li>
+                  <li>
+                    <a href="#webhook-resource" class="toc-h2 toc-link" data-title="Webhook Resource">Webhook Resource</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-webhook" class="toc-h2 toc-link" data-title="Create a Webhook">Create a Webhook</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-webhooks" class="toc-h2 toc-link" data-title="Get All Webhooks">Get All Webhooks</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-webhook" class="toc-h2 toc-link" data-title="Get a Specific Webhook">Get a Specific Webhook</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-webhook-39-s-logs" class="toc-h2 toc-link" data-title="Get a Webhook's Logs">Get a Webhook's Logs</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-webhook" class="toc-h2 toc-link" data-title="Update a Webhook">Update a Webhook</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-webhook" class="toc-h2 toc-link" data-title="Delete a Specific Webhook">Delete a Specific Webhook</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#special-models" class="toc-h1 toc-link" data-title="Special Models">Special Models</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#week-availability" class="toc-h2 toc-link" data-title="Week Availability">Week Availability</a>
+                  </li>
+                  <li>
+                    <a href="#custom-question" class="toc-h2 toc-link" data-title="Custom Question">Custom Question</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://www.kalendme.com/signup'>Sign Up for an account!</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.kalendme.com/terms'>Terms</a></li>
+            <li><a href='https://www.kalendme.com/privacy'>Privacy Policy</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the <a href="https://www.kalendme.com">KalendMe</a>&#39;s API! </p>
+<p>Welcome to the KalendMe&#39;s API! You can use our API endpoints to build your next platform and skip all scheduling headaches with a simple to use integration.</p>
 
-<p>Our API is under construction. </p>
+<p>You can view code examples in the dark area to the right.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To test authentication works, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>abcdef123456</code> with your API key.</p>
+</blockquote>
 
-<p>In the meantime you get started by <a href="https://www.kalendme.com/auth/signin">creating a free account</a>!</p>
+<p>KalendMe uses API keys to allow access to the API. You can get an API key by <a href="https://www.kalendme.com/signin">creating a free account</a> and then heading over to settings to create an Organization. </p>
+
+<aside class="warning">You will only be able to use our API with an Organization account.</aside>
+
+<p>KalendMe expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: Bearer abcdef123456</code></p>
+
+<aside class="notice">
+  You must replace <code>abcdef123456</code> with your own API key.
+</aside>
+<h1 id='users'>Users</h1><h2 id='user-resource'>User Resource</h2>
+<blockquote>
+<p>An example user model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jim Halpert"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim@dundermifflin.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim-123456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Users are all users under your organization. Users are formed by the following fields.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>The email of the user. Must be a valid email address.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>The language of the user. We currently support only <code>en</code> (english), <code>es</code> (spanish) and <code>pt</code> (portuguese).</td>
+</tr>
+<tr>
+<td>urlString</td>
+<td>string</td>
+<td>A globally unique URL for the user. Used for their bookings page such as kalendme.com/<code>john-123</code>. If none is specified, a random one will be generated on user creation.</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>string</td>
+<td>The time zone of the user. Must be a valid <a href="https://en.wikipedia.org/wiki/Tz_database">IANA time zone</a> name such as <code>America/New_York</code>.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The status of the user. Can only be: <code>ACTIVE</code> or <code>INVITED</code>. Note that invited users do not affect your bill until they accept to join your organization.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>An object containing the user&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-user'>Create a User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users?sendInvitationEmail=true"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "name": "Jim Halpert",
+    "email": "jim@dundermifflin.com",
+    "language": "en",
+    "timeZone": "America/New_York"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jim Halpert"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim@dundermifflin.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim-123456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new user under your organization.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/users</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Required</td>
+<td>The email of the user. Must be a valid email address.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Optional</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>Required</td>
+<td>The language of the user. We currently support only <code>en</code> (english), <code>es</code> (spanish) and <code>pt</code> (portuguese).</td>
+</tr>
+<tr>
+<td>urlString</td>
+<td>string</td>
+<td>Optional</td>
+<td>A globally unique URL for the user. Used for their bookings page such as kalendme.com/<code>john-123</code>. If none is specified, a random one will be generated on user creation.</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>string</td>
+<td>Required</td>
+<td>The time zone of the user. Must be a valid <a href="https://en.wikipedia.org/wiki/Tz_database">IANA time zone</a> name such as <code>America/New_York</code>.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>Optional</td>
+<td>An object containing the user&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sendInvitationEmail</td>
+<td>boolean</td>
+<td>Send the newly created user an invitation email on behalf of your organization to join your organization and configure their account.</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-users'>Get All Users</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213233"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Michael Scott"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"michael@dundermifflin.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"michael-scott"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam@dundermifflin.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam-beesly"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint retrieves all users.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users</code></p>
+<h2 id='get-a-specific-user'>Get a Specific User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123213232"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam@dundermifflin.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam-beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific user.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-user'>Update a User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "timeZone": "America/Los_Angeles"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jim Halpert"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim@dundermifflin.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim-123456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint updates a user under your organization.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Optional</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>Optional</td>
+<td>The language of the user. We currently support only <code>en</code> (english), <code>es</code> (spanish) and <code>pt</code> (portuguese).</td>
+</tr>
+<tr>
+<td>urlString</td>
+<td>string</td>
+<td>Optional</td>
+<td>A globally unique URL for the user. Used for their bookings page such as kalendme.com/<code>john-123</code>.</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>string</td>
+<td>Optional</td>
+<td>The time zone of the user. Must be a valid <a href="https://en.wikipedia.org/wiki/Tz_database">IANA time zone</a> name such as <code>America/New_York</code>.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>Optional</td>
+<td>An object containing the user&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user to update</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-user'>Delete a Specific User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam@dundermifflin.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam-beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific user from your organization.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://www.kalendme.com/api/v1/users/&lt;userId&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user to delete</td>
+</tr>
+</tbody></table>
+<h1 id='calendar-accounts'>Calendar Accounts</h1><h2 id='calendar-account-resource'>Calendar Account Resource</h2>
+<blockquote>
+<p>An example calendar account model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Calendar accounts belong to users, they are unique calendars that can contain several events and can be used to calculate a user&#39;s availability. Calendar accounts are needed if you want that user to use a KalendMe calendar without needing to connect their Google/Microsoft accounts. Calendar Accounts are formed by the following fields.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>The ID of the user that this calendar belongs to.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>The type of the calendar account.</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>string</td>
+<td>A description of the calendar account.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-calendar-account'>Create a Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-accounts?linkCalendarAccountAsInput=true"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "nickname": "My Calendar"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new calendar account for a user.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-accounts</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>nickname</td>
+<td>string</td>
+<td>Required</td>
+<td>A description of this user&#39;s calendar account.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this calendar account will belong to.</td>
+</tr>
+<tr>
+<td>linkCalendarAccountAsInput</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: false</code> This links the newly created calendar account to the user’s general availability. In other words, when you query for available date times, these calendar events will affect and block calendar times if there’s events present.</td>
+</tr>
+<tr>
+<td>linkCalendarAccountAsOutput</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: false</code> This links the newly created calendar account to be the user’s main calendar for creating events. All scheduled events will be created on this calendar account.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-user-39-s-calendar-accounts'>Get a user&#39;s Calendar Accounts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-accounts"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Personal Calendar"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Work Calendar"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint retrieves all calendar accounts for a user.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-accounts</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar accounts to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-calendar-account'>Get a Specific Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-accounts/123213232"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific calendar account for a user.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-accounts/&lt;calendarAccountId&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar accounts to retrieve</td>
+</tr>
+<tr>
+<td>calendarAccountId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the calendar account to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='user-event-types'>User Event Types</h1><h2 id='user-event-type-resource'>User Event Type Resource</h2>
+<blockquote>
+<p>An example user event type model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
+        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>User event types are the different types of events a user can have booked. They have pre-defined parameters like duration or specific minimum notice times. They can be accessed by a user&#39;s <code>urlString</code> followed by the User Event Type&#39;s <code>urlString</code> (example: <code>kalendme.com/john/quick-meeting</code>). User event types are formed by the following fields.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>The ID of the user that this event type belongs to.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The title of the event. For example, <code>Interview</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>The description of the event</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>urlString</td>
+<td>string</td>
+<td>A unique URL for the user&#39;s event type. Used for their bookings page such as kalendme.com/<code>john-123</code>/<code>event-type</code>. If none is specified, a random one will be generated on user event type creation.</td>
+</tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>The minimum number of minutes notice for a user event type. For example, <code>120</code> if this event type requires a minimum of 2 hours of notice to be booked in advance.</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td><code>Default: true</code> Specifies whether this user event type is enabled or not. Disabled event types cannot be booked or found through their <code>urlString</code></td>
+</tr>
+<tr>
+<td>public</td>
+<td>boolean</td>
+<td><code>Default: true</code> Specifies whether this user event type is public or not. Making an event non-public hides it from a user&#39;s main urlString.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>An object containing an override to the user&#39;s general avialability. A specific user event types&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
+</tr>
+<tr>
+<td>customQuestions</td>
+<td><a href="/#custom-question">CustomQuestion</a>[]</td>
+<td>An array containing custom questions to ask user&#39;s when booking this event type.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-user-event-type'>Create a User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "title": "Quick Meeting",
+    "durationMinutes": 30,
+    "urlString": "quick-meeting",
+    "description": "A quick session to catch up",
+    "weekAvailability": [],
+    "customQuestions": [
+      {
+        "id": "3656475289d4aecd03804ec4d6045953", // An ID of your choosing to map to your system
+        "order": 0,
+        "question": "Whats your phone number?"
+      }
+    ]
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
+        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new event type for a user.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Required</td>
+<td>The title of the event. For example, <code>Interview</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>The description of the event. Can be blank.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+<td>The duration in minutes of the event.</td>
+</tr>
+<tr>
+<td>urlString</td>
+<td>string</td>
+<td>Optional</td>
+<td>A unique URL for the user&#39;s event type. Used for their bookings page such as kalendme.com/<code>john-123</code>/<code>event-type</code>. If none is specified, a random one will be generated on user event type creation.</td>
+</tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The minimum number of minutes notice for a user event type. For example, <code>120</code> if this event type requires a minimum of 2 hours of notice to be booked in advance.</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: true</code> Specifies whether this user event type is enabled or not. Disabled event types cannot be booked or found through their <code>urlString</code></td>
+</tr>
+<tr>
+<td>public</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: true</code> Specifies whether this user event type is public or not. Making an event non-public hides it from a user&#39;s main urlString.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td>Optional</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>An object containing an override to the user&#39;s general avialability. A specific user event types&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
+</tr>
+<tr>
+<td>customQuestions</td>
+<td>Optional</td>
+<td><a href="/#custom-question">CustomQuestion</a>[]</td>
+<td>An array containing custom questions to ask user&#39;s when booking this event type.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this event type will belong to.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-user-39-s-event-types'>Get a User&#39;s Event Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123213233/event-types"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userEventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
+          </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint retrieves all user event types for a specific user.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user these event types belong to.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-user-event-type'>Get a Specific User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types/123213232"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
+        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific user&#39;s event type.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this event type belong to.</td>
+</tr>
+<tr>
+<td>eventTypeId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user event type.</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-user-event-type'>Update a User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "public": false,
+    "customQuestions: []
+  }'</span>
+  -
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint updates a user&#39;s event type.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Optional</td>
+<td>The title of the event. For example, <code>Interview</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>The description of the event. Can be blank.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The duration in minutes of the event.</td>
+</tr>
+<tr>
+<td>urlString</td>
+<td>string</td>
+<td>Optional</td>
+<td>A unique URL for the user&#39;s event type. Used for their bookings page such as kalendme.com/<code>john-123</code>/<code>event-type</code>. If none is specified, a random one will be generated on user event type creation.</td>
+</tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The minimum number of minutes notice for a user event type. For example, <code>120</code> if this event type requires a minimum of 2 hours of notice to be booked in advance.</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Specifies whether this user event type is enabled or not. Disabled event types cannot be booked or found through their <code>urlString</code></td>
+</tr>
+<tr>
+<td>public</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Specifies whether this user event type is public or not. Making an event non-public hides it from a user&#39;s main urlString.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td>Optional</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>An object containing an override to the user&#39;s general avialability. A specific user event types&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
+</tr>
+<tr>
+<td>customQuestions</td>
+<td>Optional</td>
+<td><a href="/#custom-question">CustomQuestion</a>[]</td>
+<td>An array containing custom questions to ask user&#39;s when booking this event type.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this event type belong to.</td>
+</tr>
+<tr>
+<td>eventTypeId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user event type.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-user-event-type'>Delete a Specific User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific user event type.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this event type belong to.</td>
+</tr>
+<tr>
+<td>eventTypeId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user event type.</td>
+</tr>
+</tbody></table>
+<h1 id='user-availability'>User Availability</h1>
+<p>General booking endpoints to consult user&#39;s availaibilities.</p>
+<h2 id='get-a-user-39-s-availability'>Get a User&#39;s Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/availability?month=10&amp;year=2021&amp;durationMinutes=30"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"availableDateTimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">  
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns a user&#39;s general availability for the requrested month, year and duration in minutes.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/availability</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user.</td>
+</tr>
+<tr>
+<td>year</td>
+<td>int</td>
+<td>Required</td>
+<td>The year you want to query the availability for.</td>
+</tr>
+<tr>
+<td>month</td>
+<td>int</td>
+<td>Required</td>
+<td>The month you want to query the availability for.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+<td>The duration of the session you want to schedule this user.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-user-39-s-event-type-availability'>Get a User&#39;s Event Type Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/event-types/654654/availability?month=10&amp;year=2021"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"availableDateTimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">  
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns a user&#39;s specific event type&#39;s availability for the requrested month and year.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;/availability</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user.</td>
+</tr>
+<tr>
+<td>eventTypeId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user event type.</td>
+</tr>
+<tr>
+<td>year</td>
+<td>int</td>
+<td>Required</td>
+<td>The year you want to query the availability for.</td>
+</tr>
+<tr>
+<td>month</td>
+<td>int</td>
+<td>Required</td>
+<td>The month you want to query the availability for.</td>
+</tr>
+</tbody></table>
+<h1 id='calendar-events'>Calendar Events</h1><h2 id='calendar-event-resource'>Calendar Event Resource</h2>
+<blockquote>
+<p>An example calendar event model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Calendar events belong to users, they are unique instances in time that a user is booked for. Having a calendar event blocks that user&#39;s availability for the duration of the event. Calendar Events are formed by the following fields.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>The ID of the user that this calendar event belongs to.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The title of the event. For example, <code>Interview</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>The description of the event</td>
+</tr>
+<tr>
+<td>startTimestamp</td>
+<td>long</td>
+<td>The timestamp in epoch milliseconds of when this event starts</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>The duration in minutes of the event</td>
+</tr>
+<tr>
+<td>guests</td>
+<td>string[]</td>
+<td>An array of the guest&#39;s emails for this event</td>
+</tr>
+<tr>
+<td>mainGuestName</td>
+<td>string</td>
+<td>The name of the person that booked the event</td>
+</tr>
+<tr>
+<td>mainGuestTimeZone</td>
+<td>string</td>
+<td>The time zone of the person that booked the event</td>
+</tr>
+<tr>
+<td>mainGuestLanguage</td>
+<td>string</td>
+<td>The language of the person that booked the event</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The status of the event. Can be <code>CONFIRMED</code> or <code>CANCELLED</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-calendar-event'>Create a Calendar Event</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-events?sendGuestNotificationEmails=true"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "title": "Quick Meeting",
+    "startTimestamp": 1634099600000,
+    "durationMinutes": 30,
+    "guests": [
+      "michael@dundermifflin.com"
+    ],
+    "mainGuestName": "Pam Beesly",
+    "mainGuestTimeZone": "America/New_York",
+    "mainGuestLanguage": "en"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new calendar event for a user. In other words, it books that user during that time. To control which calendar account this event is written to, you have to configure that user&#39;s <code>output</code> calendar account connection.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-events</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The title of the event. For example, <code>Interview</code></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>The description of the event</td>
+<td></td>
+</tr>
+<tr>
+<td>startTimestamp</td>
+<td>long</td>
+<td>The timestamp in epoch milliseconds of when this event starts</td>
+<td></td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>The duration in minutes of the event</td>
+<td></td>
+</tr>
+<tr>
+<td>guests</td>
+<td>string[]</td>
+<td>An array of the guest&#39;s emails for this event</td>
+<td></td>
+</tr>
+<tr>
+<td>mainGuestName</td>
+<td>string</td>
+<td>The name of the person that booked the event</td>
+<td></td>
+</tr>
+<tr>
+<td>mainGuestTimeZone</td>
+<td>string</td>
+<td>The time zone of the person that booked the event</td>
+<td></td>
+</tr>
+<tr>
+<td>mainGuestLanguage</td>
+<td>string</td>
+<td>The language of the person that booked the event</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this calendar event will belong to.</td>
+</tr>
+<tr>
+<td>sendGuestNotificationEmails</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: false</code> Whether you want to send an email notification that this event was created to the <code>guests</code>.</td>
+</tr>
+<tr>
+<td>sendOrganizerNotificationEmail</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: false</code> Whether you want to send an email notification that this event was created to the event organizer (the user who&#39;s <code>userId</code> you&#39;re booking).</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-calendar-event'>Get a Calendar Event</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets a specific calendar event for a user.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-events/&lt;eventId&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar event to retrieve</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the calendar event to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-calendar-event'>Update a Calendar Event</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "status": "CANCELLED"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint updates a calendar event. Used for rescheduling or cancelling calendar events.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-events/&lt;eventId&gt;</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Optional</td>
+<td>The title of the event. For example, <code>Interview</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>The description of the event</td>
+</tr>
+<tr>
+<td>startTimestamp</td>
+<td>long</td>
+<td>Optional</td>
+<td>The timestamp in epoch milliseconds of when this event starts</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The duration in minutes of the event</td>
+</tr>
+<tr>
+<td>guests</td>
+<td>string[]</td>
+<td>Optional</td>
+<td>An array of the guest&#39;s emails for this event</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Optional</td>
+<td>The status of the event. Can be <code>CONFIRMED</code> or <code>CANCELLED</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar event to update</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the calendar event to update</td>
+</tr>
+</tbody></table>
+<h1 id='webhooks'>Webhooks</h1><h2 id='overview'>Overview</h2>
+<p>Webhooks are used to keep your system up to date with KalendMe&#39;s information in real-time. You can configure which system events from KalendMe you want to subscribe to so that you can take action on your side with the information provided.</p>
+
+<p>These are signed POST requests to a <code>url</code> of your choosing.</p>
+<h2 id='webhook-event-types'>Webhook Event Types</h2>
+<table><thead>
+<tr>
+<th>Event Type</th>
+<th>Description</th>
+<th>Resource Data</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user.acceptedInvite</code></td>
+<td>Event fired when a user joins the organization (accepts an invitation to join)</td>
+<td><a href="/#user-resource">User</a></td>
+</tr>
+<tr>
+<td><code>event.created</code></td>
+<td>Event fired when an event is created</td>
+<td><a href="/#calendar-event-resource">Event</a></td>
+</tr>
+<tr>
+<td><code>event.cancelled</code></td>
+<td>Event fired when an event is cancelled</td>
+<td><a href="/#calendar-event-resource">Event</a></td>
+</tr>
+</tbody></table>
+<h2 id='general-body-structure'>General Body Structure</h2>
+<blockquote>
+<p>An example webhook&#39;s POST body looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"event.created"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Webhooks are POST requests to your systems. All of KalendMe&#39;s requests will come in the shown format with a <code>Content-Type: application/json</code> and the following body structure describing the type of the webhook event and the data.</p>
+<h2 id='security'>Security</h2>
+<blockquote>
+<p>Sample code snippet to verify an incoming webhook in javascript:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createHash</span><span class="p">,</span> <span class="nx">timingSafeEqual</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">crypto</span><span class="dl">'</span>
+
+<span class="c1">// Your server's endpoint receiving the request</span>
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">const</span> <span class="nx">hashedBody</span> <span class="o">=</span> <span class="nx">createHash</span><span class="p">(</span><span class="dl">'</span><span class="s1">sha256</span><span class="dl">'</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">}${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">KALENDME_WEBHOOK_SECRET</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">digest</span><span class="p">(</span><span class="dl">'</span><span class="s1">hex</span><span class="dl">'</span><span class="p">)</span>
+
+ <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">timingSafeEqual</span><span class="p">(</span><span class="nx">hashedBody</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="dl">'</span><span class="s1">Kalendme-Signature</span><span class="dl">'</span><span class="p">]))</span> <span class="p">{</span>
+   <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">401</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+   <span class="k">return</span>
+ <span class="p">}</span>
+
+ <span class="c1">// proceed with the processing of the webhook</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You’ll be provided with a webhook secret on account setup which you’ll use to calculate a hash to compare against the signature of every webhook.</p>
+
+<p>All webhooks will come with a signature header: <code>Kalendme-Signature</code></p>
+
+<p>That signature has to be compared to the received body of the event.</p>
+<h2 id='webhook-resource'>Webhook Resource</h2>
+<blockquote>
+<p>An example webhook resource looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="s2">"event.created"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Webhook"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Webhooks are all under your organization. Webhooks are formed by the following fields.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>The url of your endpoint that will listen to events coming in</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>string[]</td>
+<td>An array containing the <a href="/#webhook-event-types">webhook event types</a> you want to subscribe to</td>
+</tr>
+<tr>
+<td>decription</td>
+<td>string</td>
+<td>A description of ths webhook</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Controls whether this webhook actually emits events or not</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-webhook'>Create a Webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "url": "https://yourdomain.com/my-endpoint",
+    "enabledEvents": [ 
+      "event.created"
+    ],
+    "description": "My Webhook"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="s2">"event.created"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Webhook"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new webhook under your organization.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/webhooks</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Required</td>
+<td>The url of your endpoint that will listen to events coming in</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>string[]</td>
+<td>Required</td>
+<td>An array containing the <a href="/#webhook-event-types">webhook event types</a> you want to subscribe to</td>
+</tr>
+<tr>
+<td>decription</td>
+<td>string</td>
+<td>Optional</td>
+<td>A description of ths webhook</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: true</code> Controls whether this webhook actually emits events or not</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-webhooks'>Get All Webhooks</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"webhooks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"event.created"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Webhook"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213233"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint-2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"event.cancelled"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Cancelled Events Webhook"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint retrieves all webhooks for your organization.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/webhooks</code></p>
+<h2 id='get-a-specific-webhook'>Get a Specific Webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="s2">"event.created"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Webhook"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific webhook.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/webhooks/&lt;webhookId&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhookId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the webhook to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-webhook-39-s-logs'>Get a Webhook&#39;s Logs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232/logs"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="nl">"webhookEventsLogs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"webhookId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12312313"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requestData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"310675722544874052"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-25T00:58:26.866-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"event.created"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"310663991379624516"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1633834800000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Event"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"raimille2@gmail.com"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rai"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"responseText"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responseJson"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint retrieves a specific webhook&#39;s logs. Contains response status code, text and json contents if available. </p>
+
+<aside class="notice">
+  Webhook events logs are retained for 15 days only.
+</aside>
+<h3 id='webhook-event-log-resource'>Webhook Event Log Resource</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>webhookId</td>
+<td>string</td>
+<td>The id of the webhook this log entry belongs to</td>
+</tr>
+<tr>
+<td>statusCode</td>
+<td>int</td>
+<td>The http status code your system replied with when this event was emitted</td>
+</tr>
+<tr>
+<td>requestData</td>
+<td>string</td>
+<td>The JSON data sent over to your system with this event</td>
+</tr>
+<tr>
+<td>responseJson</td>
+<td>object</td>
+<td>The JSON response from your system if replied with content type of <code>application/json</code></td>
+</tr>
+<tr>
+<td>responseText</td>
+<td>string</td>
+<td>The TEXT response from your system if replied with content type other than <code>application/json</code></td>
+</tr>
+</tbody></table>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/webhooks/&lt;webhookId&gt;/logs</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhookId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the webhook to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-webhook'>Update a Webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "enabled": false
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="s2">"event.created"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Webhook"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint updates a webhook under your organization. Used to switch out the <code>url</code> or disable it by setting the <code>enabled</code> flag to false.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/webhooks/&lt;webhookId&gt;</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Optional</td>
+<td>The url of your endpoint that will listen to events coming in</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>string[]</td>
+<td>Optional</td>
+<td>An array containing the <a href="/#webhook-event-types">webhook event types</a> you want to subscribe to</td>
+</tr>
+<tr>
+<td>decription</td>
+<td>string</td>
+<td>Optional</td>
+<td>A description of ths webhook</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Controls whether this webhook actually emits events or not</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhookId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the webhook to update</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-webhook'>Delete a Specific Webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourdomain.com/my-endpoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabledEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="s2">"event.created"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Webhook"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific webhook from your organization.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://www.kalendme.com/api/v1/webhooks/&lt;webhookId&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhookId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the webhook to delete</td>
+</tr>
+</tbody></table>
+<h1 id='special-models'>Special Models</h1>
+<p>These are common special models across our API.</p>
+<h2 id='week-availability'>Week Availability</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Sunday</span><span class="w"> </span><span class="err">--</span><span class="w"> </span><span class="err">Not</span><span class="w"> </span><span class="err">availabile</span><span class="w"> 
+    </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Monday</span><span class="w">
+    </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Tuesday</span><span class="w">
+    </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Wednesday</span><span class="w">
+    </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Thursday</span><span class="w">
+    </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Friday</span><span class="w">
+    </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Saturday</span><span class="w"> </span><span class="err">--</span><span class="w"> </span><span class="err">Not</span><span class="w"> </span><span class="err">availabile</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Used to describe a user&#39;s or an event&#39;s week availability. 0 through 6 represent the days of the week starting on sunday. All times are represented in local time to the user&#39;s configured time zone.</p>
+<h2 id='custom-question'>Custom Question</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
+  </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whats your phone number?"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Used for specific user event types as questions for guests to fill out. They have an id, order in which to display to the user and the question itself.</p>
+<h1 id='errors'>Errors</h1>
+<p>KalendMe&#39;s API can reply with the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Message</th>
+<th>HTTP Status Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1000</td>
+<td>Missing required body parameter</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Missing required query parameter</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Conflict</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>The specified <code>timeZone</code> is invalid</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>The specified <code>weekAvailaibility</code> is invalid. Must contain all 7 days of the week in the required format: start/end keys in 24-hour HH:MM.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>The specified <code>language</code> is invalid. We only support (en, es, pt).</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>The specified <code>durationMinutes</code> is invalid. Can only be integers between 1 and 480.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1007</td>
+<td>The specified <code>minimumNoticeMinutes</code> is invalid. Can only be integers between 0 and 90000 (~2 months).</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1008</td>
+<td>The <code>enabled</code> attribute must be a valid boolean.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1009</td>
+<td>The <code>visible</code> attribute must be a valid boolean.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1010</td>
+<td>The specified <code>title</code> is invalid. Can only be a string between 1 and 30 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>The specified <code>description</code> is invalid. Can only be a string up to 60 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1012</td>
+<td>The specified <code>customQuestions</code> are invalid. Must be an array with { id, order, question } objects.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1013</td>
+<td>You can&#39;t change a user&#39;s email.</td>
+<td>403</td>
+</tr>
+<tr>
+<td>1014</td>
+<td>The specified <code>name</code> is invalid. Can only be a string up to 50 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1015</td>
+<td>The specified <code>urlString</code> is invalid, it can only contain letters, numbers, periods or hyphens (-) without spaces, a minimum of 1 character and a maximum of 30 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1016</td>
+<td>The specified <code>email</code> is invalid. Has to be a properly formatted email.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1017</td>
+<td>The specified <code>year</code> is invalid. Must be a positive small integer.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1018</td>
+<td>The specified <code>month</code> is invalid. Must be a positive integer between 1 and 12.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1019</td>
+<td>The specified <code>selectedDateTime</code> is invalid. Must be a future unix timestamp.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1020</td>
+<td>The specified <code>selectedDateTime</code> is not available anymore. There&#39;s a conflict.</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1021</td>
+<td>The specified <code>guest</code> array is invalid. Must be an non-empty array with valid email strings.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1022</td>
+<td>The specified <code>mainGuestName</code> is invalid. Can only be a string up to 50 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1023</td>
+<td>The specified <code>mainGuestTimeZone</code> is invalid.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>The specified <code>providerId</code> is invalid. Can only be google</td>
+<td>microsoft</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>The specified <code>day</code> is invalid. Must be a real year-month-day combination.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1026</td>
+<td>The specified <code>nickname</code> is invalid. Can only be a string up to 50 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1027</td>
+<td>The specified boolean <code>enabled</code> is invalid. Can only be a string equaling true or false.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1028</td>
+<td>The specified <code>enabledEvents</code> list is invalid. Must contain at least one valid webhook event type lowercased.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1029</td>
+<td>The specified <code>url</code> is invalid. Must be a valid URL starting with http/https. localhost is not allowed.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1030</td>
+<td>The specified <code>status</code> is invalid. Must be a string that&#39;s either CONFIRMED or CANCELLED.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1031</td>
+<td>The specified <code>location</code> is invalid. Can only be a string up to 256 characters.</td>
+<td>400</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="shell">cURL</a>
           </div>
       </div>
     </div>
