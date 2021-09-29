@@ -27,5 +27,8 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for KalendMe's API
+    content: Documentation for the Kittn API
+  - name: keywords
+    content: Kittn,API,Documentation
+
 ---
