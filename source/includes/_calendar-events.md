@@ -15,6 +15,7 @@
     "description": "Let's discuss a quick topic",
     "startTimestamp": 1634099600000,
     "durationMinutes": 30,
+    "location": "https://myvideoconferencing.com/my-link"
     "guests": [
       "michael@dundermifflin.com"
     ],
@@ -42,6 +43,7 @@ guests | string[] | An array of the guest's emails for this event
 mainGuestName | string | The name of the person that booked the event
 mainGuestTimeZone | string | The time zone of the person that booked the event
 mainGuestLanguage | string | The language of the person that booked the event
+location | string | The location of this event, can be any string of up to 256 characters.
 status | string | The status of the event. Can be `CONFIRMED` or `CANCELLED`. 
 
 ## Create a Calendar Event
@@ -98,14 +100,15 @@ This endpoint creates a new calendar event for a user. In other words, it books 
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-title | string | The title of the event. For example, `Interview`
-description | string | The description of the event
-startTimestamp | long | The timestamp in epoch milliseconds of when this event starts
-durationMinutes | int | The duration in minutes of the event
-guests | string[] | An array of the guest's emails for this event
-mainGuestName | string | The name of the person that booked the event
-mainGuestTimeZone | string | The time zone of the person that booked the event
-mainGuestLanguage | string | The language of the person that booked the event
+title | string | Required | The title of the event. For example, `Interview`
+startTimestamp | long | Required | The timestamp in epoch milliseconds of when this event starts
+durationMinutes | int | Required | The duration in minutes of the event
+guests | string[] | Required | An array of the guest's emails for this event
+mainGuestName | string | Required | The name of the person that booked the event
+mainGuestTimeZone | string | Required | The time zone of the person that booked the event
+mainGuestLanguage | string | Required | The language of the person that booked the event
+description | string | Optional | The description of the event
+location | string | Optional | The location of this event, can be any string of up to 256 characters.
 
 ### URL Parameters
 
