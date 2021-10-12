@@ -1903,50 +1903,56 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <tr>
 <td>title</td>
 <td>string</td>
+<td>Required</td>
 <td>The title of the event. For example, <code>Interview</code></td>
-<td></td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>The description of the event</td>
-<td></td>
 </tr>
 <tr>
 <td>startTimestamp</td>
 <td>long</td>
+<td>Required</td>
 <td>The timestamp in epoch milliseconds of when this event starts</td>
-<td></td>
 </tr>
 <tr>
 <td>durationMinutes</td>
 <td>int</td>
+<td>Required</td>
 <td>The duration in minutes of the event</td>
-<td></td>
 </tr>
 <tr>
 <td>guests</td>
 <td>string[]</td>
+<td>Required</td>
 <td>An array of the guest&#39;s emails for this event</td>
-<td></td>
 </tr>
 <tr>
 <td>mainGuestName</td>
 <td>string</td>
+<td>Required</td>
 <td>The name of the person that booked the event</td>
-<td></td>
 </tr>
 <tr>
 <td>mainGuestTimeZone</td>
 <td>string</td>
+<td>Required</td>
 <td>The time zone of the person that booked the event</td>
-<td></td>
 </tr>
 <tr>
 <td>mainGuestLanguage</td>
 <td>string</td>
+<td>Required</td>
 <td>The language of the person that booked the event</td>
-<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>The description of the event</td>
+</tr>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>Optional</td>
+<td>The location of this event, can be any string of up to 256 characters.</td>
 </tr>
 </tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
