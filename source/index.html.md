@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cURL
 
 toc_footers:
-  - <a href='https://www.kalendme.com/signup'>Sign Up for an account!</a>
+  - <a href='https://www.kalendme.com/auth/signin'>Sign Up for an account!</a>
   - <a href='https://www.kalendme.com/terms'>Terms</a>
   - <a href='https://www.kalendme.com/privacy'>Privacy Policy</a>
 
@@ -27,8 +27,8 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for KalendMe's API
   - name: keywords
-    content: Kittn,API,Documentation
+    content: KalendMe,API,Documentation
 
 ---
