@@ -15,6 +15,7 @@ includes:
   - users
   - calendar-accounts
   - user-event-types
+  - user-links
   - availability
   - calendar-events
   - webhooks

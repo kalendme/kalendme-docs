@@ -1,5 +1,9 @@
 # User Event Types
 
+## DEPRECATED
+
+### Important Notice: Event Types are now deprecated and will be sunset soon. Please use the User Links API instead.
+
 ## User Event Type Resource
 
 > An example user event type model looks like this:
