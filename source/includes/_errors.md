@@ -28,7 +28,7 @@ Error Code | Message | HTTP Status Code
 1021 | The specified `guest` array is invalid. Must be an non-empty array with valid email strings. | 400
 1022 | The specified `mainGuestName` is invalid. Can only be a string up to 50 characters. | 400
 1023 | The specified `mainGuestTimeZone` is invalid. | 400
-1024 | The specified `providerId` is invalid. Can only be google|microsoft | 400
+1024 | The specified `providerId` is invalid. Can only be google or microsoft | 400
 1025 | The specified `day` is invalid. Must be a real year-month-day combination. | 400
 1026 | The specified `nickname` is invalid. Can only be a string up to 50 characters. | 400
 1027 | The specified boolean `enabled` is invalid. Can only be a string equaling true or false. | 400
