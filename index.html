@@ -413,7 +413,7 @@
                     <a href="#get-a-user-39-s-availability" class="toc-h2 toc-link" data-title="Get a User's Availability">Get a User's Availability</a>
                   </li>
                   <li>
-                    <a href="#get-a-user-39-s-event-type-availability" class="toc-h2 toc-link" data-title="Get a User's Event Type Availability">Get a User's Event Type Availability</a>
+                    <a href="#get-a-user-39-s-link-availability" class="toc-h2 toc-link" data-title="Get a User's Link Availability">Get a User's Link Availability</a>
                   </li>
               </ul>
           </li>
@@ -2184,9 +2184,15 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"availableDateTimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">  
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">
     </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"potentialAvailableDateTimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">When</span><span class="w"> </span><span class="err">passing</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">flag</span><span class="w"> </span><span class="err">`includePotentialAvailableDateTimes`</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">
     </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -2209,16 +2215,16 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The id of the user.</td>
 </tr>
 <tr>
-<td>year</td>
+<td>startTimestamp</td>
 <td>int</td>
 <td>Required</td>
-<td>The year you want to query the availability for.</td>
+<td>The start timestamp in epoch milliseconds to start the query for.</td>
 </tr>
 <tr>
-<td>month</td>
+<td>endTimestamp</td>
 <td>int</td>
 <td>Required</td>
-<td>The month you want to query the availability for.</td>
+<td>The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.</td>
 </tr>
 <tr>
 <td>durationMinutes</td>
@@ -2226,8 +2232,32 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>Required</td>
 <td>The duration of the session you want to schedule this user.</td>
 </tr>
+<tr>
+<td>timeZone</td>
+<td>int</td>
+<td>Required</td>
+<td>The time zone you want to get the availability for.</td>
+</tr>
+<tr>
+<td>year</td>
+<td>int</td>
+<td>Optional</td>
+<td>Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.</td>
+</tr>
+<tr>
+<td>month</td>
+<td>int</td>
+<td>Optional</td>
+<td>Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.</td>
+</tr>
+<tr>
+<td>includePotentialAvailableDateTimes</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Output an optional array of what would be all the potential available date times for a user if they did not have any events.</td>
+</tr>
 </tbody></table>
-<h2 id='get-a-user-39-s-event-type-availability'>Get a User&#39;s Event Type Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/event-types/654654/availability?month=10&amp;year=2021"</span> <span class="se">\</span>
+<h2 id='get-a-user-39-s-link-availability'>Get a User&#39;s Link Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/links/654654/availability?month=10&amp;year=2021"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
@@ -2236,15 +2266,21 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"availableDateTimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">  
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">
     </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"potentialAvailableDateTimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">When</span><span class="w"> </span><span class="err">passing</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">flag</span><span class="w"> </span><span class="err">`includePotentialAvailableDateTimes`</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Timestamps</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">epoch</span><span class="w"> </span><span class="err">milliseconds</span><span class="w">
     </span><span class="mi">1234567890000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1234567890000</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint returns a user&#39;s specific event type&#39;s availability for the requrested month and year.</p>
+<p>This endpoint returns a user&#39;s specific link&#39;s availability for the requested month and year.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;/availability</code></p>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/links/&lt;linkId&gt;/availability</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2261,22 +2297,46 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The id of the user.</td>
 </tr>
 <tr>
-<td>eventTypeId</td>
-<td>string</td>
+<td>startTimestamp</td>
+<td>int</td>
 <td>Required</td>
-<td>The id of the user event type.</td>
+<td>The start timestamp in epoch milliseconds to start the query for.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+<td>The duration of the session you want to schedule this user.</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>int</td>
+<td>Required</td>
+<td>The time zone you want to get the availability for.</td>
 </tr>
 <tr>
 <td>year</td>
 <td>int</td>
-<td>Required</td>
-<td>The year you want to query the availability for.</td>
+<td>Optional</td>
+<td>Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.</td>
 </tr>
 <tr>
 <td>month</td>
 <td>int</td>
-<td>Required</td>
-<td>The month you want to query the availability for.</td>
+<td>Optional</td>
+<td>Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.</td>
+</tr>
+<tr>
+<td>includePotentialAvailableDateTimes</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Output an optional array of what would be all the potential available date times for a user if they did not have any events.</td>
 </tr>
 </tbody></table>
 <h1 id='calendar-events'>Calendar Events</h1><h2 id='calendar-event-resource'>Calendar Event Resource</h2>
@@ -3376,6 +3436,56 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <tr>
 <td>1031</td>
 <td>The specified <code>location</code> is invalid. Can only be a string up to 256 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1032</td>
+<td>The specified <code>description</code> is invalid. Can only be a string up to 300 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1033</td>
+<td>The specified <code>urlString</code> is already taken, please specify another one.</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1034</td>
+<td>The specified event could not be created because the user doesn&#39;t have an <code>output</code> calendar connection. Please specify an <code>output</code> calendar connection and then create the event.</td>
+<td>422</td>
+</tr>
+<tr>
+<td>1035</td>
+<td>The specified event cannot be edited anymore since it&#39;s been cancelled.</td>
+<td>422</td>
+</tr>
+<tr>
+<td>1036</td>
+<td>The specified <code>startTimestamp</code> is invalid. Must be a valid unix timestamp.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1037</td>
+<td>The specified <code>endTimestamp</code> is invalid. Must be a valid unix timestamp.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1038</td>
+<td>The specified <code>endTimestamp</code> cannot be before or equal to the specified <code>startTimestamp</code>.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1039</td>
+<td>You cannot specify <code>year</code>/<code>month</code> and <code>startTimestamp</code>/<code>endTimestsamp</code>, please pick only one method.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1040</td>
+<td>The <code>includePotentialAvailableDateTimes</code> attribute must be a valid boolean.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1041</td>
+<td>The specified <code>startTimestamp</code> and <code>endTimestamp</code> have a timespan of more than 1 month. Please select a smaller range.</td>
 <td>400</td>
 </tr>
 </tbody></table>
