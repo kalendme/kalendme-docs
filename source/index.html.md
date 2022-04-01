@@ -9,7 +9,6 @@ toc_footers:
   - <a href='https://www.kalendme.com/terms'>Terms</a>
   - <a href='https://www.kalendme.com/privacy'>Privacy Policy</a>
 
-
 includes:
   - introduction
   - users
@@ -19,6 +18,7 @@ includes:
   - availability
   - calendar-events
   - webhooks
+  - time-zones
   - special-models
   - errors
 
@@ -31,5 +31,4 @@ meta:
     content: Documentation for KalendMe's API
   - name: keywords
     content: KalendMe,API,Documentation
-
 ---
