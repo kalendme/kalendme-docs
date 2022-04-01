@@ -473,6 +473,17 @@
               </ul>
           </li>
           <li>
+            <a href="#time-zones" class="toc-h1 toc-link" data-title="Time Zones">Time Zones</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#get-time-zones" class="toc-h2 toc-link" data-title="Get Time Zones">Get Time Zones</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#special-models" class="toc-h1 toc-link" data-title="Special Models">Special Models</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3246,7 +3257,28 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The ID of the webhook to delete</td>
 </tr>
 </tbody></table>
-<h1 id='special-models'>Special Models</h1>
+<h1 id='time-zones'>Time Zones</h1><h2 id='overview'>Overview</h2>
+<p>Time zones are a critical component for scheduling. KalendMe provides this endpoint to be able to always be up to date with the latest IANA time zone DB.</p>
+
+<p>Current version: 2022a</p>
+<h2 id='get-time-zones'>Get Time Zones</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/time-zones"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"timeZones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Africa/Algiers"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Atlantic/Cape_Verde"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Africa/Ndjamena"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Africa/Abidjan"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Africa/Accra"</span><span class="p">,</span><span class="w">
+    </span><span class="err">....</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h1 id='special-models'>Special Models</h1>
 <p>These are common special models across our API.</p>
 <h2 id='week-availability'>Week Availability</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
