@@ -14,6 +14,7 @@
     "title": "Quick Meeting",
     "description": "Let's discuss a quick topic",
     "startTimestamp": 1634099600000,
+    "startTimeUtc": "2020-09-01T00:00:00.000Z",
     "durationMinutes": 30,
     "location": "https://myvideoconferencing.com/my-link"
     "guests": [
@@ -29,22 +30,22 @@
 
 Calendar events belong to users, they are unique instances in time that a user is booked for. Having a calendar event blocks that user's availability for the duration of the event. Calendar Events are formed by the following fields.
 
-Parameter | Type | Description
---------- | ---- | -----------
-id | string | The resource's id
-createdAt | timestamp | The resource's creation timesstamp
-updatedAt | timestamp | The resource's last updated timestamp
-userId | string | The ID of the user that this calendar event belongs to.
-title | string | The title of the event. For example, `Interview`
-description | string | The description of the event
-startTimestamp | long | The timestamp in epoch milliseconds of when this event starts
-durationMinutes | int | The duration in minutes of the event
-guests | string[] | An array of the guest's emails for this event
-mainGuestName | string | The name of the person that booked the event
-mainGuestTimeZone | string | The time zone of the person that booked the event
-mainGuestLanguage | string | The language of the person that booked the event
-location | string | The location of this event, can be any string of up to 256 characters.
-status | string | The status of the event. Can be `CONFIRMED` or `CANCELLED`. 
+| Parameter         | Type      | Description                                                            |
+| ----------------- | --------- | ---------------------------------------------------------------------- |
+| id                | string    | The resource's id                                                      |
+| createdAt         | timestamp | The resource's creation timesstamp                                     |
+| updatedAt         | timestamp | The resource's last updated timestamp                                  |
+| userId            | string    | The ID of the user that this calendar event belongs to.                |
+| title             | string    | The title of the event. For example, `Interview`                       |
+| description       | string    | The description of the event                                           |
+| startTimestamp    | long      | The timestamp in epoch milliseconds of when this event starts          |
+| durationMinutes   | int       | The duration in minutes of the event                                   |
+| guests            | string[]  | An array of the guest's emails for this event                          |
+| mainGuestName     | string    | The name of the person that booked the event                           |
+| mainGuestTimeZone | string    | The time zone of the person that booked the event                      |
+| mainGuestLanguage | string    | The language of the person that booked the event                       |
+| location          | string    | The location of this event, can be any string of up to 256 characters. |
+| status            | string    | The status of the event. Can be `CONFIRMED` or `CANCELLED`.            |
 
 ## Create a Calendar Event
 
@@ -78,10 +79,9 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?sendGuestN
     "title": "Quick Meeting",
     "description": "Let's discuss a quick topic",
     "startTimestamp": 1634099600000,
+    "startTimeUtc": "2020-09-01T00:00:00.000Z",
     "durationMinutes": 30,
-    "guests": [
-      "michael@dundermifflin.com"
-    ],
+    "guests": ["michael@dundermifflin.com"],
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
@@ -96,27 +96,27 @@ This endpoint creates a new calendar event for a user. In other words, it books 
 
 `POST https://www.kalendme.com/api/v1/users/<userId>/calendar-events`
 
-### Body Parameters 
+### Body Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-title | string | Required | The title of the event. For example, `Interview`
-startTimestamp | long | Required | The timestamp in epoch milliseconds of when this event starts
-durationMinutes | int | Required | The duration in minutes of the event
-guests | string[] | Required | An array of the guest's emails for this event
-mainGuestName | string | Required | The name of the person that booked the event
-mainGuestTimeZone | string | Required | The time zone of the person that booked the event
-mainGuestLanguage | string | Required | The language of the person that booked the event
-description | string | Optional | The description of the event
-location | string | Optional | The location of this event, can be any string of up to 256 characters.
+| Parameter         | Type     | Required | Description                                                            |
+| ----------------- | -------- | -------- | ---------------------------------------------------------------------- |
+| title             | string   | Required | The title of the event. For example, `Interview`                       |
+| startTimestamp    | long     | Required | The timestamp in epoch milliseconds of when this event starts          |
+| durationMinutes   | int      | Required | The duration in minutes of the event                                   |
+| guests            | string[] | Required | An array of the guest's emails for this event                          |
+| mainGuestName     | string   | Required | The name of the person that booked the event                           |
+| mainGuestTimeZone | string   | Required | The time zone of the person that booked the event                      |
+| mainGuestLanguage | string   | Required | The language of the person that booked the event                       |
+| description       | string   | Optional | The description of the event                                           |
+| location          | string   | Optional | The location of this event, can be any string of up to 256 characters. |
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The id of the user this calendar event will belong to.
-sendGuestNotificationEmails | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the `guests`.
-sendOrganizerNotificationEmail | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the event organizer (the user who's `userId` you're booking).
+| Parameter                      | Type    | Required | Description                                                                                                                                                  |
+| ------------------------------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| userId                         | string  | Required | The id of the user this calendar event will belong to.                                                                                                       |
+| sendGuestNotificationEmails    | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the `guests`.                                                 |
+| sendOrganizerNotificationEmail | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the event organizer (the user who's `userId` you're booking). |
 
 ## Get a Calendar Event
 
@@ -137,10 +137,9 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"
     "title": "Quick Meeting",
     "description": "Let's discuss a quick topic",
     "startTimestamp": 1634099600000,
+    "startTimeUtc": "2020-09-01T00:00:00.000Z",
     "durationMinutes": 30,
-    "guests": [
-      "michael@dundermifflin.com"
-    ],
+    "guests": ["michael@dundermifflin.com"],
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
@@ -157,10 +156,56 @@ This endpoint gets a specific calendar event for a user.
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user's calendar event to retrieve
-eventId | string | Required | The ID of the calendar event to retrieve
+| Parameter | Type   | Required | Description                                     |
+| --------- | ------ | -------- | ----------------------------------------------- |
+| userId    | string | Required | The ID of the user's calendar event to retrieve |
+| eventId   | string | Required | The ID of the calendar event to retrieve        |
+
+## Get Calendar Events between timestamps
+
+```shell
+curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?startTimestamp=0&endTimestamp=100000" \
+  -H "Authorization: Bearer abcdef123456"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "calendarEvents": [
+    {
+      "id": "123213232",
+      "userId": "123123123",
+      "createdAt": "2020-09-01T00:00:00.000Z",
+      "updatedAt": "2020-09-01T00:00:00.000Z",
+      "title": "Quick Meeting",
+      "description": "Let's discuss a quick topic",
+      "startTimestamp": 1634099600000,
+      "startTimeUtc": "2020-09-01T00:00:00.000Z",
+      "durationMinutes": 30,
+      "guests": ["michael@dundermifflin.com"],
+      "mainGuestName": "Pam Beesly",
+      "mainGuestTimeZone": "America/New_York",
+      "mainGuestLanguage": "en",
+      "status": "CONFIRMED"
+    } // ...
+  ]
+}
+```
+
+This endpoint gets a list of calendar events for a user between a start and an end timestamp.
+
+### HTTP Request
+
+`GET https://www.kalendme.com/api/v1/users/<userId>/calendar-events?startTimestamp=&endTimestamp=`
+
+### URL Parameters
+
+| Parameter      | Type   | Required | Description                                                                                           |
+| -------------- | ------ | -------- | ----------------------------------------------------------------------------------------------------- |
+| userId         | string | Required | The ID of the user's calendar event to retrieve                                                       |
+| startTimestamp | int    | Required | The start timestamp in epoch milliseconds to start the query for.                                     |
+| endTimestamp   | int    | Required | The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month. |
 
 ## Update a Calendar Event
 
@@ -186,10 +231,9 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"
     "title": "Quick Meeting",
     "description": "Let's discuss a quick topic",
     "startTimestamp": 1634099600000,
+    "startTimeUtc": "2020-09-01T00:00:00.000Z",
     "durationMinutes": 30,
-    "guests": [
-      "michael@dundermifflin.com"
-    ],
+    "guests": ["michael@dundermifflin.com"],
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
@@ -204,20 +248,20 @@ This endpoint updates a calendar event. Used for rescheduling or cancelling cale
 
 `PATCH https://www.kalendme.com/api/v1/users/<userId>/calendar-events/<eventId>`
 
-### Body Parameters 
+### Body Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-title | string | Optional | The title of the event. For example, `Interview`
-description | string | Optional | The description of the event
-startTimestamp | long | Optional | The timestamp in epoch milliseconds of when this event starts
-durationMinutes | int | Optional | The duration in minutes of the event
-guests | string[] | Optional | An array of the guest's emails for this event
-status | string | Optional | The status of the event. Can be `CONFIRMED` or `CANCELLED`. 
+| Parameter       | Type     | Required | Description                                                   |
+| --------------- | -------- | -------- | ------------------------------------------------------------- |
+| title           | string   | Optional | The title of the event. For example, `Interview`              |
+| description     | string   | Optional | The description of the event                                  |
+| startTimestamp  | long     | Optional | The timestamp in epoch milliseconds of when this event starts |
+| durationMinutes | int      | Optional | The duration in minutes of the event                          |
+| guests          | string[] | Optional | An array of the guest's emails for this event                 |
+| status          | string   | Optional | The status of the event. Can be `CONFIRMED` or `CANCELLED`.   |
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user's calendar event to update
-eventId | string | Required | The ID of the calendar event to update
+| Parameter | Type   | Required | Description                                   |
+| --------- | ------ | -------- | --------------------------------------------- |
+| userId    | string | Required | The ID of the user's calendar event to update |
+| eventId   | string | Required | The ID of the calendar event to update        |
