@@ -430,6 +430,9 @@
                     <a href="#get-a-calendar-event" class="toc-h2 toc-link" data-title="Get a Calendar Event">Get a Calendar Event</a>
                   </li>
                   <li>
+                    <a href="#get-calendar-events-between-timestamps" class="toc-h2 toc-link" data-title="Get Calendar Events between timestamps">Get Calendar Events between timestamps</a>
+                  </li>
+                  <li>
                     <a href="#update-a-calendar-event" class="toc-h2 toc-link" data-title="Update a Calendar Event">Update a Calendar Event</a>
                   </li>
               </ul>
@@ -2363,6 +2366,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
     </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://myvideoconferencing.com/my-link"</span><span class="w">
     </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -2483,10 +2487,9 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"michael@dundermifflin.com"</span><span class="p">],</span><span class="w">
     </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
@@ -2604,10 +2607,9 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"michael@dundermifflin.com"</span><span class="p">],</span><span class="w">
     </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
@@ -2640,6 +2642,64 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The ID of the calendar event to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-calendar-events-between-timestamps'>Get Calendar Events between timestamps</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-events?startTimestamp=0&amp;endTimestamp=100000"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendarEvents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"michael@dundermifflin.com"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets a list of calendar events for a user between a start and an end timestamp.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-events?startTimestamp=&amp;endTimestamp=</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar event to retrieve</td>
+</tr>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>The start timestamp in epoch milliseconds to start the query for.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.</td>
+</tr>
+</tbody></table>
 <h2 id='update-a-calendar-event'>Update a Calendar Event</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"</span> <span class="se">\</span>
   <span class="nt">-X</span> PATCH
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
@@ -2660,10 +2720,9 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let's discuss a quick topic"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"michael@dundermifflin.com"</span><span class="p">],</span><span class="w">
     </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
@@ -2672,7 +2731,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint updates a calendar event. Used for rescheduling or cancelling calendar events.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-events/&lt;eventId&gt;</code></p>
 <h3 id='body-parameters-2'>Body Parameters</h3>
 <table><thead>
@@ -2720,7 +2779,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The status of the event. Can be <code>CONFIRMED</code> or <code>CANCELLED</code>.</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
