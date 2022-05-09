@@ -30,22 +30,23 @@
 
 Calendar events belong to users, they are unique instances in time that a user is booked for. Having a calendar event blocks that user's availability for the duration of the event. Calendar Events are formed by the following fields.
 
-| Parameter         | Type      | Description                                                            |
-| ----------------- | --------- | ---------------------------------------------------------------------- |
-| id                | string    | The resource's id                                                      |
-| createdAt         | timestamp | The resource's creation timesstamp                                     |
-| updatedAt         | timestamp | The resource's last updated timestamp                                  |
-| userId            | string    | The ID of the user that this calendar event belongs to.                |
-| title             | string    | The title of the event. For example, `Interview`                       |
-| description       | string    | The description of the event                                           |
-| startTimestamp    | long      | The timestamp in epoch milliseconds of when this event starts          |
-| durationMinutes   | int       | The duration in minutes of the event                                   |
-| guests            | string[]  | An array of the guest's emails for this event                          |
-| mainGuestName     | string    | The name of the person that booked the event                           |
-| mainGuestTimeZone | string    | The time zone of the person that booked the event                      |
-| mainGuestLanguage | string    | The language of the person that booked the event                       |
-| location          | string    | The location of this event, can be any string of up to 256 characters. |
-| status            | string    | The status of the event. Can be `CONFIRMED` or `CANCELLED`.            |
+| Parameter         | Type                              | Description                                                                                                                                                                        |
+| ----------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                | string                            | The resource's id                                                                                                                                                                  |
+| createdAt         | timestamp                         | The resource's creation timesstamp                                                                                                                                                 |
+| updatedAt         | timestamp                         | The resource's last updated timestamp                                                                                                                                              |
+| userId            | string                            | The ID of the user that this calendar event belongs to.                                                                                                                            |
+| title             | string                            | The title of the event. For example, `Interview`                                                                                                                                   |
+| description       | string                            | The description of the event                                                                                                                                                       |
+| startTimestamp    | long                              | The timestamp in epoch milliseconds of when this event starts                                                                                                                      |
+| durationMinutes   | int                               | The duration in minutes of the event                                                                                                                                               |
+| guests            | string[]                          | An array of the guest's emails for this event                                                                                                                                      |
+| mainGuestName     | string                            | The name of the person that booked the event                                                                                                                                       |
+| mainGuestTimeZone | string                            | The time zone of the person that booked the event                                                                                                                                  |
+| mainGuestLanguage | string                            | The language of the person that booked the event                                                                                                                                   |
+| status            | string                            | The status of the event. Can be `CONFIRMED` or `CANCELLED`.                                                                                                                        |
+| padding           | [EventPadding](/#event-padding)   | Used to specify if an event needs time padding before and/or after to be scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180. |
+| location          | [EventLocation](/#event-location) | See Special Models definitions, this defines the event's location.                                                                                                                 |
 
 ## Create a Calendar Event
 
@@ -85,7 +86,10 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?sendGuestN
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
-    "status": "CONFIRMED"
+    "status": "CONFIRMED",
+    "location": {
+      "type": "other"
+    }
   }
 }
 ```
@@ -98,17 +102,18 @@ This endpoint creates a new calendar event for a user. In other words, it books 
 
 ### Body Parameters
 
-| Parameter         | Type     | Required | Description                                                            |
-| ----------------- | -------- | -------- | ---------------------------------------------------------------------- |
-| title             | string   | Required | The title of the event. For example, `Interview`                       |
-| startTimestamp    | long     | Required | The timestamp in epoch milliseconds of when this event starts          |
-| durationMinutes   | int      | Required | The duration in minutes of the event                                   |
-| guests            | string[] | Required | An array of the guest's emails for this event                          |
-| mainGuestName     | string   | Required | The name of the person that booked the event                           |
-| mainGuestTimeZone | string   | Required | The time zone of the person that booked the event                      |
-| mainGuestLanguage | string   | Required | The language of the person that booked the event                       |
-| description       | string   | Optional | The description of the event                                           |
-| location          | string   | Optional | The location of this event, can be any string of up to 256 characters. |
+| Parameter         | Type                              | Required | Description                                                   |
+| ----------------- | --------------------------------- | -------- | ------------------------------------------------------------- |
+| title             | string                            | Required | The title of the event. For example, `Interview`              |
+| startTimestamp    | long                              | Required | The timestamp in epoch milliseconds of when this event starts |
+| durationMinutes   | int                               | Required | The duration in minutes of the event                          |
+| guests            | string[]                          | Required | An array of the guest's emails for this event                 |
+| mainGuestName     | string                            | Required | The name of the person that booked the event                  |
+| mainGuestTimeZone | string                            | Required | The time zone of the person that booked the event             |
+| mainGuestLanguage | string                            | Required | The language of the person that booked the event              |
+| description       | string                            | Optional | The description of the event                                  |
+| location          | [EventLocation](/#event-location) | Optional | The location of this event                                    |
+| padding           | [EventPadding](/#event-padding)   | Optional | Any padding needed before or after scheduling this event      |
 
 ### URL Parameters
 
@@ -117,6 +122,7 @@ This endpoint creates a new calendar event for a user. In other words, it books 
 | userId                         | string  | Required | The id of the user this calendar event will belong to.                                                                                                       |
 | sendGuestNotificationEmails    | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the `guests`.                                                 |
 | sendOrganizerNotificationEmail | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the event organizer (the user who's `userId` you're booking). |
+| linkId                         | string  | Optional | `Default: null` If you want to apply an event's padding rules from a link, use this to specify which one                                                     |
 
 ## Get a Calendar Event
 
@@ -143,7 +149,10 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
-    "status": "CONFIRMED"
+    "status": "CONFIRMED",
+    "location": {
+      "type": "other"
+    }
   }
 }
 ```
@@ -187,7 +196,10 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?startTimes
       "mainGuestName": "Pam Beesly",
       "mainGuestTimeZone": "America/New_York",
       "mainGuestLanguage": "en",
-      "status": "CONFIRMED"
+      "status": "CONFIRMED",
+      "location": {
+        "type": "other"
+      }
     } // ...
   ]
 }
@@ -237,7 +249,10 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
-    "status": "CANCELLED"
+    "status": "CANCELLED",
+    "location": {
+      "type": "other"
+    }
   }
 }
 ```
