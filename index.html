@@ -1702,6 +1702,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"incrementMinutesOverride"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
     </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ONLINE"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1803,6 +1804,11 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td><a href="/#event-location">EventLocation</a></td>
 <td>See Special Models definitions, this defines the event&#39;s location.</td>
 </tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
 </tbody></table>
 <h2 id='create-a-link'>Create a Link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/links"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST
@@ -1821,6 +1827,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
       "before": 10,
       "after": 10,
     },
+    "incrementMinutesOverride": 60,
     "customQuestions": [
       {
         "id": "3656475289d4aecd03804ec4d6045953", // An ID of your choosing to map to your system
@@ -1844,6 +1851,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incrementMinutesOverride"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
     </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -1930,6 +1938,12 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td><a href="/#custom-question">CustomQuestion</a>[]</td>
 <td>An array containing custom questions to ask user&#39;s when booking through this link.</td>
 </tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Optional</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
 </tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -1965,6 +1979,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
       </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"incrementMinutesOverride"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
       </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -2018,6 +2033,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incrementMinutesOverride"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
     </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -2087,6 +2103,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incrementMinutesOverride"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
     </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2167,6 +2184,12 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td><a href="/#custom-question">CustomQuestion</a>[]</td>
 <td>An array containing custom questions to ask user&#39;s when booking through this link.</td>
 </tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Optional</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
 </tbody></table>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
@@ -2205,6 +2228,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incrementMinutesOverride"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -3707,6 +3731,16 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <tr>
 <td>1041</td>
 <td>The specified <code>startTimestamp</code> and <code>endTimestamp</code> have a timespan of more than 1 month. Please select a smaller range.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1042</td>
+<td>The specified <code>padding</code> is invalid. It must be an object with the keys: &quot;before&quot; and/or &quot;after&quot; specifying the minutes in values between 0 and 180.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1043</td>
+<td>The specified <code>incrementMinutesOverride</code> is invalid. Can only be integers between 1 and 480.</td>
 <td>400</td>
 </tr>
 </tbody></table>
