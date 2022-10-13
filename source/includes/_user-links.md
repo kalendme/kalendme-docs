@@ -19,6 +19,7 @@
     "active": true,
     "visible": true,
     "weekAvailability": [],
+    "incrementMinutesOverride": 60,
     "location": {
       "type": "ONLINE"
     },
@@ -39,23 +40,24 @@
 
 Links are the different types of events or rules that a user can be booked through. They have pre-defined parameters like duration or specific minimum notice times. They can be accessed by a user's `urlString` followed by the Link's `urlString` (example: `kalendme.com/john/quick-meeting`). Links are formed by the following fields.
 
-| Parameter            | Type                                    | Description                                                                                                                                                                                                     |
-| -------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| id                   | string                                  | The resource's id                                                                                                                                                                                               |
-| createdAt            | timestamp                               | The resource's creation timesstamp                                                                                                                                                                              |
-| updatedAt            | timestamp                               | The resource's last updated timestamp                                                                                                                                                                           |
-| userId               | string                                  | The ID of the user that this link belongs to                                                                                                                                                                    |
-| title                | string                                  | The title of the event this link will create. For example, `Interview`                                                                                                                                          |
-| description          | string                                  | The description of the event this link will create                                                                                                                                                              |
-| durationMinutes      | int                                     | Required                                                                                                                                                                                                        | The duration in minutes of the event this link will create. |
-| urlString            | string                                  | A unique URL for the user's link. Used for their bookings page such as kalendme.com/`john-123`/`link-url`. If none is specified, a random one will be generated on link creation.                               |
-| minimumNoticeMinutes | int                                     | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance                                   |
-| enabled              | boolean                                 | `Default: true` Specifies whether this link is enabled or not. Disabled links cannot be booked or found through their `urlString`                                                                               |
-| visible              | boolean                                 | `Default: true` Specifies whether this link is visible or not. Making a link non-visible hides it from a user's main urlString.                                                                                 |
-| weekAvailability     | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
-| customQuestions      | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking this link.                                                                                                                                      |
-| padding              | [EventPadding](/#event-padding)         | Used to specify if an event needs time padding before and/or after to be scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.                              |
-| location             | [EventLocation](/#event-location)       | See Special Models definitions, this defines the event's location.                                                                                                                                              |
+| Parameter                | Type                                    | Description                                                                                                                                                                                                     |
+| ------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| id                       | string                                  | The resource's id                                                                                                                                                                                               |
+| createdAt                | timestamp                               | The resource's creation timesstamp                                                                                                                                                                              |
+| updatedAt                | timestamp                               | The resource's last updated timestamp                                                                                                                                                                           |
+| userId                   | string                                  | The ID of the user that this link belongs to                                                                                                                                                                    |
+| title                    | string                                  | The title of the event this link will create. For example, `Interview`                                                                                                                                          |
+| description              | string                                  | The description of the event this link will create                                                                                                                                                              |
+| durationMinutes          | int                                     | Required                                                                                                                                                                                                        | The duration in minutes of the event this link will create. |
+| urlString                | string                                  | A unique URL for the user's link. Used for their bookings page such as kalendme.com/`john-123`/`link-url`. If none is specified, a random one will be generated on link creation.                               |
+| minimumNoticeMinutes     | int                                     | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance                                   |
+| enabled                  | boolean                                 | `Default: true` Specifies whether this link is enabled or not. Disabled links cannot be booked or found through their `urlString`                                                                               |
+| visible                  | boolean                                 | `Default: true` Specifies whether this link is visible or not. Making a link non-visible hides it from a user's main urlString.                                                                                 |
+| weekAvailability         | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
+| customQuestions          | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking this link.                                                                                                                                      |
+| padding                  | [EventPadding](/#event-padding)         | Used to specify if an event needs time padding before and/or after to be scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.                              |
+| location                 | [EventLocation](/#event-location)       | See Special Models definitions, this defines the event's location.                                                                                                                                              |
+| incrementMinutesOverride | int                                     | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.                                       |
 
 ## Create a Link
 
@@ -77,6 +79,7 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links" \
       "before": 10,
       "after": 10,
     },
+    "incrementMinutesOverride": 60,
     "customQuestions": [
       {
         "id": "3656475289d4aecd03804ec4d6045953", // An ID of your choosing to map to your system
@@ -101,6 +104,7 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links" \
     "urlString": "quick-meeting",
     "description": "A quick session to catch up",
     "minimumNotice": 0,
+    "incrementMinutesOverride": 60,
     "active": true,
     "visible": true,
     "weekAvailability": [],
@@ -130,17 +134,18 @@ This endpoint creates a new link for a user.
 
 ### Body Parameters
 
-| Parameter            | Type     | Required                                | Description                                                                                                                                                                                                     |
-| -------------------- | -------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title                | string   | Required                                | The title of the event this link will create. For example, `Interview`                                                                                                                                          |
-| description          | string   | Optional                                | The description of the event this link will create. Can be blank.                                                                                                                                               |
-| durationMinutes      | int      | Required                                | The duration in minutes of the event this link will create.                                                                                                                                                     |
-| urlString            | string   | Optional                                | A unique URL for the user's link. Used for their bookings page such as kalendme.com/`john-123`/`link-url`. If none is specified, a random one will be generated on link creation.                               |
-| minimumNoticeMinutes | int      | Optional                                | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance.                                  |
-| enabled              | boolean  | Optional                                | `Default: true` Specifies whether this link is enabled or not. Disabled links cannot be booked or found through their `urlString`                                                                               |
-| visible              | boolean  | Optional                                | `Default: true` Specifies whether this link is visible or not. Making a link non-visible hides it from a user's main urlString.                                                                                 |
-| weekAvailability     | Optional | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
-| customQuestions      | Optional | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking through this link.                                                                                                                              |
+| Parameter                | Type     | Required                                | Description                                                                                                                                                                                                     |
+| ------------------------ | -------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title                    | string   | Required                                | The title of the event this link will create. For example, `Interview`                                                                                                                                          |
+| description              | string   | Optional                                | The description of the event this link will create. Can be blank.                                                                                                                                               |
+| durationMinutes          | int      | Required                                | The duration in minutes of the event this link will create.                                                                                                                                                     |
+| urlString                | string   | Optional                                | A unique URL for the user's link. Used for their bookings page such as kalendme.com/`john-123`/`link-url`. If none is specified, a random one will be generated on link creation.                               |
+| minimumNoticeMinutes     | int      | Optional                                | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance.                                  |
+| enabled                  | boolean  | Optional                                | `Default: true` Specifies whether this link is enabled or not. Disabled links cannot be booked or found through their `urlString`                                                                               |
+| visible                  | boolean  | Optional                                | `Default: true` Specifies whether this link is visible or not. Making a link non-visible hides it from a user's main urlString.                                                                                 |
+| weekAvailability         | Optional | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
+| customQuestions          | Optional | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking through this link.                                                                                                                              |
+| incrementMinutesOverride | int      | Optional                                | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.                                       |
 
 ### URL Parameters
 
@@ -170,6 +175,7 @@ curl "https://www.kalendme.com/api/v1/users/123213233/links" \
       "urlString": "quick-meeting",
       "description": "A quick session to catch up",
       "minimumNotice": 0,
+      "incrementMinutesOverride": 60,
       "active": true,
       "visible": true,
       "weekAvailability": [],
@@ -221,6 +227,7 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232" \
     "urlString": "quick-meeting",
     "description": "A quick session to catch up",
     "minimumNotice": 0,
+    "incrementMinutesOverride": 60,
     "active": true,
     "visible": true,
     "weekAvailability": [],
@@ -283,6 +290,7 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232" \
     "urlString": "quick-meeting",
     "description": "A quick session to catch up",
     "minimumNotice": 0,
+    "incrementMinutesOverride": 60,
     "active": true,
     "visible": false,
     "location": {
@@ -306,17 +314,18 @@ This endpoint updates a user's link.
 
 ### Body Parameters
 
-| Parameter            | Type     | Required                                | Description                                                                                                                                                                                                          |
-| -------------------- | -------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title                | string   | Optional                                | The title of the event. For example, `Interview`                                                                                                                                                                     |
-| description          | string   | Optional                                | The description of the event. Can be blank.                                                                                                                                                                          |
-| durationMinutes      | int      | Optional                                | The duration in minutes of the event.                                                                                                                                                                                |
-| urlString            | string   | Optional                                | A unique URL for the user's link. Used for their bookings page such as kalendme.com/`john-123`/`event-type`. If none is specified, a random one will be generated on user link creation.                             |
-| minimumNoticeMinutes | int      | Optional                                | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance                                        |
-| enabled              | boolean  | Optional                                | Specifies whether this user link is enabled or not. Disabled links cannot be booked or found through their `urlString`                                                                                               |
-| visible              | boolean  | Optional                                | Specifies whether this user link is visible or not. Making an event non-visible hides it from a user's main urlString.                                                                                               |
-| weekAvailability     | Optional | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific user link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
-| customQuestions      | Optional | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking through this link.                                                                                                                                   |
+| Parameter                | Type     | Required                                | Description                                                                                                                                                                                                          |
+| ------------------------ | -------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title                    | string   | Optional                                | The title of the event. For example, `Interview`                                                                                                                                                                     |
+| description              | string   | Optional                                | The description of the event. Can be blank.                                                                                                                                                                          |
+| durationMinutes          | int      | Optional                                | The duration in minutes of the event.                                                                                                                                                                                |
+| urlString                | string   | Optional                                | A unique URL for the user's link. Used for their bookings page such as kalendme.com/`john-123`/`event-type`. If none is specified, a random one will be generated on user link creation.                             |
+| minimumNoticeMinutes     | int      | Optional                                | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance                                        |
+| enabled                  | boolean  | Optional                                | Specifies whether this user link is enabled or not. Disabled links cannot be booked or found through their `urlString`                                                                                               |
+| visible                  | boolean  | Optional                                | Specifies whether this user link is visible or not. Making an event non-visible hides it from a user's main urlString.                                                                                               |
+| weekAvailability         | Optional | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific user link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
+| customQuestions          | Optional | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking through this link.                                                                                                                                   |
+| incrementMinutesOverride | int      | Optional                                | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.                                            |
 
 ### URL Parameters
 
@@ -344,6 +353,7 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232" \
     "userId": "112323321",
     "title": "Quick Meeting",
     "durationMinutes": 30,
+    "incrementMinutesOverride": 60,
     "urlString": "quick-meeting",
     "description": "A quick session to catch up",
     "minimumNotice": 0,

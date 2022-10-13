@@ -46,3 +46,5 @@ KalendMe's API can reply with the following error codes:
 | 1039       | You cannot specify `year`/`month` and `startTimestamp`/`endTimestsamp`, please pick only one method.                                                                              | 400              |
 | 1040       | The `includePotentialAvailableDateTimes` attribute must be a valid boolean.                                                                                                       | 400              |
 | 1041       | The specified `startTimestamp` and `endTimestamp` have a timespan of more than 1 month. Please select a smaller range.                                                            | 400              |
+| 1042       | The specified `padding` is invalid. It must be an object with the keys: "before" and/or "after" specifying the minutes in values between 0 and 180.                               | 400              |
+| 1043       | The specified `incrementMinutesOverride` is invalid. Can only be integers between 1 and 480.                                                                                      | 400              |
