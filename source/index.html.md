@@ -13,11 +13,13 @@ includes:
   - introduction
   - users
   - calendar-accounts
+  - calendars
   - user-links
   - availability
   - calendar-events
   - webhooks
   - time-zones
+  - bulk-operations
   - special-models
   - errors
 

@@ -8,6 +8,7 @@
 {
   "calendarEvent": {
     "id": "123213232",
+    "calendarId": "123123123",
     "userId": "123123123",
     "createdAt": "2020-09-01T00:00:00.000Z",
     "updatedAt": "2020-09-01T00:00:00.000Z",
@@ -16,10 +17,11 @@
     "startTimestamp": 1634099600000,
     "startTimeUtc": "2020-09-01T00:00:00.000Z",
     "durationMinutes": 30,
-    "location": "https://myvideoconferencing.com/my-link"
-    "guests": [
-      "michael@dundermifflin.com"
-    ],
+    "location": {
+      "type": "online",
+      "value": "https://myvideoconferencing.com/my-link"
+    },
+    "guests": ["michael@dundermifflin.com"],
     "mainGuestName": "Pam Beesly",
     "mainGuestTimeZone": "America/New_York",
     "mainGuestLanguage": "en",
@@ -28,7 +30,7 @@
 }
 ```
 
-Calendar events belong to users, they are unique instances in time that a user is booked for. Having a calendar event blocks that user's availability for the duration of the event. Calendar Events are formed by the following fields.
+Calendar events belong to users' calendars, they are unique instances in time that a user is booked for. Having a calendar event blocks that user's availability for the duration of the event. Calendar Events are formed by the following fields.
 
 | Parameter         | Type                              | Description                                                                                                                                                                        |
 | ----------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,6 +38,7 @@ Calendar events belong to users, they are unique instances in time that a user i
 | createdAt         | timestamp                         | The resource's creation timesstamp                                                                                                                                                 |
 | updatedAt         | timestamp                         | The resource's last updated timestamp                                                                                                                                              |
 | userId            | string                            | The ID of the user that this calendar event belongs to.                                                                                                                            |
+| calendarId        | string                            | The ID of the calendar that this calendar event belongs to.                                                                                                                        |
 | title             | string                            | The title of the event. For example, `Interview`                                                                                                                                   |
 | description       | string                            | The description of the event                                                                                                                                                       |
 | startTimestamp    | long                              | The timestamp in epoch milliseconds of when this event starts                                                                                                                      |
@@ -75,6 +78,7 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?sendGuestN
   "calendarEvent": {
     "id": "123213232",
     "userId": "123123123",
+    "calendarId": "123123123",
     "createdAt": "2020-09-01T00:00:00.000Z",
     "updatedAt": "2020-09-01T00:00:00.000Z",
     "title": "Quick Meeting",
@@ -94,7 +98,7 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?sendGuestN
 }
 ```
 
-This endpoint creates a new calendar event for a user. In other words, it books that user during that time. To control which calendar account this event is written to, you have to configure that user's `output` calendar account connection.
+This endpoint creates a new calendar event for a user. In other words, it books that user during that time. To control which calendar account this event is written to, you have to configure that user's `output` calendar connection using the [calendars endpoints](/#calendars).
 
 ### HTTP Request
 
@@ -138,6 +142,7 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"
   "calendarEvent": {
     "id": "123213232",
     "userId": "123123123",
+    "calendarId": "123123123",
     "createdAt": "2020-09-01T00:00:00.000Z",
     "updatedAt": "2020-09-01T00:00:00.000Z",
     "title": "Quick Meeting",
@@ -185,6 +190,7 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events?startTimes
     {
       "id": "123213232",
       "userId": "123123123",
+      "calendarId": "123123123",
       "createdAt": "2020-09-01T00:00:00.000Z",
       "updatedAt": "2020-09-01T00:00:00.000Z",
       "title": "Quick Meeting",
@@ -238,6 +244,7 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"
   "calendarEvent": {
     "id": "123213232",
     "userId": "123123123",
+    "calendarId": "123123123",
     "createdAt": "2020-09-01T00:00:00.000Z",
     "updatedAt": "2020-09-01T00:00:00.000Z",
     "title": "Quick Meeting",
