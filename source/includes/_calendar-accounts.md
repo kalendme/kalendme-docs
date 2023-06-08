@@ -6,80 +6,56 @@
 
 ```json
 {
-  "calendarAccount": {
+  "account": {
     "id": "123213232",
     "userId": "123123123",
     "createdAt": "2020-09-01T00:00:00.000Z",
     "updatedAt": "2020-09-01T00:00:00.000Z",
-    "type": "KALENDME",
-    "nickname": "My Calendar"
+    "connectionStatus": "OK",
+    "provider": "google"
   }
 }
 ```
 
-Calendar accounts belong to users, they are unique calendars that can contain several events and can be used to calculate a user's availability. Calendar accounts are needed if you want that user to use a KalendMe calendar without needing to connect their Google/Microsoft accounts. Calendar Accounts are formed by the following fields.
+Calendar accounts belong to users, they are unique calendar account providers that can contain several calendars inside them. Each calendar inside an account can be used to calculate a user's availability. Each KalendMe user comes with a KALENDME Calendr Account which are needed if you want that user to use a KalendMe calendar without needing to connect their Google/Microsoft accounts. Calendar Accounts are formed by the following fields.
 
-Parameter | Type | Description
---------- | ---- | -----------
-id | string | The resource's id
-createdAt | timestamp | The resource's creation timesstamp
-updatedAt | timestamp | The resource's last updated timestamp
-userId | string | The ID of the user that this calendar belongs to.
-type | string | The type of the calendar account.
-nickname | string | A description of the calendar account.
+| Parameter        | Type      | Description                                                                    |
+| ---------------- | --------- | ------------------------------------------------------------------------------ |
+| id               | string    | The resource's id                                                              |
+| createdAt        | timestamp | The resource's creation timesstamp                                             |
+| updatedAt        | timestamp | The resource's last updated timestamp                                          |
+| userId           | string    | The ID of the user that this calendar belongs to.                              |
+| provider         | string    | The provider, today we support "google", "microsoft" and "kalendme".           |
+| connectionStatus | string    | Specifies whether the calendar account needs reconnection or is OK to be used. |
 
-## Create a Calendar Account
+## Connect a Calendar Account
 
 ```shell
-curl "https://www.kalendme.com/api/v1/users/123123123/calendar-accounts?linkCalendarAccountAsInput=true" \
+curl "https://www.kalendme.com/api/v1/users/123123123/accounts" \
   -X POST
   -H "Authorization: Bearer abcdef123456"
   -H "Content-Type: application/json"
-  -d '{
-    "nickname": "My Calendar"
-  }'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "calendarAccount": {
-    "id": "123213232",
-    "userId": "123123123",
-    "createdAt": "2020-09-01T00:00:00.000Z",
-    "updatedAt": "2020-09-01T00:00:00.000Z",
-    "type": "KALENDME",
-    "nickname": "My Calendar"
-  }
+  "connectGoogleAccountUrl": "https://www.kalendme.com/verylongtoken",
+  "connectMicrosoftAccountUrl": "https://www.kalendme.com/verylongtoken"
 }
 ```
 
-This endpoint creates a new calendar account for a user.
+This endpoint provides you with two magic links to provide to the user. One to connect a new Microsft account and another to connect a new Google account. The user will be redirected to the provider's authentication page and then redirected back to KalendMe showing that everything worked with your configured branding.
 
 ### HTTP Request
 
-`POST https://www.kalendme.com/api/v1/users/<userId>/calendar-accounts`
-
-### Body Parameters 
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-nickname | string | Required | A description of this user's calendar account.
-
-### URL Parameters
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The id of the user this calendar account will belong to.
-linkCalendarAccountAsInput | boolean | Optional | `Default: false` This links the newly created calendar account to the user’s general availability. In other words, when you query for available date times, these calendar events will affect and block calendar times if there’s events present.
-linkCalendarAccountAsOutput | boolean | Optional | `Default: false` This links the newly created calendar account to be the user’s main calendar for creating events. All scheduled events will be created on this calendar account.
-
+`POST https://www.kalendme.com/api/v1/users/<userId>/accounts`
 
 ## Get a user's Calendar Accounts
 
 ```shell
-curl "https://www.kalendme.com/api/v1/users/123123123/calendar-accounts" \
+curl "https://www.kalendme.com/api/v1/users/123123123/accounts" \
   -H "Authorization: Bearer abcdef123456"
 ```
 
@@ -87,26 +63,25 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-accounts" \
 
 ```json
 {
-  "calendarAccounts": [
+  "accounts": [
     {
       "id": "123213232",
       "userId": "123123123",
       "createdAt": "2020-09-01T00:00:00.000Z",
       "updatedAt": "2020-09-01T00:00:00.000Z",
-      "type": "KALENDME",
-      "nickname": "My Personal Calendar"
+      "provider": "kalendme",
+      "connectionStatus": "OK"
     },
     {
       "id": "123213232",
       "userId": "123123123",
       "createdAt": "2020-09-01T00:00:00.000Z",
       "updatedAt": "2020-09-01T00:00:00.000Z",
-      "type": "KALENDME",
-      "nickname": "My Work Calendar"
+      "provider": "google",
+      "connectionStatus": "OK"
     }
   ]
 }
-
 ```
 
 This endpoint retrieves all calendar accounts for a user.
@@ -117,14 +92,14 @@ This endpoint retrieves all calendar accounts for a user.
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user's calendar accounts to retrieve
+| Parameter | Type   | Required | Description                                        |
+| --------- | ------ | -------- | -------------------------------------------------- |
+| userId    | string | Required | The ID of the user's calendar accounts to retrieve |
 
 ## Get a Specific Calendar Account
 
 ```shell
-curl "https://www.kalendme.com/api/v1/users/123123123/calendar-accounts/123213232" \
+curl "https://www.kalendme.com/api/v1/users/123123123/accounts/123213232" \
   -H "Authorization: Bearer abcdef123456"
 ```
 
@@ -132,13 +107,13 @@ curl "https://www.kalendme.com/api/v1/users/123123123/calendar-accounts/12321323
 
 ```json
 {
-  "calendarAccount": {
+  "account": {
     "id": "123213232",
     "userId": "123123123",
     "createdAt": "2020-09-01T00:00:00.000Z",
     "updatedAt": "2020-09-01T00:00:00.000Z",
-    "type": "KALENDME",
-    "nickname": "My Calendar"
+    "provider": "google",
+    "connectionStatus": "OK"
   }
 }
 ```
@@ -147,11 +122,47 @@ This endpoint retrieves a specific calendar account for a user.
 
 ### HTTP Request
 
-`GET https://www.kalendme.com/api/v1/users/<userId>/calendar-accounts/<calendarAccountId>`
+`GET https://www.kalendme.com/api/v1/users/<userId>/accounts/<accountId>`
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user's calendar accounts to retrieve
-calendarAccountId | string | Required | The ID of the calendar account to retrieve
+| Parameter | Type   | Required | Description                                        |
+| --------- | ------ | -------- | -------------------------------------------------- |
+| userId    | string | Required | The ID of the user's calendar accounts to retrieve |
+| accountId | string | Required | The ID of the calendar account to retrieve         |
+
+## Delete a Specific Calendar Account
+
+```shell
+curl "https://www.kalendme.com/api/v1/users/123123123/accounts/123213232" \
+  -X POST \
+  -H "Authorization: Bearer abcdef123456"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "account": {
+    "id": "123213232",
+    "userId": "123123123",
+    "createdAt": "2020-09-01T00:00:00.000Z",
+    "updatedAt": "2020-09-01T00:00:00.000Z",
+    "provider": "google",
+    "connectionStatus": "OK"
+  }
+}
+```
+
+This endpoint retrieves a specific calendar account for a user.
+
+### HTTP Request
+
+`DELETE https://www.kalendme.com/api/v1/users/<userId>/accounts/<accountId>`
+
+### URL Parameters
+
+| Parameter | Type   | Required | Description                                      |
+| --------- | ------ | -------- | ------------------------------------------------ |
+| userId    | string | Required | The ID of the user's calendar accounts to delete |
+| accountId | string | Required | The ID of the calendar account to delete         |

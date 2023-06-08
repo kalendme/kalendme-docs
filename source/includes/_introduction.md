@@ -16,7 +16,7 @@ curl "https://www.kalendme.com/api/v1/users" \
 
 > Make sure to replace `abcdef123456` with your API key.
 
-KalendMe uses API keys to allow access to the API. You can get an API key by [creating a free account](https://www.kalendme.com/signin) and then heading over to settings to create an Organization. 
+KalendMe uses API keys to allow access to the API. You can get an API key by [creating a free account](https://www.kalendme.com/signin) and then heading over to settings to create an Organization.
 
 <aside class="warning">You will only be able to use our API with an Organization account.</aside>
 
@@ -25,5 +25,5 @@ KalendMe expects for the API key to be included in all API requests to the serve
 `Authorization: Bearer abcdef123456`
 
 <aside class="notice">
-  You must replace <code>abcdef123456</code> with your own API key.
+  You must replace <code>abcdef123456</code> with your <a href="https://www.kalendme.com/app/settings/developer" target="_blank">API key</a>.
 </aside>

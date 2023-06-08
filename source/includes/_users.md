@@ -16,13 +16,13 @@
     "timeZone": "America/New_York",
     "status": "ACTIVE",
     "weekAvailability": {
-      "0": [ { "start": "00:00", "end": "00:00" } ],
-      "1": [ { "start": "08:00", "end": "18:00" } ],
-      "2": [ { "start": "08:00", "end": "18:00" } ],
-      "3": [ { "start": "08:00", "end": "18:00" } ],
-      "4": [ { "start": "08:00", "end": "18:00" } ],
-      "5": [ { "start": "08:00", "end": "18:00" } ],
-      "6": [ { "start": "08:00", "end": "18:00" } ],
+      "0": [{ "start": "00:00", "end": "00:00" }],
+      "1": [{ "start": "08:00", "end": "18:00" }],
+      "2": [{ "start": "08:00", "end": "18:00" }],
+      "3": [{ "start": "08:00", "end": "18:00" }],
+      "4": [{ "start": "08:00", "end": "18:00" }],
+      "5": [{ "start": "08:00", "end": "18:00" }],
+      "6": [{ "start": "08:00", "end": "18:00" }]
     }
   }
 }
@@ -30,18 +30,18 @@
 
 Users are all users under your organization. Users are formed by the following fields.
 
-Parameter | Type | Description
---------- | ---- | -----------
-id | string | The resource's id
-createdAt | timestamp | The resource's creation timesstamp
-updatedAt | timestamp | The resource's last updated timestamp
-email | string | The email of the user. Must be a valid email address.
-name | string | The name of the user
-language | string | The language of the user. We currently support only `en` (english), `es` (spanish) and `pt` (portuguese).
-urlString | string | A globally unique URL for the user. Used for their bookings page such as kalendme.com/`john-123`. If none is specified, a random one will be generated on user creation.
-timeZone | string | The time zone of the user. Must be a valid [IANA time zone](https://en.wikipedia.org/wiki/Tz_database) name such as `America/New_York`.
-status | string | The status of the user. Can only be: `ACTIVE` or `INVITED`. Note that invited users do not affect your bill until they accept to join your organization.
-weekAvailability | [WeekAvailability](/#week-availability) | An object containing the user's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times.
+| Parameter        | Type                                    | Description                                                                                                                                                              |
+| ---------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| id               | string                                  | The resource's id                                                                                                                                                        |
+| createdAt        | timestamp                               | The resource's creation timesstamp                                                                                                                                       |
+| updatedAt        | timestamp                               | The resource's last updated timestamp                                                                                                                                    |
+| email            | string                                  | The email of the user. Must be a valid email address.                                                                                                                    |
+| name             | string                                  | The name of the user                                                                                                                                                     |
+| language         | string                                  | The language of the user. We currently support only `en` (english), `es` (spanish) and `pt` (portuguese).                                                                |
+| urlString        | string                                  | A globally unique URL for the user. Used for their bookings page such as kalendme.com/`john-123`. If none is specified, a random one will be generated on user creation. |
+| timeZone         | string                                  | The time zone of the user. Must be a valid [IANA time zone](https://en.wikipedia.org/wiki/Tz_database) name such as `America/New_York`.                                  |
+| status           | string                                  | The status of the user. Can only be: `ACTIVE` or `INVITED`. Note that invited users do not affect your bill until they accept to join your organization.                 |
+| weekAvailability | [WeekAvailability](/#week-availability) | An object containing the user's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times.                 |
 
 ## Create a User
 
@@ -71,13 +71,13 @@ curl "https://www.kalendme.com/api/v1/users?sendInvitationEmail=true" \
     "urlString": "jim-123456",
     "timeZone": "America/New_York",
     "weekAvailability": {
-      "0": [ { "start": "00:00", "end": "00:00" } ],
-      "1": [ { "start": "08:00", "end": "18:00" } ],
-      "2": [ { "start": "08:00", "end": "18:00" } ],
-      "3": [ { "start": "08:00", "end": "18:00" } ],
-      "4": [ { "start": "08:00", "end": "18:00" } ],
-      "5": [ { "start": "08:00", "end": "18:00" } ],
-      "6": [ { "start": "08:00", "end": "18:00" } ],
+      "0": [{ "start": "00:00", "end": "00:00" }],
+      "1": [{ "start": "08:00", "end": "18:00" }],
+      "2": [{ "start": "08:00", "end": "18:00" }],
+      "3": [{ "start": "08:00", "end": "18:00" }],
+      "4": [{ "start": "08:00", "end": "18:00" }],
+      "5": [{ "start": "08:00", "end": "18:00" }],
+      "6": [{ "start": "08:00", "end": "18:00" }]
     }
   }
 }
@@ -89,22 +89,24 @@ This endpoint creates a new user under your organization.
 
 `POST https://www.kalendme.com/api/v1/users`
 
-### Body Parameters 
+### Body Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-email | string | Required | The email of the user. Must be a valid email address.
-name | string | Optional | The name of the user
-language | string | Required | The language of the user. We currently support only `en` (english), `es` (spanish) and `pt` (portuguese).
-urlString | string | Optional | A globally unique URL for the user. Used for their bookings page such as kalendme.com/`john-123`. If none is specified, a random one will be generated on user creation.
-timeZone | string | Required | The time zone of the user. Must be a valid [IANA time zone](https://en.wikipedia.org/wiki/Tz_database) name such as `America/New_York`.
-weekAvailability | [WeekAvailability](/#week-availability) | Optional | An object containing the user's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. 
+| Parameter        | Type                                    | Required | Description                                                                                                                                                              |
+| ---------------- | --------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| email            | string                                  | Required | The email of the user. Must be a valid email address.                                                                                                                    |
+| name             | string                                  | Optional | The name of the user                                                                                                                                                     |
+| language         | string                                  | Required | The language of the user. We currently support only `en` (english), `es` (spanish) and `pt` (portuguese).                                                                |
+| urlString        | string                                  | Optional | A globally unique URL for the user. Used for their bookings page such as kalendme.com/`john-123`. If none is specified, a random one will be generated on user creation. |
+| timeZone         | string                                  | Required | The time zone of the user. Must be a valid [IANA time zone](https://en.wikipedia.org/wiki/Tz_database) name such as `America/New_York`.                                  |
+| weekAvailability | [WeekAvailability](/#week-availability) | Optional | An object containing the user's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times.                 |
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-sendInvitationEmail | boolean | Send the newly created user an invitation email on behalf of your organization to join your organization and configure their account.
+| Parameter           | Type    | Description                                                                                                                                                                                                                            |
+| ------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sendInvitationEmail | boolean | Send the newly created user an invitation email on behalf of your organization to join your organization and configure their account.                                                                                                  |
+| activateOnCreate    | boolean | Activate the newly created user on behalf of your organization. If not specified, the user will be created in an `INVITED` state and will not affect your bill until they accept to join your organization.                            |
+| inviteOnConflict    | boolean | If a user with the same email already exists, send them an invitation email on behalf of your organization to join your organization and configure their account. If not specified, the request will fail with a `409 Conflict` error. |
 
 ## Get All Users
 
@@ -127,13 +129,13 @@ curl "https://www.kalendme.com/api/v1/users" \
       "urlString": "michael-scott",
       "timeZone": "America/New_York",
       "weekAvailability": {
-        "0": [ { "start": "00:00", "end": "00:00" } ],
-        "1": [ { "start": "08:00", "end": "18:00" } ],
-        "2": [ { "start": "08:00", "end": "18:00" } ],
-        "3": [ { "start": "08:00", "end": "18:00" } ],
-        "4": [ { "start": "08:00", "end": "18:00" } ],
-        "5": [ { "start": "08:00", "end": "18:00" } ],
-        "6": [ { "start": "08:00", "end": "18:00" } ],
+        "0": [{ "start": "00:00", "end": "00:00" }],
+        "1": [{ "start": "08:00", "end": "18:00" }],
+        "2": [{ "start": "08:00", "end": "18:00" }],
+        "3": [{ "start": "08:00", "end": "18:00" }],
+        "4": [{ "start": "08:00", "end": "18:00" }],
+        "5": [{ "start": "08:00", "end": "18:00" }],
+        "6": [{ "start": "08:00", "end": "18:00" }]
       }
     },
     {
@@ -145,18 +147,17 @@ curl "https://www.kalendme.com/api/v1/users" \
       "urlString": "pam-beesly",
       "timeZone": "America/New_York",
       "weekAvailability": {
-        "0": [ { "start": "00:00", "end": "00:00" } ],
-        "1": [ { "start": "08:00", "end": "18:00" } ],
-        "2": [ { "start": "08:00", "end": "18:00" } ],
-        "3": [ { "start": "08:00", "end": "18:00" } ],
-        "4": [ { "start": "08:00", "end": "18:00" } ],
-        "5": [ { "start": "08:00", "end": "18:00" } ],
-        "6": [ { "start": "08:00", "end": "18:00" } ],
+        "0": [{ "start": "00:00", "end": "00:00" }],
+        "1": [{ "start": "08:00", "end": "18:00" }],
+        "2": [{ "start": "08:00", "end": "18:00" }],
+        "3": [{ "start": "08:00", "end": "18:00" }],
+        "4": [{ "start": "08:00", "end": "18:00" }],
+        "5": [{ "start": "08:00", "end": "18:00" }],
+        "6": [{ "start": "08:00", "end": "18:00" }]
       }
-    },
+    }
   ]
 }
-
 ```
 
 This endpoint retrieves all users.
@@ -185,13 +186,13 @@ curl "https://www.kalendme.com/api/v1/users/123213232" \
     "urlString": "pam-beesly",
     "timeZone": "America/New_York",
     "weekAvailability": {
-      "0": [ { "start": "00:00", "end": "00:00" } ],
-      "1": [ { "start": "08:00", "end": "18:00" } ],
-      "2": [ { "start": "08:00", "end": "18:00" } ],
-      "3": [ { "start": "08:00", "end": "18:00" } ],
-      "4": [ { "start": "08:00", "end": "18:00" } ],
-      "5": [ { "start": "08:00", "end": "18:00" } ],
-      "6": [ { "start": "08:00", "end": "18:00" } ],
+      "0": [{ "start": "00:00", "end": "00:00" }],
+      "1": [{ "start": "08:00", "end": "18:00" }],
+      "2": [{ "start": "08:00", "end": "18:00" }],
+      "3": [{ "start": "08:00", "end": "18:00" }],
+      "4": [{ "start": "08:00", "end": "18:00" }],
+      "5": [{ "start": "08:00", "end": "18:00" }],
+      "6": [{ "start": "08:00", "end": "18:00" }]
     }
   }
 }
@@ -205,9 +206,9 @@ This endpoint retrieves a specific user.
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user to retrieve
+| Parameter | Type   | Required | Description                    |
+| --------- | ------ | -------- | ------------------------------ |
+| userId    | string | Required | The ID of the user to retrieve |
 
 ## Update a User
 
@@ -234,13 +235,13 @@ curl "https://www.kalendme.com/api/v1/users" \
     "urlString": "jim-123456",
     "timeZone": "America/Los_Angeles",
     "weekAvailability": {
-      "0": [ { "start": "00:00", "end": "00:00" } ],
-      "1": [ { "start": "08:00", "end": "18:00" } ],
-      "2": [ { "start": "08:00", "end": "18:00" } ],
-      "3": [ { "start": "08:00", "end": "18:00" } ],
-      "4": [ { "start": "08:00", "end": "18:00" } ],
-      "5": [ { "start": "08:00", "end": "18:00" } ],
-      "6": [ { "start": "08:00", "end": "18:00" } ],
+      "0": [{ "start": "00:00", "end": "00:00" }],
+      "1": [{ "start": "08:00", "end": "18:00" }],
+      "2": [{ "start": "08:00", "end": "18:00" }],
+      "3": [{ "start": "08:00", "end": "18:00" }],
+      "4": [{ "start": "08:00", "end": "18:00" }],
+      "5": [{ "start": "08:00", "end": "18:00" }],
+      "6": [{ "start": "08:00", "end": "18:00" }]
     }
   }
 }
@@ -252,21 +253,21 @@ This endpoint updates a user under your organization.
 
 `PATCH https://www.kalendme.com/api/v1/users/<userId>`
 
-### Body Parameters 
+### Body Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-name | string | Optional | The name of the user
-language | string | Optional | The language of the user. We currently support only `en` (english), `es` (spanish) and `pt` (portuguese).
-urlString | string | Optional | A globally unique URL for the user. Used for their bookings page such as kalendme.com/`john-123`.
-timeZone | string | Optional | The time zone of the user. Must be a valid [IANA time zone](https://en.wikipedia.org/wiki/Tz_database) name such as `America/New_York`.
-weekAvailability | [WeekAvailability](/#week-availability) | Optional | An object containing the user's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times.
+| Parameter        | Type                                    | Required | Description                                                                                                                                              |
+| ---------------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name             | string                                  | Optional | The name of the user                                                                                                                                     |
+| language         | string                                  | Optional | The language of the user. We currently support only `en` (english), `es` (spanish) and `pt` (portuguese).                                                |
+| urlString        | string                                  | Optional | A globally unique URL for the user. Used for their bookings page such as kalendme.com/`john-123`.                                                        |
+| timeZone         | string                                  | Optional | The time zone of the user. Must be a valid [IANA time zone](https://en.wikipedia.org/wiki/Tz_database) name such as `America/New_York`.                  |
+| weekAvailability | [WeekAvailability](/#week-availability) | Optional | An object containing the user's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user to update
+| Parameter | Type   | Required | Description                  |
+| --------- | ------ | -------- | ---------------------------- |
+| userId    | string | Required | The ID of the user to update |
 
 ## Delete a Specific User
 
@@ -289,13 +290,13 @@ curl "https://www.kalendme.com/api/v1/users/123213232" \
     "urlString": "pam-beesly",
     "timeZone": "America/New_York",
     "weekAvailability": {
-      "0": [ { "start": "00:00", "end": "00:00" } ],
-      "1": [ { "start": "08:00", "end": "18:00" } ],
-      "2": [ { "start": "08:00", "end": "18:00" } ],
-      "3": [ { "start": "08:00", "end": "18:00" } ],
-      "4": [ { "start": "08:00", "end": "18:00" } ],
-      "5": [ { "start": "08:00", "end": "18:00" } ],
-      "6": [ { "start": "08:00", "end": "18:00" } ],
+      "0": [{ "start": "00:00", "end": "00:00" }],
+      "1": [{ "start": "08:00", "end": "18:00" }],
+      "2": [{ "start": "08:00", "end": "18:00" }],
+      "3": [{ "start": "08:00", "end": "18:00" }],
+      "4": [{ "start": "08:00", "end": "18:00" }],
+      "5": [{ "start": "08:00", "end": "18:00" }],
+      "6": [{ "start": "08:00", "end": "18:00" }]
     }
   }
 }
@@ -309,6 +310,6 @@ This endpoint deletes a specific user from your organization.
 
 ### URL Parameters
 
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-userId | string | Required | The ID of the user to delete
+| Parameter | Type   | Required | Description                  |
+| --------- | ------ | -------- | ---------------------------- |
+| userId    | string | Required | The ID of the user to delete |
