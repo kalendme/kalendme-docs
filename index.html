@@ -288,7 +288,6 @@
     <link href="stylesheets/screen-8a220aad.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-a9fde460.js"></script>
-    <script data-token="0CL5CQ7GMMWU" async src="https://cdn.splitbee.io/sb.js"></script>
     <script>
       $(function() { setupCodeCopy(); });
     </script>
@@ -347,7 +346,7 @@
                     <a href="#calendar-account-resource" class="toc-h2 toc-link" data-title="Calendar Account Resource">Calendar Account Resource</a>
                   </li>
                   <li>
-                    <a href="#create-a-calendar-account" class="toc-h2 toc-link" data-title="Create a Calendar Account">Create a Calendar Account</a>
+                    <a href="#connect-a-calendar-account" class="toc-h2 toc-link" data-title="Connect a Calendar Account">Connect a Calendar Account</a>
                   </li>
                   <li>
                     <a href="#get-a-user-39-s-calendar-accounts" class="toc-h2 toc-link" data-title="Get a user's Calendar Accounts">Get a user's Calendar Accounts</a>
@@ -355,31 +354,8 @@
                   <li>
                     <a href="#get-a-specific-calendar-account" class="toc-h2 toc-link" data-title="Get a Specific Calendar Account">Get a Specific Calendar Account</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#user-event-types" class="toc-h1 toc-link" data-title="User Event Types">User Event Types</a>
-              <ul class="toc-list-h2">
                   <li>
-                    <a href="#deprecated" class="toc-h2 toc-link" data-title="DEPRECATED">DEPRECATED</a>
-                  </li>
-                  <li>
-                    <a href="#user-event-type-resource" class="toc-h2 toc-link" data-title="User Event Type Resource">User Event Type Resource</a>
-                  </li>
-                  <li>
-                    <a href="#create-a-user-event-type" class="toc-h2 toc-link" data-title="Create a User Event Type">Create a User Event Type</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-user-39-s-event-types" class="toc-h2 toc-link" data-title="Get a User's Event Types">Get a User's Event Types</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-user-event-type" class="toc-h2 toc-link" data-title="Get a Specific User Event Type">Get a Specific User Event Type</a>
-                  </li>
-                  <li>
-                    <a href="#update-a-user-event-type" class="toc-h2 toc-link" data-title="Update a User Event Type">Update a User Event Type</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-user-event-type" class="toc-h2 toc-link" data-title="Delete a Specific User Event Type">Delete a Specific User Event Type</a>
+                    <a href="#delete-a-specific-calendar-account" class="toc-h2 toc-link" data-title="Delete a Specific Calendar Account">Delete a Specific Calendar Account</a>
                   </li>
               </ul>
           </li>
@@ -558,13 +534,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -653,13 +629,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim-123456"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -726,6 +702,16 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>boolean</td>
 <td>Send the newly created user an invitation email on behalf of your organization to join your organization and configure their account.</td>
 </tr>
+<tr>
+<td>activateOnCreate</td>
+<td>boolean</td>
+<td>Activate the newly created user on behalf of your organization. If not specified, the user will be created in an <code>INVITED</code> state and will not affect your bill until they accept to join your organization.</td>
+</tr>
+<tr>
+<td>inviteOnConflict</td>
+<td>boolean</td>
+<td>If a user with the same email already exists, send them an invitation email on behalf of your organization to join your organization and configure their account. If not specified, the request will fail with a <code>409 Conflict</code> error.</td>
+</tr>
 </tbody></table>
 <h2 id='get-all-users'>Get All Users</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
@@ -744,13 +730,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
       </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"michael-scott"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -762,18 +748,17 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
       </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam-beesly"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div>
 <p>This endpoint retrieves all users.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
@@ -794,13 +779,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam-beesly"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -845,13 +830,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jim-123456"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -932,13 +917,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pam-beesly"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -967,17 +952,17 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <p>An example calendar account model looks like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"calendarAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="w">
+    </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Calendar accounts belong to users, they are unique calendars that can contain several events and can be used to calculate a user&#39;s availability. Calendar accounts are needed if you want that user to use a KalendMe calendar without needing to connect their Google/Microsoft accounts. Calendar Accounts are formed by the following fields.</p>
+<p>Calendar accounts belong to users, they are unique calendar account providers that can contain several calendars inside them. Each calendar inside an account can be used to calculate a user&#39;s availability. Each KalendMe user comes with a KALENDME Calendr Account which are needed if you want that user to use a KalendMe calendar without needing to connect their Google/Microsoft accounts. Calendar Accounts are formed by the following fields.</p>
 
 <table><thead>
 <tr>
@@ -1007,390 +992,62 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The ID of the user that this calendar belongs to.</td>
 </tr>
 <tr>
-<td>type</td>
+<td>provider</td>
 <td>string</td>
-<td>The type of the calendar account.</td>
+<td>The provider, today we support &quot;google&quot;, &quot;microsoft&quot; and &quot;kalendme&quot;.</td>
 </tr>
 <tr>
-<td>nickname</td>
+<td>connectionStatus</td>
 <td>string</td>
-<td>A description of the calendar account.</td>
+<td>Specifies whether the calendar account needs reconnection or is OK to be used.</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-calendar-account'>Create a Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-accounts?linkCalendarAccountAsInput=true"</span> <span class="se">\</span>
+<h2 id='connect-a-calendar-account'>Connect a Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/accounts"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
-  <span class="nt">-d</span> <span class="s1">'{
-    "nickname": "My Calendar"
-  }'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"calendarAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"connectGoogleAccountUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/verylongtoken"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connectMicrosoftAccountUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/verylongtoken"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint creates a new calendar account for a user.</p>
+<p>This endpoint provides you with two magic links to provide to the user. One to connect a new Microsft account and another to connect a new Google account. The user will be redirected to the provider&#39;s authentication page and then redirected back to KalendMe showing that everything worked with your configured branding.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-accounts</code></p>
-<h3 id='body-parameters'>Body Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>nickname</td>
-<td>string</td>
-<td>Required</td>
-<td>A description of this user&#39;s calendar account.</td>
-</tr>
-</tbody></table>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>string</td>
-<td>Required</td>
-<td>The id of the user this calendar account will belong to.</td>
-</tr>
-<tr>
-<td>linkCalendarAccountAsInput</td>
-<td>boolean</td>
-<td>Optional</td>
-<td><code>Default: false</code> This links the newly created calendar account to the user’s general availability. In other words, when you query for available date times, these calendar events will affect and block calendar times if there’s events present.</td>
-</tr>
-<tr>
-<td>linkCalendarAccountAsOutput</td>
-<td>boolean</td>
-<td>Optional</td>
-<td><code>Default: false</code> This links the newly created calendar account to be the user’s main calendar for creating events. All scheduled events will be created on this calendar account.</td>
-</tr>
-</tbody></table>
-<h2 id='get-a-user-39-s-calendar-accounts'>Get a user&#39;s Calendar Accounts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-accounts"</span> <span class="se">\</span>
+<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/accounts</code></p>
+<h2 id='get-a-user-39-s-calendar-accounts'>Get a user&#39;s Calendar Accounts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/accounts"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"calendarAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Personal Calendar"</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kalendme"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Work Calendar"</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div>
 <p>This endpoint retrieves all calendar accounts for a user.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-accounts</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>string</td>
-<td>Required</td>
-<td>The ID of the user&#39;s calendar accounts to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='get-a-specific-calendar-account'>Get a Specific Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-accounts/123213232"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"calendarAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KALENDME"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific calendar account for a user.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-accounts/&lt;calendarAccountId&gt;</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>string</td>
-<td>Required</td>
-<td>The ID of the user&#39;s calendar accounts to retrieve</td>
-</tr>
-<tr>
-<td>calendarAccountId</td>
-<td>string</td>
-<td>Required</td>
-<td>The ID of the calendar account to retrieve</td>
-</tr>
-</tbody></table>
-<h1 id='user-event-types'>User Event Types</h1><h2 id='deprecated'>DEPRECATED</h2><h3 id='important-notice-event-types-are-now-deprecated-and-will-be-sunset-soon-please-use-the-user-links-api-instead'>Important Notice: Event Types are now deprecated and will be sunset soon. Please use the User Links API instead.</h3><h2 id='user-event-type-resource'>User Event Type Resource</h2>
-<blockquote>
-<p>An example user event type model looks like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
-        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>User event types are the different types of events a user can have booked. They have pre-defined parameters like duration or specific minimum notice times. They can be accessed by a user&#39;s <code>urlString</code> followed by the User Event Type&#39;s <code>urlString</code> (example: <code>kalendme.com/john/quick-meeting</code>). User event types are formed by the following fields.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>The resource&#39;s id</td>
-</tr>
-<tr>
-<td>createdAt</td>
-<td>timestamp</td>
-<td>The resource&#39;s creation timesstamp</td>
-</tr>
-<tr>
-<td>updatedAt</td>
-<td>timestamp</td>
-<td>The resource&#39;s last updated timestamp</td>
-</tr>
-<tr>
-<td>userId</td>
-<td>string</td>
-<td>The ID of the user that this event type belongs to.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>The title of the event. For example, <code>Interview</code></td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>The description of the event</td>
-</tr>
-<tr>
-<td>durationMinutes</td>
-<td>int</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>urlString</td>
-<td>string</td>
-<td>A unique URL for the user&#39;s event type. Used for their bookings page such as kalendme.com/<code>john-123</code>/<code>event-type</code>. If none is specified, a random one will be generated on user event type creation.</td>
-</tr>
-<tr>
-<td>minimumNoticeMinutes</td>
-<td>int</td>
-<td>The minimum number of minutes notice for a user event type. For example, <code>120</code> if this event type requires a minimum of 2 hours of notice to be booked in advance.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean</td>
-<td><code>Default: true</code> Specifies whether this user event type is enabled or not. Disabled event types cannot be booked or found through their <code>urlString</code></td>
-</tr>
-<tr>
-<td>public</td>
-<td>boolean</td>
-<td><code>Default: true</code> Specifies whether this user event type is public or not. Making an event non-public hides it from a user&#39;s main urlString.</td>
-</tr>
-<tr>
-<td>weekAvailability</td>
-<td><a href="/#week-availability">WeekAvailability</a></td>
-<td>An object containing an override to the user&#39;s general avialability. A specific user event types&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
-</tr>
-<tr>
-<td>customQuestions</td>
-<td><a href="/#custom-question">CustomQuestion</a>[]</td>
-<td>An array containing custom questions to ask user&#39;s when booking this event type.</td>
-</tr>
-</tbody></table>
-<h2 id='create-a-user-event-type'>Create a User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types"</span> <span class="se">\</span>
-  <span class="nt">-X</span> POST
-  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
-  <span class="nt">-d</span> <span class="s1">'{
-    "title": "Quick Meeting",
-    "durationMinutes": 30,
-    "urlString": "quick-meeting",
-    "description": "A quick session to catch up",
-    "weekAvailability": [],
-    "customQuestions": [
-      {
-        "id": "3656475289d4aecd03804ec4d6045953", // An ID of your choosing to map to your system
-        "order": 0,
-        "question": "Whats your phone number?"
-      }
-    ]
-  }'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
-        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint creates a new event type for a user.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types</code></p>
-<h3 id='body-parameters'>Body Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Required</td>
-<td>The title of the event. For example, <code>Interview</code></td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>Optional</td>
-<td>The description of the event. Can be blank.</td>
-</tr>
-<tr>
-<td>durationMinutes</td>
-<td>int</td>
-<td>Required</td>
-<td>The duration in minutes of the event.</td>
-</tr>
-<tr>
-<td>urlString</td>
-<td>string</td>
-<td>Optional</td>
-<td>A unique URL for the user&#39;s event type. Used for their bookings page such as kalendme.com/<code>john-123</code>/<code>event-type</code>. If none is specified, a random one will be generated on user event type creation.</td>
-</tr>
-<tr>
-<td>minimumNoticeMinutes</td>
-<td>int</td>
-<td>Optional</td>
-<td>The minimum number of minutes notice for a user event type. For example, <code>120</code> if this event type requires a minimum of 2 hours of notice to be booked in advance.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean</td>
-<td>Optional</td>
-<td><code>Default: true</code> Specifies whether this user event type is enabled or not. Disabled event types cannot be booked or found through their <code>urlString</code></td>
-</tr>
-<tr>
-<td>public</td>
-<td>boolean</td>
-<td>Optional</td>
-<td><code>Default: true</code> Specifies whether this user event type is public or not. Making an event non-public hides it from a user&#39;s main urlString.</td>
-</tr>
-<tr>
-<td>weekAvailability</td>
-<td>Optional</td>
-<td><a href="/#week-availability">WeekAvailability</a></td>
-<td>An object containing an override to the user&#39;s general avialability. A specific user event types&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
-</tr>
-<tr>
-<td>customQuestions</td>
-<td>Optional</td>
-<td><a href="/#custom-question">CustomQuestion</a>[]</td>
-<td>An array containing custom questions to ask user&#39;s when booking this event type.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1404,45 +1061,29 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>userId</td>
 <td>string</td>
 <td>Required</td>
-<td>The id of the user this event type will belong to.</td>
+<td>The ID of the user&#39;s calendar accounts to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-user-39-s-event-types'>Get a User&#39;s Event Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123213233/event-types"</span> <span class="se">\</span>
+<h2 id='get-a-specific-calendar-account'>Get a Specific Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/accounts/123213232"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"userEventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
-          </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div>
-<p>This endpoint retrieves all user event types for a specific user.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types</code></p>
+<p>This endpoint retrieves a specific calendar account for a user.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/accounts/&lt;accountId&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1456,42 +1097,36 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>userId</td>
 <td>string</td>
 <td>Required</td>
-<td>The id of the user these event types belong to.</td>
+<td>The ID of the user&#39;s calendar accounts to retrieve</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the calendar account to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-user-event-type'>Get a Specific User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types/123213232"</span> <span class="se">\</span>
+<h2 id='delete-a-specific-calendar-account'>Delete a Specific Calendar Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/accounts/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3656475289d4aecd03804ec4d6045953"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">An</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">choosing</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">system</span><span class="w">
-        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific user&#39;s event type.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;</code></p>
+<p>This endpoint retrieves a specific calendar account for a user.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE https://www.kalendme.com/api/v1/users/&lt;userId&gt;/accounts/&lt;accountId&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1505,183 +1140,13 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>userId</td>
 <td>string</td>
 <td>Required</td>
-<td>The id of the user this event type belong to.</td>
+<td>The ID of the user&#39;s calendar accounts to delete</td>
 </tr>
 <tr>
-<td>eventTypeId</td>
+<td>accountId</td>
 <td>string</td>
 <td>Required</td>
-<td>The id of the user event type.</td>
-</tr>
-</tbody></table>
-<h2 id='update-a-user-event-type'>Update a User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types/123213232"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PATCH
-  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
-  <span class="nt">-d</span> <span class="s1">'{
-    "public": false,
-    "customQuestions: []
-  }'</span>
-  -
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint updates a user&#39;s event type.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;</code></p>
-<h3 id='body-parameters-2'>Body Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>Optional</td>
-<td>The title of the event. For example, <code>Interview</code></td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>Optional</td>
-<td>The description of the event. Can be blank.</td>
-</tr>
-<tr>
-<td>durationMinutes</td>
-<td>int</td>
-<td>Optional</td>
-<td>The duration in minutes of the event.</td>
-</tr>
-<tr>
-<td>urlString</td>
-<td>string</td>
-<td>Optional</td>
-<td>A unique URL for the user&#39;s event type. Used for their bookings page such as kalendme.com/<code>john-123</code>/<code>event-type</code>. If none is specified, a random one will be generated on user event type creation.</td>
-</tr>
-<tr>
-<td>minimumNoticeMinutes</td>
-<td>int</td>
-<td>Optional</td>
-<td>The minimum number of minutes notice for a user event type. For example, <code>120</code> if this event type requires a minimum of 2 hours of notice to be booked in advance.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean</td>
-<td>Optional</td>
-<td>Specifies whether this user event type is enabled or not. Disabled event types cannot be booked or found through their <code>urlString</code></td>
-</tr>
-<tr>
-<td>public</td>
-<td>boolean</td>
-<td>Optional</td>
-<td>Specifies whether this user event type is public or not. Making an event non-public hides it from a user&#39;s main urlString.</td>
-</tr>
-<tr>
-<td>weekAvailability</td>
-<td>Optional</td>
-<td><a href="/#week-availability">WeekAvailability</a></td>
-<td>An object containing an override to the user&#39;s general avialability. A specific user event types&#39;s week availability from Sunday [0] through Saturday [7] and each day&#39;s availability slots with a <code>start</code> and <code>end</code> times.</td>
-</tr>
-<tr>
-<td>customQuestions</td>
-<td>Optional</td>
-<td><a href="/#custom-question">CustomQuestion</a>[]</td>
-<td>An array containing custom questions to ask user&#39;s when booking this event type.</td>
-</tr>
-</tbody></table>
-<h3 id='url-parameters-4'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>string</td>
-<td>Required</td>
-<td>The id of the user this event type belong to.</td>
-</tr>
-<tr>
-<td>eventTypeId</td>
-<td>string</td>
-<td>Required</td>
-<td>The id of the user event type.</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-user-event-type'>Delete a Specific User Event Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/event-types/123213232"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"userEventType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"urlString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quick-meeting"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A quick session to catch up"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"minimumNotice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nl">"customQuestions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific user event type.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE https://www.kalendme.com/api/v1/users/&lt;userId&gt;/event-types/&lt;eventTypeId&gt;</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>string</td>
-<td>Required</td>
-<td>The id of the user this event type belong to.</td>
-</tr>
-<tr>
-<td>eventTypeId</td>
-<td>string</td>
-<td>Required</td>
-<td>The id of the user event type.</td>
+<td>The ID of the calendar account to delete</td>
 </tr>
 </tbody></table>
 <h1 id='user-links'>User Links</h1><h2 id='user-link-resource'>User Link Resource</h2>
@@ -3431,8 +2896,6 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 </tbody></table>
 <h1 id='time-zones'>Time Zones</h1><h2 id='overview'>Overview</h2>
 <p>Time zones are a critical component for scheduling. KalendMe provides this endpoint to be able to always be up to date with the latest IANA time zone DB.</p>
-
-<p>Current version: 2022a</p>
 <h2 id='get-time-zones'>Get Time Zones</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/time-zones"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
@@ -3440,6 +2903,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"currentVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023c"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"timeZones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"Africa/Algiers"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"Atlantic/Cape_Verde"</span><span class="p">,</span><span class="w">
