@@ -2,6 +2,15 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BEVKFLNLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9BEVKFLNLW');
+    </script>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -360,6 +369,26 @@
               </ul>
           </li>
           <li>
+            <a href="#calendars" class="toc-h1 toc-link" data-title="Calendars">Calendars</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#calendar-resource" class="toc-h2 toc-link" data-title="Calendar Resource">Calendar Resource</a>
+                  </li>
+                  <li>
+                    <a href="#connect-a-calendar" class="toc-h2 toc-link" data-title="Connect a Calendar">Connect a Calendar</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-user-39-s-calendars" class="toc-h2 toc-link" data-title="Get a user's Calendars">Get a user's Calendars</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-calendar" class="toc-h2 toc-link" data-title="Get a Specific Calendar">Get a Specific Calendar</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-calendar" class="toc-h2 toc-link" data-title="Update a Calendar">Update a Calendar</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#user-links" class="toc-h1 toc-link" data-title="User Links">User Links</a>
               <ul class="toc-list-h2">
                   <li>
@@ -459,6 +488,20 @@
                   </li>
                   <li>
                     <a href="#get-time-zones" class="toc-h2 toc-link" data-title="Get Time Zones">Get Time Zones</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bulk-operations" class="toc-h1 toc-link" data-title="Bulk Operations">Bulk Operations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-mass-availability" class="toc-h2 toc-link" data-title="Get Mass Availability">Get Mass Availability</a>
+                  </li>
+                  <li>
+                    <a href="#get-users-available-between-two-timestamps" class="toc-h2 toc-link" data-title="Get Users Available between Two Timestamps">Get Users Available between Two Timestamps</a>
+                  </li>
+                  <li>
+                    <a href="#get-users-availabilities-between-two-timestamps" class="toc-h2 toc-link" data-title="Get Users Availabilities between Two Timestamps">Get Users Availabilities between Two Timestamps</a>
                   </li>
               </ul>
           </li>
@@ -1147,6 +1190,246 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>string</td>
 <td>Required</td>
 <td>The ID of the calendar account to delete</td>
+</tr>
+</tbody></table>
+<h1 id='calendars'>Calendars</h1><h2 id='calendar-resource'>Calendar Resource</h2>
+<blockquote>
+<p>An example calendar model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isInput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isOutput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isReadOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Calendars belong to user <a href="#calendar-accounts">calendar accounts</a>. They are the calendars that the user has access to. They can be input, output or both. They can also be read-only.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timesstamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>The ID of the user that this calendar belongs to.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>string</td>
+<td>The ID of the calendar account that this calendar belongs to.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the calendar</td>
+</tr>
+<tr>
+<td>isInput</td>
+<td>boolean</td>
+<td>Whether this calendar is an input calendar</td>
+</tr>
+<tr>
+<td>isOutput</td>
+<td>boolean</td>
+<td>Whether this calendar is an output calendar</td>
+</tr>
+<tr>
+<td>isReadOnly</td>
+<td>boolean</td>
+<td>Whether this calendar is read-only</td>
+</tr>
+</tbody></table>
+<h2 id='connect-a-calendar'>Connect a Calendar</h2>
+<p>Calendars are created after connecting a Calendar account automatically since they come from the account&#39;s provider. You don&#39;t need to create them manually.</p>
+<h2 id='get-a-user-39-s-calendars'>Get a user&#39;s Calendars</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendars"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendars"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Calendar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isInput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isOutput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isReadOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Holidays in Brazil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isInput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isOutput"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isReadOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all configured calendars for a user.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendars</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendars to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-calendar'>Get a Specific Calendar</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendars/123213232"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Holidays in Brazil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isInput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isOutput"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isReadOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific calendar for a user.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendars/&lt;calendarId&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar accounts to retrieve</td>
+</tr>
+<tr>
+<td>calendarId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the calendar to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-calendar'>Update a Calendar</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendars/123213232"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"calendar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Holidays in Brazil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isInput"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isOutput"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isReadOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint updates a calendar for a specific user. Use it to configure the calendar&#39;s input, and output properties. This way a user can control which calendars they want to use as input calendars when calculating their availability, and which calendar they want to use as output when sharing their availability so that events can be created there.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendars/&lt;calendarId&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the user&#39;s calendar accounts to retrieve</td>
+</tr>
+<tr>
+<td>calendarId</td>
+<td>string</td>
+<td>Required</td>
+<td>The ID of the calendar to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>isInput</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Whether this calendar is an input calendar</td>
+</tr>
+<tr>
+<td>isOutput</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Whether this calendar is an output calendar</td>
 </tr>
 </tbody></table>
 <h1 id='user-links'>User Links</h1><h2 id='user-link-resource'>User Link Resource</h2>
@@ -1909,6 +2192,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"calendarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
@@ -1917,10 +2201,11 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634099600000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"durationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://myvideoconferencing.com/my-link"</span><span class="w">
-    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"michael@dundermifflin.com"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://myvideoconferencing.com/my-link"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"guests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"michael@dundermifflin.com"</span><span class="p">],</span><span class="w">
     </span><span class="nl">"mainGuestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pam Beesly"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestTimeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mainGuestLanguage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
@@ -1928,7 +2213,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Calendar events belong to users, they are unique instances in time that a user is booked for. Having a calendar event blocks that user&#39;s availability for the duration of the event. Calendar Events are formed by the following fields.</p>
+<p>Calendar events belong to users&#39; calendars, they are unique instances in time that a user is booked for. Having a calendar event blocks that user&#39;s availability for the duration of the event. Calendar Events are formed by the following fields.</p>
 
 <table><thead>
 <tr>
@@ -1956,6 +2241,11 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>userId</td>
 <td>string</td>
 <td>The ID of the user that this calendar event belongs to.</td>
+</tr>
+<tr>
+<td>calendarId</td>
+<td>string</td>
+<td>The ID of the calendar that this calendar event belongs to.</td>
 </tr>
 <tr>
 <td>title</td>
@@ -2036,6 +2326,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"calendarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
@@ -2054,7 +2345,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint creates a new calendar event for a user. In other words, it books that user during that time. To control which calendar account this event is written to, you have to configure that user&#39;s <code>output</code> calendar account connection.</p>
+<p>This endpoint creates a new calendar event for a user. In other words, it books that user during that time. To control which calendar account this event is written to, you have to configure that user&#39;s <code>output</code> calendar connection using the <a href="/#calendars">calendars endpoints</a>.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/calendar-events</code></p>
 <h3 id='body-parameters'>Body Parameters</h3>
@@ -2171,6 +2462,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"calendarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
@@ -2225,6 +2517,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"calendarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
@@ -2290,6 +2583,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="nl">"calendarEvent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123213232"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"calendarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quick Meeting"</span><span class="p">,</span><span class="w">
@@ -2914,7 +3208,168 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='special-models'>Special Models</h1>
+</span></code></pre></div><h1 id='bulk-operations'>Bulk Operations</h1>
+<p>These endpoints are hosted under another domain. To use them please use the following base URL: <code>https://api.kalendme.com</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="nt">--request</span> GET <span class="se">\</span>
+  <span class="nt">--url</span> https://api.kalendme.com/health
+</code></pre></div>
+<p>Bulk endpoints are mainly focused towards larger organizations with hundreds of users but you can also leverage them to build customized round robin scheduling solutions among other things.</p>
+<h2 id='get-mass-availability'>Get Mass Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
+<span class="nt">--url</span> https://api.kalendme.com/v1/availability/calculate-mass-availability <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data</span> <span class="s1">'{
+    "userIds":["12312313",
+        "12312"],
+    "startTimeMillis": 1675090800000,
+    "endTimeMillis": 1676862000000,
+    "durationMinutes": 30
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"12312313"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1675090800000</span><span class="p">,</span><span class="w"> </span><span class="mi">1675090800000</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"12312"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1675090800000</span><span class="p">,</span><span class="w"> </span><span class="mi">1675090800000</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns an array of user&#39;s availabilities based on the specified rules. You can query the availability for any amount of users and any amount of time. Although this endpoint is built for speed, the response may take longer for larger time spans or larger amounts of users.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.kalendme.com/v1/availability/calculate-mass-availability</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userIds</td>
+<td>array</td>
+<td>Required</td>
+<td>The ids of the users.</td>
+</tr>
+<tr>
+<td>startTimeMillis</td>
+<td>int</td>
+<td>Required</td>
+<td>The start timestamp in epoch milliseconds to start the query for.</td>
+</tr>
+<tr>
+<td>endTimeMillis</td>
+<td>int</td>
+<td>Required</td>
+<td>The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+<td>The duration of the session you want to schedule this user.</td>
+</tr>
+</tbody></table>
+<h2 id='get-users-available-between-two-timestamps'>Get Users Available between Two Timestamps</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://api.kalendme.com/v1/availability/users-available-between <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer token'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{
+    "startTimeMillis": 1678158000000,
+    "endTimeMillis": 1678190400000,
+    "durationMinutes": 30
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"12341332"</span><span class="p">,</span><span class="w"> </span><span class="s2">"123123123"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns an array of user&#39;s ids that are available based on the specified time slot. This is designed to be used as slots, so for example when you want to schedule a meeting next tuesday at 4 pm for 60 minutes and you want to know which users are available.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.kalendme.com/v1/availability/users-available-between</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimeMillis</td>
+<td>int</td>
+<td>Required</td>
+<td>The start timestamp in epoch milliseconds to start the query for.</td>
+</tr>
+<tr>
+<td>endTimeMillis</td>
+<td>int</td>
+<td>Required</td>
+<td>The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+<td>The duration of the session you want to schedule this user.</td>
+</tr>
+</tbody></table>
+<h2 id='get-users-availabilities-between-two-timestamps'>Get Users Availabilities between Two Timestamps</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://api.kalendme.com/v1/availability/users-availabilities-between <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer token'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{
+    "startTimeMillis": 1678244400000,
+    "endTimeMillis": 1678330800000,
+    "durationMinutes": 30
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"123123123"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1678244400000</span><span class="p">,</span><span class="w"> </span><span class="mi">1678244400000</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"123123123"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1678244400000</span><span class="p">,</span><span class="w"> </span><span class="mi">1678244400000</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns an array of user&#39;s availabilities based on the specified durationMinutes. Similar to the other endpoint but this is used when you want to various availabilities for several users at once.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.kalendme.com/v1/availability/users-availabilities-between</code></p>
+<h3 id='body-parameters-3'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimeMillis</td>
+<td>int</td>
+<td>Required</td>
+<td>The start timestamp in epoch milliseconds to start the query for.</td>
+</tr>
+<tr>
+<td>endTimeMillis</td>
+<td>int</td>
+<td>Required</td>
+<td>The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.</td>
+</tr>
+<tr>
+<td>durationMinutes</td>
+<td>int</td>
+<td>Required</td>
+<td>The duration of the session you want to schedule this user.</td>
+</tr>
+</tbody></table>
+<h1 id='special-models'>Special Models</h1>
 <p>These are common special models across our API.</p>
 <h2 id='week-availability'>Week Availability</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3205,6 +3660,26 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <tr>
 <td>1043</td>
 <td>The specified <code>incrementMinutesOverride</code> is invalid. Can only be integers between 1 and 480.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1044</td>
+<td>The specified event could not be created because the user has a calendar connection as an output that is not properly configured. Please ask them to reconnect the calendar account.</td>
+<td>422</td>
+</tr>
+<tr>
+<td>1045</td>
+<td>The specified <code>isInput</code> attribute must be a valid boolean.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1046</td>
+<td>The specified <code>isOutput</code> attribute must be a valid boolean.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1047</td>
+<td>The specified <code>location</code> is invalid. Location is an object containing a required key &quot;type&quot; and an optional key &quot;value&quot; depending on the location type. Types: inPerson &amp; phone (callDirection: receive) require a value</td>
 <td>400</td>
 </tr>
 </tbody></table>
