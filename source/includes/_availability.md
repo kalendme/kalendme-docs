@@ -36,16 +36,20 @@ This endpoint returns a user's general availability for the requrested month, ye
 
 ### URL Parameters
 
-| Parameter                          | Type    | Required | Description                                                                                                                  |
-| ---------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| userId                             | string  | Required | The id of the user.                                                                                                          |
-| startTimestamp                     | int     | Required | The start timestamp in epoch milliseconds to start the query for.                                                            |
-| endTimestamp                       | int     | Required | The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.                        |
-| durationMinutes                    | int     | Required | The duration of the session you want to schedule this user.                                                                  |
-| timeZone                           | int     | Required | The time zone you want to get the availability for.                                                                          |
-| year                               | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                             |
-| month                              | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                             |
-| includePotentialAvailableDateTimes | boolean | Optional | Output an optional array of what would be all the potential available date times for a user if they did not have any events. |
+| Parameter                          | Type    | Required | Description                                                                                                                                                                   |
+| ---------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userId                             | string  | Required | The id of the user.                                                                                                                                                           |
+| startTimestamp                     | int     | Required | The start timestamp in epoch milliseconds to start the query for.                                                                                                             |
+| endTimestamp                       | int     | Required | The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.                                                                         |
+| durationMinutes                    | int     | Required | The duration of the session you want to schedule this user.                                                                                                                   |
+| timeZone                           | int     | Required | The time zone you want to get the availability for.                                                                                                                           |
+| year                               | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                                                                              |
+| month                              | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                                                                              |
+| includePotentialAvailableDateTimes | boolean | Optional | Output an optional array of what would be all the potential available date times for a user if they did not have any events.                                                  |
+| minimumNoticeMinutes               | int     | Optional | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance |
+| incrementMinutesOverride           | int     | Optional | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.     |
+| paddingMinutesBefore               | int     | Optional | Used to specify if an event needs time padding before being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.         |
+| paddingMinutesAfter                | int     | Optional | Used to specify if an event needs time padding after being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.          |
 
 ## Get a User's Link Availability
 
@@ -81,13 +85,17 @@ This endpoint returns a user's specific link's availability for the requested mo
 
 ### URL Parameters
 
-| Parameter                          | Type    | Required | Description                                                                                                                  |
-| ---------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| userId                             | string  | Required | The id of the user.                                                                                                          |
-| startTimestamp                     | int     | Required | The start timestamp in epoch milliseconds to start the query for.                                                            |
-| endTimestamp                       | int     | Required | The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.                        |
-| durationMinutes                    | int     | Required | The duration of the session you want to schedule this user.                                                                  |
-| timeZone                           | int     | Required | The time zone you want to get the availability for.                                                                          |
-| year                               | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                             |
-| month                              | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                             |
-| includePotentialAvailableDateTimes | boolean | Optional | Output an optional array of what would be all the potential available date times for a user if they did not have any events. |
+| Parameter                          | Type    | Required | Description                                                                                                                                                                   |
+| ---------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userId                             | string  | Required | The id of the user.                                                                                                                                                           |
+| startTimestamp                     | int     | Required | The start timestamp in epoch milliseconds to start the query for.                                                                                                             |
+| endTimestamp                       | int     | Required | The end timestamp in epoch milliseconds to start the query for. It cannot span for more than a month.                                                                         |
+| durationMinutes                    | int     | Required | The duration of the session you want to schedule this user.                                                                                                                   |
+| timeZone                           | int     | Required | The time zone you want to get the availability for.                                                                                                                           |
+| year                               | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                                                                              |
+| month                              | int     | Optional | Instead of querying a specific startTimestamp and endTimestamp you can pass in a year and month.                                                                              |
+| includePotentialAvailableDateTimes | boolean | Optional | Output an optional array of what would be all the potential available date times for a user if they did not have any events.                                                  |
+| minimumNoticeMinutes               | int     | Optional | The minimum number of minutes notice required to book through this link. For example, `120` if this link type requires a minimum of 2 hours of notice to be booked in advance |
+| incrementMinutesOverride           | int     | Optional | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.     |
+| paddingMinutesBefore               | int     | Optional | Used to specify if an event needs time padding before being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.         |
+| paddingMinutesAfter                | int     | Optional | Used to specify if an event needs time padding after being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.          |
