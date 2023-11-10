@@ -2102,6 +2102,30 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>Optional</td>
 <td>Output an optional array of what would be all the potential available date times for a user if they did not have any events.</td>
 </tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The minimum number of minutes notice required to book through this link. For example, <code>120</code> if this link type requires a minimum of 2 hours of notice to be booked in advance</td>
+</tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Optional</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
+<tr>
+<td>paddingMinutesBefore</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding before being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
+</tr>
+<tr>
+<td>paddingMinutesAfter</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding after being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
+</tr>
 </tbody></table>
 <h2 id='get-a-user-39-s-link-availability'>Get a User&#39;s Link Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/links/654654/availability?month=10&amp;year=2021"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET
@@ -2183,6 +2207,30 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>boolean</td>
 <td>Optional</td>
 <td>Output an optional array of what would be all the potential available date times for a user if they did not have any events.</td>
+</tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The minimum number of minutes notice required to book through this link. For example, <code>120</code> if this link type requires a minimum of 2 hours of notice to be booked in advance</td>
+</tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Optional</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
+<tr>
+<td>paddingMinutesBefore</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding before being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
+</tr>
+<tr>
+<td>paddingMinutesAfter</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding after being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
 </tr>
 </tbody></table>
 <h1 id='calendar-events'>Calendar Events</h1><h2 id='calendar-event-resource'>Calendar Event Resource</h2>
