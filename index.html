@@ -2121,6 +2121,30 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>Optional</td>
 <td>Output an optional array of what would be all the potential available date times for a user if they did not have any events.</td>
 </tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The minimum number of minutes notice required to book through this link. For example, <code>120</code> if this link type requires a minimum of 2 hours of notice to be booked in advance</td>
+</tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Optional</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
+<tr>
+<td>paddingMinutesBefore</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding before being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
+</tr>
+<tr>
+<td>paddingMinutesAfter</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding after being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
+</tr>
 </tbody></table>
 <h2 id='get-a-user-39-s-link-availability'>Get a User&#39;s Link Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/links/654654/availability?month=10&amp;year=2021"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET
@@ -2202,6 +2226,30 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>boolean</td>
 <td>Optional</td>
 <td>Output an optional array of what would be all the potential available date times for a user if they did not have any events.</td>
+</tr>
+<tr>
+<td>minimumNoticeMinutes</td>
+<td>int</td>
+<td>Optional</td>
+<td>The minimum number of minutes notice required to book through this link. For example, <code>120</code> if this link type requires a minimum of 2 hours of notice to be booked in advance</td>
+</tr>
+<tr>
+<td>incrementMinutesOverride</td>
+<td>int</td>
+<td>Optional</td>
+<td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
+<tr>
+<td>paddingMinutesBefore</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding before being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
+</tr>
+<tr>
+<td>paddingMinutesAfter</td>
+<td>int</td>
+<td>Optional</td>
+<td>Used to specify if an event needs time padding after being scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</td>
 </tr>
 </tbody></table>
 <h1 id='calendar-events'>Calendar Events</h1><h2 id='calendar-event-resource'>Calendar Event Resource</h2>
@@ -3528,8 +3576,8 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 </tr>
 <tr>
 <td>1013</td>
-<td>You can&#39;t change a user&#39;s email.</td>
-<td>403</td>
+<td>The specified <code>email</code> is already taken, please specify another one.</td>
+<td>409</td>
 </tr>
 <tr>
 <td>1014</td>
@@ -3563,7 +3611,7 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 </tr>
 <tr>
 <td>1020</td>
-<td>The specified <code>selectedDateTime</code> is not available anymore. There&#39;s a conflict.</td>
+<td>The specified <code>selectedDateTime</code> is not available anymore. There&#39;s a conflict. If you sepcified a linkId, it&#39;s possible it has a padding (bofore/after) conflict as well.</td>
 <td>409</td>
 </tr>
 <tr>
@@ -3583,8 +3631,8 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 </tr>
 <tr>
 <td>1024</td>
-<td>The specified <code>providerId</code> is invalid. Can only be google or microsoft</td>
-<td>400</td>
+<td>The specified <code>provider</code> is invalid. Can only be google</td>
+<td>microsoft</td>
 </tr>
 <tr>
 <td>1025</td>
@@ -3618,7 +3666,7 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 </tr>
 <tr>
 <td>1031</td>
-<td>The specified <code>location</code> is invalid. Can only be a string up to 256 characters.</td>
+<td>The specified <code>location</code> is invalid. Can only be a string up to 256 characters or a valid location object.</td>
 <td>400</td>
 </tr>
 <tr>
@@ -3668,7 +3716,7 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 </tr>
 <tr>
 <td>1041</td>
-<td>The specified <code>startTimestamp</code> and <code>endTimestamp</code> have a timespan of more than 1 month. Please select a smaller range.</td>
+<td>The specified <code>startTimestamp</code> and <code>endTimestamp</code> have a timespan of more than 5 weeks. Please select a smaller range.</td>
 <td>400</td>
 </tr>
 <tr>
@@ -3699,6 +3747,26 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 <tr>
 <td>1047</td>
 <td>The specified <code>location</code> is invalid. Location is an object containing a required key &quot;type&quot; and an optional key &quot;value&quot; depending on the location type. Types: inPerson &amp; phone (callDirection: receive) require a value</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1048</td>
+<td>The specified <code>status</code> is invalid. It can only potentially be <code>RESERVED</code></td>
+<td>400</td>
+</tr>
+<tr>
+<td>1049</td>
+<td>The specified <code>reserveExpiresAt</code> is invalid. You specified status <code>RESERVED</code>, reservationExpiresAt must be a future unix timestamp.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1050</td>
+<td>The calendar event status cannot be changed to confirmed.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1051</td>
+<td>The specified <code>onSuccessRedirectUrl</code> is invalid. It must be a valid URL starting with http/https and be in the allowed in the organization settings safe redirect domains list.</td>
 <td>400</td>
 </tr>
 </tbody></table>
