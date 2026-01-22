@@ -35,7 +35,16 @@ curl "https://www.kalendme.com/api/v1/users/123123123/accounts" \
   -X POST
   -H "Authorization: Bearer abcdef123456"
   -H "Content-Type: application/json"
+  -d '{
+    "onSuccessRedirectUrl": "https://www.example.com"
+  }'
 ```
+
+### Body Parameters
+
+| Parameter         | Type                              | Required | Description                                                   |
+| ----------------- | --------------------------------- | -------- | ------------------------------------------------------------- |
+| onSuccessRedirectUrl             | string                            | Optional | The URL to redirect to after the calendar account is connected. The domain must be whitelisted in your KalendMe account settings.              |
 
 > The above command returns JSON structured like this:
 
