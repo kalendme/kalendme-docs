@@ -33,10 +33,22 @@
         "order": 0,
         "question": "What's your phone number?"
       }
+    ],
+    "schedulingMode": "SOLO",
+    "schedulingConfig": null,
+    "participants": [
+      {
+        "userId": "112323321",
+        "role": "PARTICIPANT",
+        "active": true,
+        "weight": 1
+      }
     ]
   }
 }
 ```
+
+<aside class="notice">The <code>participants</code> array is only included in single-link GET responses.</aside>
 
 Links are the different types of events or rules that a user can be booked through. They have pre-defined parameters like duration or specific minimum notice times. They can be accessed by a user's `urlString` followed by the Link's `urlString` (example: `kalendme.com/john/quick-meeting`). Links are formed by the following fields.
 
@@ -58,6 +70,9 @@ Links are the different types of events or rules that a user can be booked throu
 | padding                  | [EventPadding](/#event-padding)         | Used to specify if an event needs time padding before and/or after to be scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.                              |
 | location                 | [EventLocation](/#event-location)       | See Special Models definitions, this defines the event's location.                                                                                                                                              |
 | incrementMinutesOverride | int                                     | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.                                       |
+| schedulingMode           | string                                  | The link's scheduling mode. One of: `SOLO`, `GROUP_ALL_HOSTS`, `ROUND_ROBIN`. See [Scheduling Mode](#scheduling-mode).                                                                                         |
+| schedulingConfig         | [SchedulingConfig](#scheduling-config-for-round-robin) | Round-robin configuration. Only applicable to ROUND_ROBIN links. `null` for other modes.                                                                                                           |
+| participants             | [LinkParticipant](#link-participant)[]   | Co-hosts assigned to this link. Only included in single-link GET responses.                                                                                                                                     |
 
 ## Create a Link
 
@@ -80,6 +95,7 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links" \
       "after": 10,
     },
     "incrementMinutesOverride": 60,
+    "schedulingMode": "SOLO",
     "customQuestions": [
       {
         "id": "3656475289d4aecd03804ec4d6045953", // An ID of your choosing to map to your system
@@ -121,7 +137,9 @@ curl "https://www.kalendme.com/api/v1/users/112323321/links" \
         "order": 0,
         "question": "What's your phone number?"
       }
-    ]
+    ],
+    "schedulingMode": "SOLO",
+    "schedulingConfig": null
   }
 }
 ```
@@ -146,6 +164,8 @@ This endpoint creates a new link for a user.
 | weekAvailability         | Optional | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
 | customQuestions          | Optional | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking through this link.                                                                                                                              |
 | incrementMinutesOverride | int      | Optional                                | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.                                       |
+| schedulingMode           | string   | Optional                                | The scheduling mode. Default: `SOLO`. See [Scheduling Mode](#scheduling-mode). GROUP_ALL_HOSTS and ROUND_ROBIN require Premium.                                                                                 |
+| schedulingConfig         | object   | Optional                                | Round-robin config. See [Scheduling Config](#scheduling-config-for-round-robin). Only applicable when schedulingMode is ROUND_ROBIN.                                                                             |
 
 ### URL Parameters
 
@@ -326,6 +346,8 @@ This endpoint updates a user's link.
 | weekAvailability         | Optional | [WeekAvailability](/#week-availability) | An object containing an override to the user's general avialability. A specific user link's week availability from Sunday [0] through Saturday [7] and each day's availability slots with a `start` and `end` times. |
 | customQuestions          | Optional | [CustomQuestion](/#custom-question)[]   | An array containing custom questions to ask user's when booking through this link.                                                                                                                                   |
 | incrementMinutesOverride | int      | Optional                                | Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.                                            |
+| schedulingMode           | string   | Optional                                | The scheduling mode. See [Scheduling Mode](#scheduling-mode). GROUP_ALL_HOSTS and ROUND_ROBIN require Premium.                                                                                                       |
+| schedulingConfig         | object   | Optional                                | Round-robin config. See [Scheduling Config](#scheduling-config-for-round-robin). Only applicable when schedulingMode is ROUND_ROBIN.                                                                                  |
 
 ### URL Parameters
 
@@ -384,3 +406,141 @@ This endpoint deletes a specific user link.
 | --------- | ------ | -------- | --------------------------------------- |
 | userId    | string | Required | The id of the user this link belong to. |
 | linkId    | string | Required | The id of the user link.                |
+
+## Link Participants
+
+### List Link Participants
+
+```shell
+curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants" \
+  -H "Authorization: Bearer abcdef123456"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "participants": [
+    {
+      "userId": "112323321",
+      "role": "PARTICIPANT",
+      "active": true,
+      "weight": 1
+    }
+  ]
+}
+```
+
+This endpoint retrieves all participants for a specific link.
+
+#### HTTP Request
+
+`GET https://www.kalendme.com/api/v1/users/<userId>/links/<linkId>/participants`
+
+#### URL Parameters
+
+| Parameter | Type   | Required | Description                             |
+| --------- | ------ | -------- | --------------------------------------- |
+| userId    | string | Required | The id of the user this link belong to. |
+| linkId    | string | Required | The id of the link.                     |
+
+### Add Participants
+
+```shell
+curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants" \
+  -X POST
+  -H "Authorization: Bearer abcdef123456"
+  -H "Content-Type: application/json"
+  -d '{
+    "participants": [
+      {
+        "userId": "998877665",
+        "role": "PARTICIPANT",
+        "weight": 1
+      }
+    ]
+  }'
+```
+
+This endpoint adds participants to a link.
+
+#### HTTP Request
+
+`POST https://www.kalendme.com/api/v1/users/<userId>/links/<linkId>/participants`
+
+#### Body Parameters
+
+| Parameter    | Type   | Required | Description                                                                                          |
+| ------------ | ------ | -------- | ---------------------------------------------------------------------------------------------------- |
+| participants | array  | Required | Array of participant objects with `userId` (required), `role` (optional), `active` (optional), `weight` (optional). |
+
+#### URL Parameters
+
+| Parameter | Type   | Required | Description                             |
+| --------- | ------ | -------- | --------------------------------------- |
+| userId    | string | Required | The id of the user this link belong to. |
+| linkId    | string | Required | The id of the link.                     |
+
+<aside class="notice">
+The link must have GROUP_ALL_HOSTS or ROUND_ROBIN scheduling mode (error 1053 if SOLO). All participant userIds must belong to the same organization (error 1054). Valid roles: VIEWER, PARTICIPANT, EDITOR (error 1056 if invalid). Upserts: if a userId is already a participant, their role/active/weight are updated.
+</aside>
+
+### Update a Participant
+
+```shell
+curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants/998877665" \
+  -X PATCH
+  -H "Authorization: Bearer abcdef123456"
+  -H "Content-Type: application/json"
+  -d '{
+    "role": "EDITOR",
+    "active": true,
+    "weight": 2
+  }'
+```
+
+This endpoint updates a specific participant on a link.
+
+#### HTTP Request
+
+`PATCH https://www.kalendme.com/api/v1/users/<userId>/links/<linkId>/participants/<participantUserId>`
+
+#### Body Parameters
+
+| Parameter | Type    | Required | Description                                          |
+| --------- | ------- | -------- | ---------------------------------------------------- |
+| role      | string  | Optional | `"VIEWER"`, `"PARTICIPANT"`, or `"EDITOR"`           |
+| active    | boolean | Optional | Whether this participant is active for scheduling    |
+| weight    | int     | Optional | Weighting factor for round-robin assignment          |
+
+#### URL Parameters
+
+| Parameter         | Type   | Required | Description                                  |
+| ----------------- | ------ | -------- | -------------------------------------------- |
+| userId            | string | Required | The id of the user this link belong to.      |
+| linkId            | string | Required | The id of the link.                          |
+| participantUserId | string | Required | The id of the participant user to update.    |
+
+### Remove a Participant
+
+```shell
+curl "https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants/998877665" \
+  -X DELETE
+  -H "Authorization: Bearer abcdef123456"
+```
+
+This endpoint removes a participant from a link.
+
+#### HTTP Request
+
+`DELETE https://www.kalendme.com/api/v1/users/<userId>/links/<linkId>/participants/<participantUserId>`
+
+#### URL Parameters
+
+| Parameter         | Type   | Required | Description                                  |
+| ----------------- | ------ | -------- | -------------------------------------------- |
+| userId            | string | Required | The id of the user this link belong to.      |
+| linkId            | string | Required | The id of the link.                          |
+| participantUserId | string | Required | The id of the participant user to remove.    |
+
+<aside class="notice">Cannot remove the link owner from participants (error 1055).</aside>

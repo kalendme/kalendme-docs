@@ -62,3 +62,51 @@ Used to configure an event's location, can be used to pre-create links with thes
 ```
 
 Used to specify if an event needs time padding before and/or after to be scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.
+
+## Scheduling Config (for Round-Robin)
+
+```json
+{
+  "strategy": "least_load",
+  "cooldownMinutes": 15,
+  "lookAheadDays": 7
+}
+```
+
+Configuration object for round-robin link assignment. Only applicable when a link's `schedulingMode` is `ROUND_ROBIN`.
+
+| Field           | Type   | Description                                                                                           |
+| --------------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| strategy        | string | Required. `"cyclic"` (round-robin rotation) or `"least_load"` (fewest upcoming bookings).            |
+| cooldownMinutes | int    | Optional. Minimum gap in minutes between assignments to the same host. Default: 0.                    |
+| lookAheadDays   | int    | Optional. Window in days for counting upcoming bookings (least_load strategy). Default: 14.           |
+
+## Scheduling Mode
+
+| Value           | Description                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------- |
+| SOLO            | Standard 1:1 scheduling — one host per booking. Default.                                                    |
+| GROUP_ALL_HOSTS | All co-hosts required — creates one event per host. Rejects booking if any host has a conflict (409).       |
+| ROUND_ROBIN     | Auto-assign — selects one host per booking via the configured strategy.                                     |
+
+<aside class="notice">GROUP_ALL_HOSTS and ROUND_ROBIN require a Premium subscription.</aside>
+
+## Link Participant
+
+```json
+{
+  "userId": "112323321",
+  "role": "PARTICIPANT",
+  "active": true,
+  "weight": 1
+}
+```
+
+Represents a co-host assigned to a group scheduling link.
+
+| Field  | Type    | Description                                                    |
+| ------ | ------- | -------------------------------------------------------------- |
+| userId | string  | The user's ID                                                  |
+| role   | string  | `"VIEWER"`, `"PARTICIPANT"`, or `"EDITOR"`                     |
+| active | boolean | Whether this participant is active for scheduling              |
+| weight | int     | Weighting factor for round-robin assignment                    |
