@@ -110,3 +110,52 @@ Represents a co-host assigned to a group scheduling link.
 | role   | string  | `"VIEWER"`, `"PARTICIPANT"`, or `"EDITOR"`                     |
 | active | boolean | Whether this participant is active for scheduling              |
 | weight | int     | Weighting factor for round-robin assignment                    |
+
+## Resource ACL
+
+```json
+{ "mode": "public" }
+```
+
+```json
+{ "mode": "domain", "domains": ["acme.com", "example.org"] }
+```
+
+```json
+{ "mode": "allowlist", "emails": ["alice@acme.com", "bob@acme.com"] }
+```
+
+```json
+{ "mode": "org_members" }
+```
+
+Rule that governs which `organizerEmail` values are allowed when booking a [resource](/#resources). Every resource has exactly one ACL; the shape depends on `mode`.
+
+| Mode          | Extra fields                                                       | Description                                                                                                             |
+| ------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| `public`      | none                                                               | Anyone with a valid API key (or the public page) can book.                                                              |
+| `domain`      | `domains` — non-empty array of strings                             | The organizer's email must end in `@<domain>` for one of the listed domains (case-insensitive).                         |
+| `allowlist`   | `emails` — non-empty array of email strings                        | The organizer's email must be an exact match (case-insensitive) in the list.                                            |
+| `org_members` | none                                                               | Only API keys belonging to the resource's own organization can book (useful for internal rooms).                        |
+
+<aside class="notice">Any other key besides those listed above will cause the ACL to be rejected with error <code>1063</code>.</aside>
+
+## Resource Metadata
+
+```json
+{
+  "capacity": 10,
+  "floor": 4,
+  "building": "HQ",
+  "equipment": ["projector", "whiteboard"]
+}
+```
+
+Optional structured metadata attached to a [resource](/#resources). All fields are optional, and only the keys listed below are accepted — any other key fails validation (error `1064`).
+
+| Field     | Type       | Description                                                            |
+| --------- | ---------- | ---------------------------------------------------------------------- |
+| capacity  | int        | Number of people the resource can hold. Must be `>= 0`.                |
+| floor     | int        | Floor number (can be negative for basement levels).                    |
+| building  | string     | Building name or code.                                                 |
+| equipment | string[]   | List of equipment / features (e.g. `"projector"`, `"whiteboard"`).     |

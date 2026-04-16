@@ -17,6 +17,7 @@ includes:
   - user-links
   - availability
   - calendar-events
+  - resources
   - webhooks
   - time-zones
   - bulk-operations
