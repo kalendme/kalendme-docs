@@ -409,6 +409,9 @@
                   <li>
                     <a href="#delete-a-specific-user-link" class="toc-h2 toc-link" data-title="Delete a Specific User Link">Delete a Specific User Link</a>
                   </li>
+                  <li>
+                    <a href="#link-participants" class="toc-h2 toc-link" data-title="Link Participants">Link Participants</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -439,6 +442,59 @@
                   </li>
                   <li>
                     <a href="#update-a-calendar-event" class="toc-h2 toc-link" data-title="Update a Calendar Event">Update a Calendar Event</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#resource-resource" class="toc-h2 toc-link" data-title="Resource Resource">Resource Resource</a>
+                  </li>
+                  <li>
+                    <a href="#resource-booking-resource" class="toc-h2 toc-link" data-title="Resource Booking Resource">Resource Booking Resource</a>
+                  </li>
+                  <li>
+                    <a href="#list-resources" class="toc-h2 toc-link" data-title="List Resources">List Resources</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-resource" class="toc-h2 toc-link" data-title="Create a Resource">Create a Resource</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-resource" class="toc-h2 toc-link" data-title="Get a Resource">Get a Resource</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-resource" class="toc-h2 toc-link" data-title="Update a Resource">Update a Resource</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-resource" class="toc-h2 toc-link" data-title="Delete a Resource">Delete a Resource</a>
+                  </li>
+                  <li>
+                    <a href="#regenerate-feed-token" class="toc-h2 toc-link" data-title="Regenerate Feed Token">Regenerate Feed Token</a>
+                  </li>
+                  <li>
+                    <a href="#get-availability-for-a-resource" class="toc-h2 toc-link" data-title="Get Availability for a Resource">Get Availability for a Resource</a>
+                  </li>
+                  <li>
+                    <a href="#list-resource-bookings" class="toc-h2 toc-link" data-title="List Resource Bookings">List Resource Bookings</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-resource-booking" class="toc-h2 toc-link" data-title="Create a Resource Booking">Create a Resource Booking</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-resource-booking" class="toc-h2 toc-link" data-title="Get a Resource Booking">Get a Resource Booking</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-a-resource-booking" class="toc-h2 toc-link" data-title="Cancel a Resource Booking">Cancel a Resource Booking</a>
+                  </li>
+                  <li>
+                    <a href="#find-available-resources" class="toc-h2 toc-link" data-title="Find Available Resources">Find Available Resources</a>
+                  </li>
+                  <li>
+                    <a href="#public-organization-resources" class="toc-h2 toc-link" data-title="Public Organization Resources">Public Organization Resources</a>
+                  </li>
+                  <li>
+                    <a href="#resource-ics-feed" class="toc-h2 toc-link" data-title="Resource ICS Feed">Resource ICS Feed</a>
                   </li>
               </ul>
           </li>
@@ -519,6 +575,21 @@
                   </li>
                   <li>
                     <a href="#event-padding" class="toc-h2 toc-link" data-title="Event Padding">Event Padding</a>
+                  </li>
+                  <li>
+                    <a href="#scheduling-config-for-round-robin" class="toc-h2 toc-link" data-title="Scheduling Config (for Round-Robin)">Scheduling Config (for Round-Robin)</a>
+                  </li>
+                  <li>
+                    <a href="#scheduling-mode" class="toc-h2 toc-link" data-title="Scheduling Mode">Scheduling Mode</a>
+                  </li>
+                  <li>
+                    <a href="#link-participant" class="toc-h2 toc-link" data-title="Link Participant">Link Participant</a>
+                  </li>
+                  <li>
+                    <a href="#resource-acl" class="toc-h2 toc-link" data-title="Resource ACL">Resource ACL</a>
+                  </li>
+                  <li>
+                    <a href="#resource-metadata" class="toc-h2 toc-link" data-title="Resource Metadata">Resource Metadata</a>
                   </li>
               </ul>
           </li>
@@ -1483,10 +1554,22 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
         </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
       </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"schedulingMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"schedulingConfig"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTICIPANT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<aside class="notice">The <code>participants</code> array is only included in single-link GET responses.</aside>
+
 <p>Links are the different types of events or rules that a user can be booked through. They have pre-defined parameters like duration or specific minimum notice times. They can be accessed by a user&#39;s <code>urlString</code> followed by the Link&#39;s <code>urlString</code> (example: <code>kalendme.com/john/quick-meeting</code>). Links are formed by the following fields.</p>
 
 <table><thead>
@@ -1576,6 +1659,21 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>int</td>
 <td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
 </tr>
+<tr>
+<td>schedulingMode</td>
+<td>string</td>
+<td>The link&#39;s scheduling mode. One of: <code>SOLO</code>, <code>GROUP_ALL_HOSTS</code>, <code>ROUND_ROBIN</code>. See <a href="#scheduling-mode">Scheduling Mode</a>.</td>
+</tr>
+<tr>
+<td>schedulingConfig</td>
+<td><a href="#scheduling-config-for-round-robin">SchedulingConfig</a></td>
+<td>Round-robin configuration. Only applicable to ROUND_ROBIN links. <code>null</code> for other modes.</td>
+</tr>
+<tr>
+<td>participants</td>
+<td><a href="#link-participant">LinkParticipant</a>[]</td>
+<td>Co-hosts assigned to this link. Only included in single-link GET responses.</td>
+</tr>
 </tbody></table>
 <h2 id='create-a-link'>Create a Link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/links"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST
@@ -1595,6 +1693,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
       "after": 10,
     },
     "incrementMinutesOverride": 60,
+    "schedulingMode": "SOLO",
     "customQuestions": [
       {
         "id": "3656475289d4aecd03804ec4d6045953", // An ID of your choosing to map to your system
@@ -1635,7 +1734,9 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
         </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's your phone number?"</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"schedulingMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"schedulingConfig"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1710,6 +1811,18 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>int</td>
 <td>Optional</td>
 <td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
+</tr>
+<tr>
+<td>schedulingMode</td>
+<td>string</td>
+<td>Optional</td>
+<td>The scheduling mode. Default: <code>SOLO</code>. See <a href="#scheduling-mode">Scheduling Mode</a>. GROUP_ALL_HOSTS and ROUND_ROBIN require Premium.</td>
+</tr>
+<tr>
+<td>schedulingConfig</td>
+<td>object</td>
+<td>Optional</td>
+<td>Round-robin config. See <a href="#scheduling-config-for-round-robin">Scheduling Config</a>. Only applicable when schedulingMode is ROUND_ROBIN.</td>
 </tr>
 </tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
@@ -1957,6 +2070,18 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>Optional</td>
 <td>Use this parameter to force an increment between events in minutes. For example if you want to force only events to be able to be booked every hour only, you pass in 60.</td>
 </tr>
+<tr>
+<td>schedulingMode</td>
+<td>string</td>
+<td>Optional</td>
+<td>The scheduling mode. See <a href="#scheduling-mode">Scheduling Mode</a>. GROUP_ALL_HOSTS and ROUND_ROBIN require Premium.</td>
+</tr>
+<tr>
+<td>schedulingConfig</td>
+<td>object</td>
+<td>Optional</td>
+<td>Round-robin config. See <a href="#scheduling-config-for-round-robin">Scheduling Config</a>. Only applicable when schedulingMode is ROUND_ROBIN.</td>
+</tr>
 </tbody></table>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
@@ -2038,6 +2163,213 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The id of the user link.</td>
 </tr>
 </tbody></table>
+<h2 id='link-participants'>Link Participants</h2><h3 id='list-link-participants'>List Link Participants</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTICIPANT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all participants for a specific link.</p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>GET https://www.kalendme.com/api/v1/users/&lt;userId&gt;/links/&lt;linkId&gt;/participants</code></p>
+<h4 id='url-parameters-6'>URL Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this link belong to.</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the link.</td>
+</tr>
+</tbody></table>
+<h3 id='add-participants'>Add Participants</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "participants": [
+      {
+        "userId": "998877665",
+        "role": "PARTICIPANT",
+        "weight": 1
+      }
+    ]
+  }'</span>
+</code></pre></div>
+<p>This endpoint adds participants to a link.</p>
+<h4 id='http-request-7'>HTTP Request</h4>
+<p><code>POST https://www.kalendme.com/api/v1/users/&lt;userId&gt;/links/&lt;linkId&gt;/participants</code></p>
+<h4 id='body-parameters-3'>Body Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>participants</td>
+<td>array</td>
+<td>Required</td>
+<td>Array of participant objects with <code>userId</code> (required), <code>role</code> (optional), <code>active</code> (optional), <code>weight</code> (optional).</td>
+</tr>
+</tbody></table>
+<h4 id='url-parameters-7'>URL Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this link belong to.</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the link.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+The link must have GROUP_ALL_HOSTS or ROUND_ROBIN scheduling mode (error 1053 if SOLO). All participant userIds must belong to the same organization (error 1054). Valid roles: VIEWER, PARTICIPANT, EDITOR (error 1056 if invalid). Upserts: if a userId is already a participant, their role/active/weight are updated.
+</aside>
+<h3 id='update-a-participant'>Update a Participant</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants/998877665"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "role": "EDITOR",
+    "active": true,
+    "weight": 2
+  }'</span>
+</code></pre></div>
+<p>This endpoint updates a specific participant on a link.</p>
+<h4 id='http-request-8'>HTTP Request</h4>
+<p><code>PATCH https://www.kalendme.com/api/v1/users/&lt;userId&gt;/links/&lt;linkId&gt;/participants/&lt;participantUserId&gt;</code></p>
+<h4 id='body-parameters-4'>Body Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>role</td>
+<td>string</td>
+<td>Optional</td>
+<td><code>&quot;VIEWER&quot;</code>, <code>&quot;PARTICIPANT&quot;</code>, or <code>&quot;EDITOR&quot;</code></td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Whether this participant is active for scheduling</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>int</td>
+<td>Optional</td>
+<td>Weighting factor for round-robin assignment</td>
+</tr>
+</tbody></table>
+<h4 id='url-parameters-8'>URL Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this link belong to.</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the link.</td>
+</tr>
+<tr>
+<td>participantUserId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the participant user to update.</td>
+</tr>
+</tbody></table>
+<h3 id='remove-a-participant'>Remove a Participant</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/112323321/links/123213232/participants/998877665"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<p>This endpoint removes a participant from a link.</p>
+<h4 id='http-request-9'>HTTP Request</h4>
+<p><code>DELETE https://www.kalendme.com/api/v1/users/&lt;userId&gt;/links/&lt;linkId&gt;/participants/&lt;participantUserId&gt;</code></p>
+<h4 id='url-parameters-9'>URL Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the user this link belong to.</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the link.</td>
+</tr>
+<tr>
+<td>participantUserId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the participant user to remove.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">Cannot remove the link owner from participants (error 1055).</aside>
 <h1 id='user-availability'>User Availability</h1>
 <p>General booking endpoints to consult user&#39;s availaibilities.</p>
 <h2 id='get-a-user-39-s-availability'>Get a User&#39;s Availability</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123/availability?month=10&amp;year=2021&amp;durationMinutes=30"</span> <span class="se">\</span>
@@ -2740,6 +3072,1093 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The ID of the calendar event to update</td>
 </tr>
 </tbody></table>
+<h1 id='resources'>Resources</h1>
+<p>Resources are shared organization assets (e.g. meeting rooms, equipment) that can be booked directly by API consumers, by email (with the generated <code>emailAlias</code>), or through an optional public booking page. Each resource has its own weekly availability window and an ACL that controls who can book it.</p>
+<h2 id='resource-resource'>Resource Resource</h2>
+<blockquote>
+<p>An example resource model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_11223344"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-seat boardroom on the 4th floor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_members"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"building"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HQ"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"projector"</span><span class="p">,</span><span class="w"> </span><span class="s2">"whiteboard"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isPubliclyListed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The resource&#39;s id</td>
+</tr>
+<tr>
+<td>organizationId</td>
+<td>string</td>
+<td>The organization the resource belongs to</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Human-readable resource name (1–50 chars)</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string \</td>
+<td>null</td>
+</tr>
+<tr>
+<td>emailAlias</td>
+<td>string</td>
+<td>Local-part of the resource&#39;s email address. Bookings can be created by inviting <code>&lt;emailAlias&gt;@resources.kalendme.com</code> as a guest on a calendar event.</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>string</td>
+<td>IANA timezone used for interpreting <code>weekAvailability</code></td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>Weekly availability windows (0=Sunday through 6=Saturday), in the resource&#39;s local time</td>
+</tr>
+<tr>
+<td>acl</td>
+<td><a href="/#resource-acl">ResourceACL</a></td>
+<td>Rule controlling who can book this resource</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="/#resource-metadata">ResourceMetadata</a> \</td>
+<td>null</td>
+</tr>
+<tr>
+<td>isEnabled</td>
+<td>boolean</td>
+<td>When <code>false</code>, new bookings are rejected with HTTP 409</td>
+</tr>
+<tr>
+<td>isPubliclyListed</td>
+<td>boolean</td>
+<td>When <code>true</code>, the resource appears on the organization&#39;s public booking page</td>
+</tr>
+<tr>
+<td>feedUrl</td>
+<td>string \</td>
+<td>null</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s creation timestamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The resource&#39;s last updated timestamp</td>
+</tr>
+</tbody></table>
+<h2 id='resource-booking-resource'>Resource Booking Resource</h2>
+<blockquote>
+<p>An example resource booking model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"booking"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb_7c21e0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@acme.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly planning"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q2 strategy review"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713441600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713445200000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T14:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T15:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bookingSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The booking&#39;s id</td>
+</tr>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>The id of the resource this booking belongs to</td>
+</tr>
+<tr>
+<td>organizerEmail</td>
+<td>string</td>
+<td>Email of the person booking the resource</td>
+</tr>
+<tr>
+<td>organizerName</td>
+<td>string</td>
+<td>Name of the person booking the resource</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Event title</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string \</td>
+<td>null</td>
+</tr>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Start time in unix milliseconds</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>End time in unix milliseconds</td>
+</tr>
+<tr>
+<td>startTimeUtc</td>
+<td>timestamp</td>
+<td>Start time as an ISO 8601 UTC string</td>
+</tr>
+<tr>
+<td>endTimeUtc</td>
+<td>timestamp</td>
+<td>End time as an ISO 8601 UTC string</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td><code>&quot;CONFIRMED&quot;</code> or <code>&quot;CANCELLED&quot;</code></td>
+</tr>
+<tr>
+<td>bookingSource</td>
+<td>string</td>
+<td><code>&quot;API&quot;</code>, <code>&quot;EMAIL&quot;</code>, or <code>&quot;PUBLIC_PAGE&quot;</code> — how the booking was created</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>timestamp</td>
+<td>The booking&#39;s creation timestamp</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>timestamp</td>
+<td>The booking&#39;s last updated timestamp</td>
+</tr>
+</tbody></table>
+<h2 id='list-resources'>List Resources</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_11223344"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-seat boardroom on the 4th floor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_members"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"isEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isPubliclyListed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves all resources in the authenticated API key&#39;s organization.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/resources</code></p>
+<h2 id='create-a-resource'>Create a Resource</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "name": "Boardroom A",
+    "description": "10-seat boardroom on the 4th floor",
+    "timezone": "America/Sao_Paulo",
+    "weekAvailability": {
+      "0": [],
+      "1": [{ "start": "09:00", "end": "18:00" }],
+      "2": [{ "start": "09:00", "end": "18:00" }],
+      "3": [{ "start": "09:00", "end": "18:00" }],
+      "4": [{ "start": "09:00", "end": "18:00" }],
+      "5": [{ "start": "09:00", "end": "18:00" }],
+      "6": []
+    },
+    "acl": { "mode": "org_members" },
+    "metadata": { "capacity": 10, "floor": 4, "building": "HQ" },
+    "emailAlias": "boardroom-a"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_11223344"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-seat boardroom on the 4th floor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="nl">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_members"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nl">"building"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HQ"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isPubliclyListed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Creates a new resource in the organization. Each resource consumes a seat against the organization&#39;s plan, so creation is rejected with HTTP 403 (error 1065) if the seat limit is reached.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/resources</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Required</td>
+<td>Resource name (1–50 characters).</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>Free-form description.</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>string</td>
+<td>Required</td>
+<td>IANA timezone used for interpreting <code>weekAvailability</code>.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>Required</td>
+<td>Weekly booking windows, keyed <code>0</code> (Sunday) through <code>6</code> (Saturday), each a list of <code>{ start, end }</code> objects in 24-hour <code>HH:MM</code>. Use <code>&quot;24:00&quot;</code> for end-of-day.</td>
+</tr>
+<tr>
+<td>acl</td>
+<td><a href="/#resource-acl">ResourceACL</a></td>
+<td>Optional</td>
+<td>Defaults to <code>{ &quot;mode&quot;: &quot;public&quot; }</code> if omitted.</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="/#resource-metadata">ResourceMetadata</a></td>
+<td>Optional</td>
+<td>Structured metadata (capacity, floor, building, equipment).</td>
+</tr>
+<tr>
+<td>emailAlias</td>
+<td>string</td>
+<td>Optional</td>
+<td>Local-part of the booking email (<code>[a-z0-9-]{1,36}</code>). If omitted, a random alias is generated.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">If <code>emailAlias</code> collides with an existing resource in any organization, the request fails with HTTP 409.</aside>
+<h2 id='get-a-resource'>Get a Resource</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_11223344"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-seat boardroom on the 4th floor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_members"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isPubliclyListed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a single resource owned by the authenticated organization.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-resource'>Update a Resource</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "description": "10-seat boardroom with video conferencing",
+    "acl": { "mode": "domain", "domains": ["acme.com"] },
+    "isEnabled": true
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_11223344"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-seat boardroom with video conferencing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"domain"</span><span class="p">,</span><span class="w"> </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"acme.com"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isPubliclyListed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-11T09:15:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Partially updates a resource. Only fields present in the body are changed.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Optional</td>
+<td>Resource name (1–50 characters).</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>Free-form description. Pass an empty string to clear.</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>string</td>
+<td>Optional</td>
+<td>IANA timezone.</td>
+</tr>
+<tr>
+<td>weekAvailability</td>
+<td><a href="/#week-availability">WeekAvailability</a></td>
+<td>Optional</td>
+<td>Replaces the entire weekly availability.</td>
+</tr>
+<tr>
+<td>acl</td>
+<td><a href="/#resource-acl">ResourceACL</a></td>
+<td>Optional</td>
+<td>Replaces the ACL.</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="/#resource-metadata">ResourceMetadata</a></td>
+<td>Optional</td>
+<td>Replaces the metadata. Pass <code>null</code> to clear.</td>
+</tr>
+<tr>
+<td>isEnabled</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Toggle whether the resource accepts new bookings.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-resource'>Delete a Resource</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Soft-deletes the resource. Its <code>emailAlias</code> is released and the resource disappears from list endpoints. Existing bookings remain in the database but cannot be re-fetched through v1.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+<h2 id='regenerate-feed-token'>Regenerate Feed Token</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/9a1c...ef02.ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-11T10:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Rotates the resource&#39;s ICS <code>feedToken</code>, invalidating the previous <code>feedUrl</code>. The full resource (with the new <code>feedUrl</code>) is returned.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">Any subscribers to the old feed URL will stop receiving updates.</aside>
+<h2 id='get-availability-for-a-resource'>Get Availability for a Resource</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c/availability?startTimestamp=1713398400000&amp;endTimestamp=1713657600000&amp;timeZone=America/Sao_Paulo"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"availableSlots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T09:00:00.000-03:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T11:00:00.000-03:00"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T12:00:00.000-03:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T18:00:00.000-03:00"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Computes the free slots for a resource within a time range by subtracting existing bookings from the resource&#39;s weekly availability. Slots are returned in the requested <code>timeZone</code> (falls back to the resource&#39;s own timezone if missing or invalid).</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;/availability</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>Start of the window in unix milliseconds.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>End of the window in unix milliseconds. Must be after <code>startTimestamp</code>.</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>string</td>
+<td>Optional</td>
+<td>IANA timezone to emit ISO strings in. Defaults to the resource&#39;s <code>timezone</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+<h2 id='list-resource-bookings'>List Resource Bookings</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c/bookings?startTimestamp=1713398400000&amp;endTimestamp=1714003200000"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb_7c21e0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizerEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@acme.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly planning"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713441600000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"endTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713445200000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T14:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"endTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T15:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bookingSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Lists bookings for a resource. When both timestamps are provided, only bookings overlapping the <code>[startTimestamp, endTimestamp]</code> range are returned. If neither is provided, all bookings for the resource are returned.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;/bookings</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Optional</td>
+<td>Start of the window in unix milliseconds.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Optional</td>
+<td>End of the window in unix milliseconds.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-resource-booking'>Create a Resource Booking</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c/bookings"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "startTimestamp": 1713441600000,
+    "endTimestamp": 1713445200000,
+    "organizerEmail": "alice@acme.com",
+    "organizerName": "Alice Smith",
+    "title": "Quarterly planning",
+    "description": "Q2 strategy review"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"booking"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb_7c21e0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@acme.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly planning"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q2 strategy review"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713441600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713445200000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T14:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T15:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bookingSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Books the resource for the given time window. The endpoint enforces:</p>
+
+<ul>
+<li>The resource is enabled (<code>isEnabled: true</code>) — otherwise <code>1070</code>.</li>
+<li>The <code>organizerEmail</code> is authorized by the resource&#39;s <a href="/#resource-acl">ACL</a> — otherwise <code>1071</code>.</li>
+<li>The window fits within the resource&#39;s <code>weekAvailability</code> — otherwise <code>1069</code>.</li>
+<li>The window does not collide with an existing booking — otherwise <code>1068</code>. Conflict detection uses a serialized transaction to make concurrent bookings safe.</li>
+</ul>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;/bookings</code></p>
+<h3 id='body-parameters-3'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>Booking start in unix milliseconds.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>Booking end in unix milliseconds. Must be after start.</td>
+</tr>
+<tr>
+<td>organizerEmail</td>
+<td>string</td>
+<td>Required</td>
+<td>Email of the person booking the resource. Validated by ACL.</td>
+</tr>
+<tr>
+<td>organizerName</td>
+<td>string</td>
+<td>Required</td>
+<td>Name of the person booking the resource.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Required</td>
+<td>Event title.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Optional</td>
+<td>Free-form description.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-resource-booking'>Get a Resource Booking</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c/bookings/rb_7c21e0"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"booking"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb_7c21e0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@acme.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly planning"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q2 strategy review"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713441600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713445200000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T14:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T15:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRMED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bookingSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;/bookings/&lt;bookingId&gt;</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+<tr>
+<td>bookingId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the booking.</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-a-resource-booking'>Cancel a Resource Booking</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/resources/r_9f8a1c/bookings/rb_7c21e0"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"booking"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb_7c21e0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@acme.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"organizerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly planning"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q2 strategy review"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713441600000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1713445200000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T14:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T15:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bookingSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-11T09:45:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cancels a booking by setting <code>status</code> to <code>CANCELLED</code>. Cancelled bookings no longer block conflicting windows.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>DELETE https://www.kalendme.com/api/v1/resources/&lt;resourceId&gt;/bookings/&lt;bookingId&gt;</code></p>
+<h3 id='url-parameters-9'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+<tr>
+<td>bookingId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the booking.</td>
+</tr>
+</tbody></table>
+<h2 id='find-available-resources'>Find Available Resources</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/organizations/resources/available?startTimestamp=1713441600000&amp;endTimestamp=1713445200000"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_11223344"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_members"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"isEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isPubliclyListed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-01T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-10T08:30:00.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns every enabled resource in the organization that has no booking conflicts <strong>and</strong> whose <code>weekAvailability</code> fully covers the requested window. Useful for &quot;find a room&quot; UIs.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/organizations/resources/available</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>Start of the desired window in unix milliseconds.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>End of the desired window in unix milliseconds. Must be after start.</td>
+</tr>
+</tbody></table>
+<h2 id='public-organization-resources'>Public Organization Resources</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/public/organizations/acme/resources?startTimestamp=1713398400000&amp;endTimestamp=1713657600000&amp;token=5f4d...abc1"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acme"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boardroom A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-seat boardroom on the 4th floor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"emailAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boardroom-a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Sao_Paulo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekAvailability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w"> </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18:00"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb_7c21e0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r_9f8a1c"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T14:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"endTimeUtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-18T15:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly planning"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizerEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@acme.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Public, unauthenticated endpoint that backs an organization&#39;s public booking page. Returns every resource the organization has marked <code>isPubliclyListed: true</code> and any bookings that overlap the requested window (up to 7 days).</p>
+
+<p>When the organization has enabled a <code>publicPageToken</code>, the <code>token</code> query parameter must match exactly or the request fails with error <code>1079</code>. If the organization&#39;s <code>publicShowBookingDetails</code> setting is <code>false</code>, the <code>title</code>, <code>organizerName</code>, and <code>organizerEmail</code> fields are omitted from each booking.</p>
+
+<aside class="notice">This endpoint is "Public" — no <code>Authorization</code> header is required, but public-page access must be enabled on the organization and the request must match the slug/token configured by the admin.</aside>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/public/organizations/&lt;slug&gt;/resources</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>Start of the desired window in unix milliseconds.</td>
+</tr>
+<tr>
+<td>endTimestamp</td>
+<td>int</td>
+<td>Required</td>
+<td>End of the desired window in unix milliseconds. Must be after start and within 7 days of it.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>Conditional</td>
+<td>Required if the organization has configured a <code>publicPageToken</code>; omit otherwise.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>slug</td>
+<td>string</td>
+<td>Required</td>
+<td>The organization&#39;s public slug.</td>
+</tr>
+</tbody></table>
+<h2 id='resource-ics-feed'>Resource ICS Feed</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/resources/r_9f8a1c/feed/5f4d...abc1.ics"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns an ICS calendar document:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//KalendMe//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Boardroom A
+BEGIN:VEVENT
+UID:booking-rb_7c21e0@kalendme.com
+DTSTAMP:20260410T083000Z
+DTSTART:20260418T140000Z
+DTEND:20260418T150000Z
+SUMMARY:Quarterly planning
+DESCRIPTION:Alice Smith (alice@acme.com)
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
+</code></pre></div>
+<p>Public, unauthenticated ICS feed subscribed to from Google Calendar, Outlook, Apple Calendar, etc. Authentication is by bearer-equivalent secret: the <code>feedToken</code> in the URL path. Returns every booking from 30 days in the past through 90 days in the future.</p>
+
+<aside class="warning">Anyone with the feed URL can read bookings. Rotate via <a href="#regenerate-feed-token">Regenerate Feed Token</a> to invalidate a leaked URL.</aside>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/resources/&lt;resourceId&gt;/feed/&lt;feedToken&gt;.ics</code></p>
+
+<p>The <code>.ics</code> suffix is optional but recommended — most calendar clients require it to recognize the response.</p>
+<h3 id='url-parameters-11'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resourceId</td>
+<td>string</td>
+<td>Required</td>
+<td>The id of the resource.</td>
+</tr>
+<tr>
+<td>feedToken</td>
+<td>string</td>
+<td>Required</td>
+<td>The secret feed token generated on resource creation/rotation.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<p><code>Content-Type: text/calendar; charset=utf-8</code> with an RFC 5545 iCalendar document. Cancelled bookings are not included.</p>
 <h1 id='webhooks'>Webhooks</h1><h2 id='overview'>Overview</h2>
 <p>Webhooks are used to keep your system up to date with KalendMe&#39;s information in real-time. You can configure which system events from KalendMe you want to subscribe to so that you can take action on your side with the information provided.</p>
 
@@ -3499,6 +4918,170 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Used to specify if an event needs time padding before and/or after to be scheduled. Must be numbers in minutes of the padding needed and values can be anywhere between 0 and 180.</p>
+<h2 id='scheduling-config-for-round-robin'>Scheduling Config (for Round-Robin)</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"least_load"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cooldownMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lookAheadDays"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Configuration object for round-robin link assignment. Only applicable when a link&#39;s <code>schedulingMode</code> is <code>ROUND_ROBIN</code>.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>strategy</td>
+<td>string</td>
+<td>Required. <code>&quot;cyclic&quot;</code> (round-robin rotation) or <code>&quot;least_load&quot;</code> (fewest upcoming bookings).</td>
+</tr>
+<tr>
+<td>cooldownMinutes</td>
+<td>int</td>
+<td>Optional. Minimum gap in minutes between assignments to the same host. Default: 0.</td>
+</tr>
+<tr>
+<td>lookAheadDays</td>
+<td>int</td>
+<td>Optional. Window in days for counting upcoming bookings (least_load strategy). Default: 14.</td>
+</tr>
+</tbody></table>
+<h2 id='scheduling-mode'>Scheduling Mode</h2>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SOLO</td>
+<td>Standard 1:1 scheduling — one host per booking. Default.</td>
+</tr>
+<tr>
+<td>GROUP_ALL_HOSTS</td>
+<td>All co-hosts required — creates one event per host. Rejects booking if any host has a conflict (409).</td>
+</tr>
+<tr>
+<td>ROUND_ROBIN</td>
+<td>Auto-assign — selects one host per booking via the configured strategy.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">GROUP_ALL_HOSTS and ROUND_ROBIN require a Premium subscription.</aside>
+<h2 id='link-participant'>Link Participant</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"112323321"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTICIPANT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Represents a co-host assigned to a group scheduling link.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>The user&#39;s ID</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td><code>&quot;VIEWER&quot;</code>, <code>&quot;PARTICIPANT&quot;</code>, or <code>&quot;EDITOR&quot;</code></td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Whether this participant is active for scheduling</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>int</td>
+<td>Weighting factor for round-robin assignment</td>
+</tr>
+</tbody></table>
+<h2 id='resource-acl'>Resource ACL</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"domain"</span><span class="p">,</span><span class="w"> </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"acme.com"</span><span class="p">,</span><span class="w"> </span><span class="s2">"example.org"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allowlist"</span><span class="p">,</span><span class="w"> </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"alice@acme.com"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bob@acme.com"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_members"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Rule that governs which <code>organizerEmail</code> values are allowed when booking a <a href="/#resources">resource</a>. Every resource has exactly one ACL; the shape depends on <code>mode</code>.</p>
+
+<table><thead>
+<tr>
+<th>Mode</th>
+<th>Extra fields</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>public</code></td>
+<td>none</td>
+<td>Anyone with a valid API key (or the public page) can book.</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td><code>domains</code> — non-empty array of strings</td>
+<td>The organizer&#39;s email must end in <code>@&lt;domain&gt;</code> for one of the listed domains (case-insensitive).</td>
+</tr>
+<tr>
+<td><code>allowlist</code></td>
+<td><code>emails</code> — non-empty array of email strings</td>
+<td>The organizer&#39;s email must be an exact match (case-insensitive) in the list.</td>
+</tr>
+<tr>
+<td><code>org_members</code></td>
+<td>none</td>
+<td>Only API keys belonging to the resource&#39;s own organization can book (useful for internal rooms).</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">Any other key besides those listed above will cause the ACL to be rejected with error <code>1063</code>.</aside>
+<h2 id='resource-metadata'>Resource Metadata</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"building"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HQ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"projector"</span><span class="p">,</span><span class="w"> </span><span class="s2">"whiteboard"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Optional structured metadata attached to a <a href="/#resources">resource</a>. All fields are optional, and only the keys listed below are accepted — any other key fails validation (error <code>1064</code>).</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>capacity</td>
+<td>int</td>
+<td>Number of people the resource can hold. Must be <code>&gt;= 0</code>.</td>
+</tr>
+<tr>
+<td>floor</td>
+<td>int</td>
+<td>Floor number (can be negative for basement levels).</td>
+</tr>
+<tr>
+<td>building</td>
+<td>string</td>
+<td>Building name or code.</td>
+</tr>
+<tr>
+<td>equipment</td>
+<td>string[]</td>
+<td>List of equipment / features (e.g. <code>&quot;projector&quot;</code>, <code>&quot;whiteboard&quot;</code>).</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>KalendMe&#39;s API can reply with the following error codes:</p>
 
@@ -3767,6 +5350,131 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 <tr>
 <td>1051</td>
 <td>The specified <code>onSuccessRedirectUrl</code> is invalid. It must be a valid URL starting with http/https and be in the allowed in the organization settings safe redirect domains list.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1052</td>
+<td>The specified <code>schedulingConfig</code> is invalid. Must be an object with <code>strategy</code> (&#39;cyclic&#39; or &#39;least_load&#39;), optional <code>cooldownMinutes</code> (&gt;= 0), optional <code>lookAheadDays</code> (&gt; 0).</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1053</td>
+<td>Participant management requires a group scheduling mode (GROUP_ALL_HOSTS or ROUND_ROBIN).</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1054</td>
+<td>One or more participant user IDs do not belong to your organization.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1055</td>
+<td>Cannot remove the link owner from participants.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1056</td>
+<td>The specified participant role is invalid. Must be one of: VIEWER, PARTICIPANT, EDITOR.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1060</td>
+<td>The specified <code>name</code> is required and must be a non-empty string up to 50 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1061</td>
+<td>The specified <code>timezone</code> is invalid.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1062</td>
+<td>The specified <code>emailAlias</code> is invalid. Must be alphanumeric with hyphens, up to 30 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1063</td>
+<td>The specified <code>acl</code> is invalid. Must be a valid ACL object with mode: public \</td>
+<td>domain \</td>
+</tr>
+<tr>
+<td>1064</td>
+<td>The specified <code>metadata</code> is invalid.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1065</td>
+<td>Seat limit reached. Upgrade your plan to add more resources.</td>
+<td>403</td>
+</tr>
+<tr>
+<td>1066</td>
+<td>Resource not found.</td>
+<td>404</td>
+</tr>
+<tr>
+<td>1067</td>
+<td>Booking not found.</td>
+<td>404</td>
+</tr>
+<tr>
+<td>1068</td>
+<td>The requested time slot conflicts with an existing booking.</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1069</td>
+<td>The requested time slot is outside the resource availability hours.</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1070</td>
+<td>Resource is currently disabled.</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1071</td>
+<td>You are not authorized to book this resource.</td>
+<td>403</td>
+</tr>
+<tr>
+<td>1072</td>
+<td>The specified <code>organizerEmail</code> is required and must be a valid email.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1073</td>
+<td>The specified <code>organizerName</code> is required and must be a non-empty string.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1074</td>
+<td>The specified <code>title</code> is required and must be a non-empty string.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1075</td>
+<td>The provided <code>publicSlug</code> is already in use.</td>
+<td>409</td>
+</tr>
+<tr>
+<td>1076</td>
+<td>The provided time range is invalid: <code>to</code> must be after <code>from</code>.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1077</td>
+<td>The provided time range is too large. Max window is 7 days.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1078</td>
+<td>The provided <code>publicSlug</code> is invalid. Must be lowercase alphanumeric and hyphens, 1–50 characters.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1079</td>
+<td>The provided token is malformed.</td>
 <td>400</td>
 </tr>
 </tbody></table>
