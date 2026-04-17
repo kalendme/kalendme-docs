@@ -700,7 +700,7 @@ curl "https://www.kalendme.com/api/public/organizations/acme/resources?startTime
 
 Public, unauthenticated endpoint that backs an organization's public booking page. Returns every resource the organization has marked `isPubliclyListed: true` and any bookings that overlap the requested window (up to 7 days).
 
-When the organization has enabled a `publicPageToken`, the `token` query parameter must match exactly or the request fails with error `1076`. If the organization's `publicShowBookingDetails` setting is `false`, the `title`, `organizerName`, and `organizerEmail` fields are omitted from each booking.
+When the organization has enabled a `publicPageToken`, the `token` query parameter must match exactly or the request fails with error `1079`. If the organization's `publicShowBookingDetails` setting is `false`, the `title`, `organizerName`, and `organizerEmail` fields are omitted from each booking.
 
 <aside class="notice">This endpoint is "Public" — no <code>Authorization</code> header is required, but public-page access must be enabled on the organization and the request must match the slug/token configured by the admin.</aside>
 
