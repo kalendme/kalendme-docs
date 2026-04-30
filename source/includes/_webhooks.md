@@ -241,7 +241,7 @@ webhookId | string | Required | The ID of the webhook to retrieve
 ## Get a Webhook's Logs
 
 ```shell
-curl "https://www.kalendme.com/api/v1/webhooks/123213232/logs" \
+curl "https://www.kalendme.com/api/v1/webhooks/123213232/logs?limit=10" \
   -H "Authorization: Bearer abcdef123456"
 ```
 
@@ -282,10 +282,14 @@ curl "https://www.kalendme.com/api/v1/webhooks/123213232/logs" \
 
 ```
 
-This endpoint retrieves a specific webhook's logs. Contains response status code, text and json contents if available. 
+This endpoint retrieves a specific webhook's logs. Contains response status code, text and json contents if available. Logs are returned in reverse-chronological order (most recent first).
 
 <aside class="notice">
   Webhook events logs are retained for 15 days only.
+</aside>
+
+<aside class="notice">
+  Responses are paginated. Use the <code>limit</code> query parameter (default <code>50</code>, maximum <code>200</code>) to control the number of log entries returned.
 </aside>
 
 ### Webhook Event Log Resource
@@ -310,6 +314,12 @@ responseText | string | The TEXT response from your system if replied with conte
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 webhookId | string | Required | The ID of the webhook to retrieve
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+limit | int | Optional | Maximum number of log entries to return. Defaults to `50`. Clamped to the range `1..200`.
 
 ## Update a Webhook
 
