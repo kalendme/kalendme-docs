@@ -4445,7 +4445,7 @@ END:VCALENDAR
 <td>The ID of the webhook to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-webhook-39-s-logs'>Get a Webhook&#39;s Logs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232/logs"</span> <span class="se">\</span>
+<h2 id='get-a-webhook-39-s-logs'>Get a Webhook&#39;s Logs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232/logs?limit=10"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
 <blockquote>
@@ -4484,10 +4484,14 @@ END:VCALENDAR
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
-<p>This endpoint retrieves a specific webhook&#39;s logs. Contains response status code, text and json contents if available. </p>
+<p>This endpoint retrieves a specific webhook&#39;s logs. Contains response status code, text and json contents if available. Logs are returned in reverse-chronological order (most recent first).</p>
 
 <aside class="notice">
   Webhook events logs are retained for 15 days only.
+</aside>
+
+<aside class="notice">
+  Responses are paginated. Use the <code>limit</code> query parameter (default <code>50</code>, maximum <code>200</code>) to control the number of log entries returned.
 </aside>
 <h3 id='webhook-event-log-resource'>Webhook Event Log Resource</h3>
 <table><thead>
@@ -4554,6 +4558,22 @@ END:VCALENDAR
 <td>string</td>
 <td>Required</td>
 <td>The ID of the webhook to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>Optional</td>
+<td>Maximum number of log entries to return. Defaults to <code>50</code>. Clamped to the range <code>1..200</code>.</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-webhook'>Update a Webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232"</span> <span class="se">\</span>
