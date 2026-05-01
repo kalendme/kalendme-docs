@@ -277,9 +277,17 @@ curl "https://www.kalendme.com/api/v1/webhooks/123213232/logs?limit=10" \
       "responseJson": {},
       "id": "123123"
     }
-  ]
+  ],
+  "nextCursor": "eyJjcmVhdGVkQXQiOiIyMDIwLTA5LTAxVDAwOjAwOjAwLjAwMFoiLCJpZCI6IjEyMzEyMyJ9"
 }
 
+```
+
+> To fetch the next page, pass `nextCursor` from the previous response as the `cursor` query parameter:
+
+```shell
+curl "https://www.kalendme.com/api/v1/webhooks/123213232/logs?limit=10&cursor=eyJjcmVhdGVkQXQiOiIyMDIwLTA5LTAxVDAwOjAwOjAwLjAwMFoiLCJpZCI6IjEyMzEyMyJ9" \
+  -H "Authorization: Bearer abcdef123456"
 ```
 
 This endpoint retrieves a specific webhook's logs. Contains response status code, text and json contents if available. Logs are returned in reverse-chronological order (most recent first).
@@ -289,7 +297,7 @@ This endpoint retrieves a specific webhook's logs. Contains response status code
 </aside>
 
 <aside class="notice">
-  Responses are paginated. Use the <code>limit</code> query parameter (default <code>50</code>, maximum <code>200</code>) to control the number of log entries returned.
+  Responses are paginated. Use the <code>limit</code> query parameter (default <code>50</code>, maximum <code>200</code>) to bound page size, and pass the response's <code>nextCursor</code> back as <code>cursor</code> to fetch the next page. <code>nextCursor</code> is <code>null</code> on the last page.
 </aside>
 
 ### Webhook Event Log Resource
@@ -320,6 +328,14 @@ webhookId | string | Required | The ID of the webhook to retrieve
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 limit | int | Optional | Maximum number of log entries to return. Defaults to `50`. Clamped to the range `1..200`.
+cursor | string | Optional | Opaque pagination cursor. Pass the `nextCursor` returned by a previous request to fetch the next page. Omit on the first request.
+
+### Response Body
+
+Parameter | Type | Description
+--------- | ---- | -----------
+webhookEventsLogs | object[] | The page of [webhook event log](/#webhook-event-log-resource) entries, ordered most-recent-first.
+nextCursor | string \| null | Opaque cursor to pass as `cursor` on the next request, or `null` if there are no more pages.
 
 ## Update a Webhook
 
