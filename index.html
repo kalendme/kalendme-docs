@@ -4480,10 +4480,17 @@ END:VCALENDAR
       </span><span class="nl">"responseJson"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"nextCursor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJjcmVhdGVkQXQiOiIyMDIwLTA5LTAxVDAwOjAwOjAwLjAwMFoiLCJpZCI6IjEyMzEyMyJ9"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
+<blockquote>
+<p>To fetch the next page, pass <code>nextCursor</code> from the previous response as the <code>cursor</code> query parameter:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232/logs?limit=10&amp;cursor=eyJjcmVhdGVkQXQiOiIyMDIwLTA5LTAxVDAwOjAwOjAwLjAwMFoiLCJpZCI6IjEyMzEyMyJ9"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
 <p>This endpoint retrieves a specific webhook&#39;s logs. Contains response status code, text and json contents if available. Logs are returned in reverse-chronological order (most recent first).</p>
 
 <aside class="notice">
@@ -4491,7 +4498,7 @@ END:VCALENDAR
 </aside>
 
 <aside class="notice">
-  Responses are paginated. Use the <code>limit</code> query parameter (default <code>50</code>, maximum <code>200</code>) to control the number of log entries returned.
+  Responses are paginated. Use the <code>limit</code> query parameter (default <code>50</code>, maximum <code>200</code>) to bound page size, and pass the response's <code>nextCursor</code> back as <code>cursor</code> to fetch the next page. <code>nextCursor</code> is <code>null</code> on the last page.
 </aside>
 <h3 id='webhook-event-log-resource'>Webhook Event Log Resource</h3>
 <table><thead>
@@ -4574,6 +4581,31 @@ END:VCALENDAR
 <td>int</td>
 <td>Optional</td>
 <td>Maximum number of log entries to return. Defaults to <code>50</code>. Clamped to the range <code>1..200</code>.</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>string</td>
+<td>Optional</td>
+<td>Opaque pagination cursor. Pass the <code>nextCursor</code> returned by a previous request to fetch the next page. Omit on the first request.</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhookEventsLogs</td>
+<td>object[]</td>
+<td>The page of <a href="/#webhook-event-log-resource">webhook event log</a> entries, ordered most-recent-first.</td>
+</tr>
+<tr>
+<td>nextCursor</td>
+<td>string \</td>
+<td>null</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-webhook'>Update a Webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/webhooks/123213232"</span> <span class="se">\</span>
