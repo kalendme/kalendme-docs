@@ -127,6 +127,17 @@ This endpoint creates a new calendar event for a user. In other words, it books 
 | sendGuestNotificationEmails    | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the `guests`.                                                 |
 | sendOrganizerNotificationEmail | boolean | Optional | `Default: false` Whether you want to send an email notification that this event was created to the event organizer (the user who's `userId` you're booking). |
 | linkId                         | string  | Optional | `Default: null` If you want to apply an event's padding rules from a link, use this to specify which one                                                     |
+| createWithoutConflictChecks    | boolean | Optional | `Default: false` Force-create the event even when it overlaps an existing booking and/or starts in the past. See below.                                       |
+
+### Force booking with `createWithoutConflictChecks`
+
+By default this endpoint rejects a create request when the requested slot overlaps an existing event (`409`, error code `1020`) or when `startTimestamp` is in the past (`400`, error code `1019`).
+
+Set `createWithoutConflictChecks=true` to bypass both of those checks and force the event in. This is useful when you need to book a user outside their normal availability, for example honoring a guest's time request or double-booking a host on purpose, without first changing that user's availability settings.
+
+<aside class="warning">
+This flag does not skip required-field validation. It only relaxes the overlap and past-timestamp guards. Because the endpoint already requires the organization API key, this override is owner-only.
+</aside>
 
 ## Get a Calendar Event
 
