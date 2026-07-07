@@ -2850,7 +2850,21 @@ The link must have GROUP_ALL_HOSTS or ROUND_ROBIN scheduling mode (error 1053 if
 <td>Optional</td>
 <td><code>Default: null</code> If you want to apply an event&#39;s padding rules from a link, use this to specify which one</td>
 </tr>
+<tr>
+<td>createWithoutConflictChecks</td>
+<td>boolean</td>
+<td>Optional</td>
+<td><code>Default: false</code> Force-create the event even when it overlaps an existing booking and/or starts in the past. See below.</td>
+</tr>
 </tbody></table>
+<h3 id='force-booking-with-createwithoutconflictchecks'>Force booking with <code>createWithoutConflictChecks</code></h3>
+<p>By default this endpoint rejects a create request when the requested slot overlaps an existing event (<code>409</code>, error code <code>1020</code>) or when <code>startTimestamp</code> is in the past (<code>400</code>, error code <code>1019</code>).</p>
+
+<p>Set <code>createWithoutConflictChecks=true</code> to bypass both of those checks and force the event in. This is useful when you need to book a user outside their normal availability, for example honoring a guest&#39;s time request or double-booking a host on purpose, without first changing that user&#39;s availability settings.</p>
+
+<aside class="warning">
+This flag does not skip required-field validation. It only relaxes the overlap and past-timestamp guards. Because the endpoint already requires the organization API key, this override is owner-only.
+</aside>
 <h2 id='get-a-calendar-event'>Get a Calendar Event</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/users/123123123/calendar-events/123213232"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
 </code></pre></div>
