@@ -24,7 +24,7 @@
 }
 ```
 
-The organization is the top-level tenant that owns your users, links, and API key. Its `settings` object holds account-wide configuration. Only the settings keys listed below are exposed and editable through the API; billing and fiscal settings are managed from the KalendMe dashboard and are never returned by these endpoints.
+The organization is the top-level tenant that owns your users, links, and API key. Its `settings` object holds account-wide configuration. The settings keys listed below are the ones exposed and editable through the API.
 
 ### Editable settings
 
@@ -63,7 +63,7 @@ curl "https://www.kalendme.com/api/v1/organization" \
 }
 ```
 
-This endpoint returns your organization. Secret fields (API key, webhook secret) and private billing/fiscal settings are omitted from the response.
+This endpoint returns your organization. Secret fields such as your API key and webhook secret are omitted from the response.
 
 ### HTTP Request
 
@@ -107,7 +107,7 @@ curl "https://www.kalendme.com/api/v1/organization" \
 
 Updates one or more of the editable settings keys. This is a **shallow merge**: only the keys you send are replaced; any other settings keys keep their current value. To clear a key, send it explicitly with an empty value (e.g. `"safeRedirectDomains": []`).
 
-Only the editable keys documented above are accepted. Sending any other settings key (for example a billing or fiscal field) is rejected with HTTP 400. When `safeRedirectDomains` is provided it must be an array of valid http/https URLs, otherwise the request fails with error code `1075`.
+Only the editable keys documented above are accepted. Sending any settings key other than those listed above is rejected with HTTP 400. When `safeRedirectDomains` is provided it must be an array of valid http/https URLs, otherwise the request fails with error code `1075`.
 
 ### Body Parameters
 
