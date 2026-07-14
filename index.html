@@ -1097,7 +1097,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>The organization is the top-level tenant that owns your users, links, and API key. Its <code>settings</code> object holds account-wide configuration. Only the settings keys listed below are exposed and editable through the API; billing and fiscal settings are managed from the KalendMe dashboard and are never returned by these endpoints.</p>
+<p>The organization is the top-level tenant that owns your users, links, and API key. Its <code>settings</code> object holds account-wide configuration. The settings keys listed below are the ones exposed and editable through the API.</p>
 <h3 id='editable-settings'>Editable settings</h3>
 <table><thead>
 <tr>
@@ -1146,7 +1146,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint returns your organization. Secret fields (API key, webhook secret) and private billing/fiscal settings are omitted from the response.</p>
+<p>This endpoint returns your organization. Secret fields such as your API key and webhook secret are omitted from the response.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.kalendme.com/api/v1/organization</code></p>
 <h2 id='update-your-organization-settings'>Update your Organization settings</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/organization"</span> <span class="se">\</span>
@@ -1182,7 +1182,7 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 </span></code></pre></div>
 <p>Updates one or more of the editable settings keys. This is a <strong>shallow merge</strong>: only the keys you send are replaced; any other settings keys keep their current value. To clear a key, send it explicitly with an empty value (e.g. <code>&quot;safeRedirectDomains&quot;: []</code>).</p>
 
-<p>Only the editable keys documented above are accepted. Sending any other settings key (for example a billing or fiscal field) is rejected with HTTP 400. When <code>safeRedirectDomains</code> is provided it must be an array of valid http/https URLs, otherwise the request fails with error code <code>1075</code>.</p>
+<p>Only the editable keys documented above are accepted. Sending any settings key other than those listed above is rejected with HTTP 400. When <code>safeRedirectDomains</code> is provided it must be an array of valid http/https URLs, otherwise the request fails with error code <code>1075</code>.</p>
 <h3 id='body-parameters'>Body Parameters</h3>
 <table><thead>
 <tr>
