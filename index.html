@@ -349,6 +349,20 @@
               </ul>
           </li>
           <li>
+            <a href="#organization" class="toc-h1 toc-link" data-title="Organization">Organization</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#organization-resource" class="toc-h2 toc-link" data-title="Organization Resource">Organization Resource</a>
+                  </li>
+                  <li>
+                    <a href="#get-your-organization" class="toc-h2 toc-link" data-title="Get your Organization">Get your Organization</a>
+                  </li>
+                  <li>
+                    <a href="#update-your-organization-settings" class="toc-h2 toc-link" data-title="Update your Organization settings">Update your Organization settings</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#calendar-accounts" class="toc-h1 toc-link" data-title="Calendar Accounts">Calendar Accounts</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1061,6 +1075,132 @@ curl <span class="s2">"https://www.kalendme.com/api/v1/users"</span> <span class
 <td>The ID of the user to delete</td>
 </tr>
 </tbody></table>
+<h1 id='organization'>Organization</h1><h2 id='organization-resource'>Organization Resource</h2>
+<blockquote>
+<p>An example organization model looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"safeRedirectDomains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://app.example.com"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"isAnnonymousInvitesModeEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customEmailSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail.example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The organization is the top-level tenant that owns your users, links, and API key. Its <code>settings</code> object holds account-wide configuration. Only the settings keys listed below are exposed and editable through the API; billing and fiscal settings are managed from the KalendMe dashboard and are never returned by these endpoints.</p>
+<h3 id='editable-settings'>Editable settings</h3>
+<table><thead>
+<tr>
+<th>Setting</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>safeRedirectDomains</td>
+<td>string[]</td>
+<td>Allowlist of URL prefixes accepted as <code>onSuccessRedirectUrl</code> when connecting a calendar account. Each entry must be a valid http/https URL (e.g. <code>https://app.example.com</code>). A redirect is accepted only if it starts with one of these entries.</td>
+</tr>
+<tr>
+<td>isAnnonymousInvitesModeEnabled</td>
+<td>boolean</td>
+<td>Whether anonymous invite mode is enabled for the organization.</td>
+</tr>
+<tr>
+<td>customEmailSettings</td>
+<td>object</td>
+<td>Custom sender configuration (<code>domain</code>, <code>from</code>, <code>key</code>) for transactional email.</td>
+</tr>
+</tbody></table>
+<h2 id='get-your-organization'>Get your Organization</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/organization"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"safeRedirectDomains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://app.example.com"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"isAnnonymousInvitesModeEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customEmailSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail.example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns your organization. Secret fields (API key, webhook secret) and private billing/fiscal settings are omitted from the response.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.kalendme.com/api/v1/organization</code></p>
+<h2 id='update-your-organization-settings'>Update your Organization settings</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.kalendme.com/api/v1/organization"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer abcdef123456"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "settings": {
+      "safeRedirectDomains": ["https://app.example.com"]
+    }
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns the updated organization:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_123123123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"safeRedirectDomains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://app.example.com"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"isAnnonymousInvitesModeEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customEmailSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail.example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates one or more of the editable settings keys. This is a <strong>shallow merge</strong>: only the keys you send are replaced; any other settings keys keep their current value. To clear a key, send it explicitly with an empty value (e.g. <code>&quot;safeRedirectDomains&quot;: []</code>).</p>
+
+<p>Only the editable keys documented above are accepted. Sending any other settings key (for example a billing or fiscal field) is rejected with HTTP 400. When <code>safeRedirectDomains</code> is provided it must be an array of valid http/https URLs, otherwise the request fails with error code <code>1075</code>.</p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>settings</td>
+<td>object</td>
+<td>Required</td>
+<td>An object containing one or more of the editable settings keys.</td>
+</tr>
+</tbody></table>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>PATCH https://www.kalendme.com/api/v1/organization</code></p>
 <h1 id='calendar-accounts'>Calendar Accounts</h1><h2 id='calendar-account-resource'>Calendar Account Resource</h2>
 <blockquote>
 <p>An example calendar account model looks like this:</p>
@@ -5516,6 +5656,11 @@ curl <span class="nt">--request</span> GET <span class="se">\</span>
 <tr>
 <td>1074</td>
 <td>The provided token is malformed.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>1075</td>
+<td>The provided <code>safeRedirectDomains</code> is invalid. Must be an array of valid http/https URLs.</td>
 <td>400</td>
 </tr>
 <tr>
