@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - introduction
   - users
+  - organization
   - calendar-accounts
   - calendars
   - user-links
