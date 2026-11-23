@@ -47,33 +47,45 @@ Webhooks are POST requests to your systems. All of KalendMe's requests will come
 
 ## Security
 
-> Sample code snippet to verify an incoming webhook in javascript:
+> Sample code snippet to verify an incoming webhook in javascript (Node.js / Express):
 
 ```javascript
+import express from 'express'
 import { createHash, timingSafeEqual } from 'crypto'
- 
-// Your server's endpoint receiving the request
-export default async function(req, res) {
- const hashedBody = createHash('sha256')
-   .update(`${req.body}${process.env.KALENDME_WEBHOOK_SECRET}`)
-   .digest('hex')
- 
- if (!timingSafeEqual(hashedBody, req.headers['Kalendme-Signature'])) {
-   res.status(401).end()
-   return
- }
- 
- // proceed with the processing of the webhook
-}
-```
 
+const app = express()
+
+// Use the RAW request body. Re-serializing a parsed JSON body
+// (JSON.stringify(req.body)) can change it and break the signature.
+// Register this route before any global app.use(express.json()), otherwise
+// req.body is already parsed and verification always fails.
+app.post('/my-endpoint', express.raw({ type: 'application/json' }), (req, res) => {
+  const rawBody = req.body.toString('utf8')
+
+  const expected = Buffer.from(
+    createHash('sha256')
+      .update(rawBody + process.env.KALENDME_WEBHOOK_SECRET)
+      .digest('hex'),
+    'hex'
+  )
+  // Node.js lowercases incoming header names
+  const received = Buffer.from(req.headers['kalendme-signature'] || '', 'hex')
+
+  if (received.length !== expected.length || !timingSafeEqual(received, expected)) {
+    return res.status(401).end()
+  }
+
+  const event = JSON.parse(rawBody)
+  // proceed with the processing of the webhook
+  res.status(200).end()
+})
+```
 
 You’ll be provided with a webhook secret on account setup which you’ll use to calculate a hash to compare against the signature of every webhook.
 
-All webhooks will come with a signature header: `Kalendme-Signature`
+All webhooks will come with a signature header: `Kalendme-Signature`. Header names are case-insensitive; Node.js exposes it as `req.headers['kalendme-signature']`.
 
-That signature has to be compared to the received body of the event.
-
+The signature is the hex-encoded SHA-256 digest of the **raw request body** immediately followed by your webhook secret: `hex(sha256(rawBody + webhookSecret))`. Compute it over the exact bytes you received, before any JSON parsing, and compare it to the header value with a constant-time comparison.
 
 ## Webhook Resource
 
